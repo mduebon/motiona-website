@@ -443,9 +443,7 @@ export default function Home() {
           
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-3 bg-background border border-border rounded-lg px-6 py-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">
-                PDF
-              </div>
+              <img src="/images/bsfz-logo.png" alt="BSFZ" className="h-12" />
               <p className="text-sm text-muted-foreground">
                 {t.contact.funding}
               </p>
