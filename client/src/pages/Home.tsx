@@ -43,15 +43,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/">
-            <div className="flex items-center gap-3 cursor-pointer">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">DE</span>
-              </div>
-              <div>
-                <div className="font-bold text-sm tracking-tight">{t.header.dubon}</div>
-                <div className="text-xs text-muted-foreground">{t.header.advancedMotionControl}</div>
-              </div>
-            </div>
+            <img src="/images/dubon-logo.png" alt="Dübon Engineering" className="h-12 cursor-pointer" />
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
@@ -467,15 +459,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">DE</span>
-                </div>
-                <div>
-                  <div className="font-bold text-sm">DÜBON</div>
-                  <div className="text-xs opacity-80">ENGINEERING GMBH</div>
-                </div>
-              </div>
+              <img src="/images/dubon-logo.png" alt="Dübon Engineering" className="h-10" />
               <p className="text-sm opacity-80">
                 {t.footer.tagline}
               </p>
