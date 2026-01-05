@@ -63,10 +63,12 @@ export default function Home() {
             >
               {language === 'en' ? 'DE' : 'EN'}
             </Button>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              {t.header.documentation}
-              <ExternalLink className="ml-2 h-3 w-3" />
-            </Button>
+            <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                {t.header.documentation}
+                <ExternalLink className="ml-2 h-3 w-3" />
+              </Button>
+            </a>
           </nav>
         </div>
       </header>
@@ -93,10 +95,12 @@ export default function Home() {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                  {t.hero.exploreSolutions}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <a href="#products">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    {t.hero.exploreSolutions}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
                 <Button size="lg" variant="outline">
                   <Play className="mr-2 h-4 w-4" />
                   {t.hero.watchDemo}
@@ -304,9 +308,11 @@ export default function Home() {
                   ))}
                 </ul>
                 
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  {t.solutions.motionA.learnMore}
-                </Button>
+                <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                    {t.solutions.motionA.learnMore}
+                  </Button>
+                </a>
               </CardContent>
             </Card>
             
@@ -335,9 +341,11 @@ export default function Home() {
                   ))}
                 </ul>
                 
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                  {t.solutions.motionASpark.learnMore}
-                </Button>
+                <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                    {t.solutions.motionASpark.learnMore}
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -356,7 +364,20 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {t.resources.items.map((resource, index) => (
+            {[
+              {
+                ...t.resources.items[0],
+                url: 'https://www.industrielle-automation.net/motion-control-neu-gedacht/',
+              },
+              {
+                ...t.resources.items[1],
+                url: 'https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P',
+              },
+              {
+                ...t.resources.items[2],
+                url: 'https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview',
+              },
+            ].map((resource, index) => (
               <Card key={index} className="border-border hover:border-primary transition-colors">
                 <CardContent className="p-6 space-y-4">
                   <div>
@@ -366,19 +387,23 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {resource.description}
                   </p>
-                  <Button variant="outline" className="w-full">
-                    {resource.cta}
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </Button>
+                  <a href={resource.url} target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full">
+                      {resource.cta}
+                      <ExternalLink className="ml-2 h-3 w-3" />
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             ))}
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              {t.resources.viewPricing}
-            </Button>
+            <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/pages/31129609" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                {t.resources.viewPricing}
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -415,7 +440,7 @@ export default function Home() {
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-bold">{t.contact.phone.title}</h3>
-                <a href="tel:+4970711384161009" className="text-sm text-primary hover:underline block">
+                <a href="tel:+4970711384" className="text-sm text-primary hover:underline block">
                   {t.contact.phone.number}
                 </a>
               </CardContent>
@@ -435,10 +460,12 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-8">
-            <Button variant="outline" size="lg">
-              {t.contact.visitWebsite}
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Button>
+            <a href="https://motion-a-by-dubon-engineering-e066635c.base44.app/#" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg">
+                {t.contact.visitWebsite}
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
           </div>
           
           <div className="mt-16 text-center">
@@ -466,18 +493,18 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4 text-sm">{t.footer.products}</h4>
               <ul className="space-y-2 text-sm opacity-80">
-                <li><a href="#" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.software}</a></li>
-                <li><a href="#" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.spark}</a></li>
-                <li><a href="#" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.pricing}</a></li>
+                <li><a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.software}</a></li>
+                <li><a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.spark}</a></li>
+                <li><a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/pages/31129609" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.pricing}</a></li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-bold mb-4 text-sm">{t.footer.resources}</h4>
               <ul className="space-y-2 text-sm opacity-80">
-                <li><a href="#" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.documentation}</a></li>
-                <li><a href="#" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.youtube}</a></li>
-                <li><a href="#" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.article}</a></li>
+                <li><a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.documentation}</a></li>
+                <li><a href="https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.youtube}</a></li>
+                <li><a href="https://www.industrielle-automation.net/motion-control-neu-gedacht/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.article}</a></li>
               </ul>
             </div>
             
