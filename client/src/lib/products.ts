@@ -111,9 +111,9 @@ export const products: Record<string, Product> = {
     relatedProducts: ["motiona", "zynq-pcie-board"],
   },
 
-  "komi-temperature-humidity": {
-    id: "komi-temperature-humidity",
-    slug: "komi-temperature-humidity",
+  "komi-monitor": {
+    id: "komi-monitor",
+    slug: "komi-monitor",
     name: "Komi Temperature & Humidity Monitor",
     category: "IoT & Connectivity",
     description:
@@ -262,7 +262,82 @@ export const products: Record<string, Product> = {
     links: {
       documentation: "https://www.duebon-engineering.de/lorawan-gateway",
     },
-    relatedProducts: ["komi-temperature-humidity"],
+    relatedProducts: ["komi-monitor"],
+  },
+
+  "zynq-pcie": {
+    id: "zynq-pcie",
+    slug: "zynq-pcie",
+    name: "ZYNQ PCIe Board",
+    category: "FPGA Solutions",
+    description:
+      "A ZYNQ PCIe Board with FMC connector for custom expansion cards and Linux OS. Features ZYNQ XC72015, PCIe IP Core, and comprehensive Linux support for advanced FPGA applications.",
+    descriptionDE:
+      "Ein ZYNQ-PCIe-Board mit FMC-Stecker für kundenspezifische Erweiterungskarten und Linux OS. Mit ZYNQ XC72015, PCIe IP Core und umfassender Linux-Unterstützung für fortgeschrittene FPGA-Anwendungen.",
+    shortDescription: "High-performance FPGA board for advanced computing applications.",
+    shortDescriptionDE: "Hochleistungs-FPGA-Board für fortgeschrittene Computing-Anwendungen.",
+    images: [
+      {
+        url: "/images/zynq-pcie-board.webp",
+        alt: "ZYNQ PCIe Board",
+        caption: "ZYNQ PCIe Board with FMC Connector",
+      },
+    ],
+    features: [
+      {
+        title: "ZYNQ XC72015",
+        description: "Powerful Xilinx ZYNQ SoC with ARM processor and FPGA fabric",
+      },
+      {
+        title: "FMC Connector",
+        description: "FPGA Mezzanine Card connector for custom expansion cards",
+      },
+      {
+        title: "PCIe IP Core",
+        description: "Integrated PCIe interface for high-speed data transfer",
+      },
+      {
+        title: "Linux OS Support",
+        description: "Full Linux operating system support for easy development",
+      },
+    ],
+    featuresDE: [
+      {
+        title: "ZYNQ XC72015",
+        description: "Leistungsstarker Xilinx ZYNQ SoC mit ARM-Prozessor und FPGA-Fabric",
+      },
+      {
+        title: "FMC-Stecker",
+        description: "FPGA Mezzanine Card Stecker für kundenspezifische Erweiterungskarten",
+      },
+      {
+        title: "PCIe IP Core",
+        description: "Integrierte PCIe-Schnittstelle für Hochgeschwindigkeitsdatenübertragung",
+      },
+      {
+        title: "Linux OS-Unterstützung",
+        description: "Vollständige Linux-Betriebssystemunterstützung für einfache Entwicklung",
+      },
+    ],
+    specifications: {
+      FPGA: "ZYNQ XC72015",
+      Connector: "FMC (FPGA Mezzanine Card)",
+      Interface: "PCIe IP Core",
+      "Operating System": "Linux",
+      Repository: "https://bitbucket.org/ingdb/tec0097.git",
+    },
+    specificationsDE: {
+      FPGA: "ZYNQ XC72015",
+      Stecker: "FMC (FPGA Mezzanine Card)",
+      Schnittstelle: "PCIe IP Core",
+      Betriebssystem: "Linux",
+      Repository: "https://bitbucket.org/ingdb/tec0097.git",
+    },
+    links: {
+      documentation: "https://www.duebon-engineering.de/zynq-pcie-board",
+      repository: "https://bitbucket.org/ingdb/tec0097.git",
+    },
+    relatedProducts: ["motionc-flex"],
   },
 };
 
