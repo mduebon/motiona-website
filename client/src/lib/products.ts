@@ -282,6 +282,11 @@ export const products: Record<string, Product> = {
         alt: "ZYNQ PCIe Board",
         caption: "ZYNQ PCIe Board with FMC Connector",
       },
+      {
+        url: "/images/zynq-fmc-diagram.png",
+        alt: "FMC and Carrier Board Architecture",
+        caption: "FMC Expansion Cards and Carrier Board Architecture",
+      },
     ],
     features: [
       {
