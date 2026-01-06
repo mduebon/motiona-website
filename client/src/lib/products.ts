@@ -213,6 +213,11 @@ export const products: Record<string, Product> = {
         alt: "LoraWAN Gateway Product",
         caption: "LoraWAN Gateway",
       },
+      {
+        url: "/images/lorawan-gateway-hardware.png",
+        alt: "LoraWAN Gateway Hardware",
+        caption: "LoraWAN Gateway Hardware with Antenna Connection",
+      },
     ],
     features: [
       {
