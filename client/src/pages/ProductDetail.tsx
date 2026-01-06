@@ -13,10 +13,7 @@ export default function ProductDetail() {
   const product = slug ? getProductBySlug(slug) : undefined;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const { ref: heroRef } = useScrollAnimation();
-  const { ref: featuresRef } = useScrollAnimation();
-  const { ref: specsRef } = useScrollAnimation();
-  const { ref: relatedRef } = useScrollAnimation();
+  useScrollAnimation();
 
   if (!product) {
     return (
@@ -44,7 +41,7 @@ export default function ProductDetail() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section ref={heroRef} className="scroll-animate py-12 md:py-20">
+      <section className="scroll-animation py-12 md:py-20">
         <div className="container">
           <div className="mb-8">
             <span className="section-label text-primary">{product.category}</span>
@@ -153,7 +150,7 @@ export default function ProductDetail() {
       </section>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="scroll-animate py-16 md:py-24 bg-secondary/30">
+      <section className="scroll-animation py-16 md:py-24 bg-secondary/30">
         <div className="container">
           <div className="mb-12">
             <span className="section-label text-primary">
@@ -180,7 +177,7 @@ export default function ProductDetail() {
 
       {/* Specifications Section */}
       {specifications && (
-        <section ref={specsRef} className="scroll-animate py-16 md:py-24">
+        <section className="scroll-animation py-16 md:py-24">
           <div className="container">
             <div className="mb-12">
               <span className="section-label text-primary">
@@ -220,7 +217,7 @@ export default function ProductDetail() {
 
       {/* Related Products Section */}
       {relatedProducts.length > 0 && (
-        <section ref={relatedRef} className="scroll-animate py-16 md:py-24 bg-secondary/30">
+        <section className="scroll-animation py-16 md:py-24 bg-secondary/30">
           <div className="container">
             <div className="mb-12">
               <span className="section-label text-primary">
