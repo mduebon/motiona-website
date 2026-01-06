@@ -204,18 +204,6 @@ export const translations = {
       },
       products: [
         {
-          id: 'motiona',
-          name: 'MotionA',
-          category: 'Motion Control',
-          description: 'Advanced motion control solution for flexible robotic systems with real-time performance.',
-        },
-        {
-          id: 'motionc-flex',
-          name: 'MotionC++ Flex',
-          category: 'Motion Control',
-          description: 'Flexible control system board for versatile motion applications.',
-        },
-        {
           id: 'komi-monitor',
           name: 'Komi Temperature & Humidity Monitor',
           category: 'IoT & Connectivity',
@@ -497,18 +485,6 @@ export const translations = {
         services: 'Services',
       },
       products: [
-        {
-          id: 'motiona',
-          name: 'MotionA',
-          category: 'Bewegungssteuerung',
-          description: 'Fortgeschrittene Bewegungssteuerungslosung fuer flexible Robotersysteme mit Echtzeit-Leistung.',
-        },
-        {
-          id: 'motionc-flex',
-          name: 'MotionC++ Flex',
-          category: 'Bewegungssteuerung',
-          description: 'Flexible Steuerungsplatine fuer vielseitige Bewegungsanwendungen.',
-        },
         {
           id: 'komi-monitor',
           name: 'Komi Temperatur- & Feuchtigkeitsmonitor',
