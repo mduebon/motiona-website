@@ -124,14 +124,14 @@ export const products: Record<string, Product> = {
     shortDescriptionDE: "Echtzeit-Umweltüberwachung mit IoT-Konnektivität.",
     images: [
       {
-        url: "https://images.squarespace-cdn.com/content/v1/619512257bd2ba0708fcc8bc/1637326137441-2X1DXVD1VJUBYVV36TTO/2020",
-        alt: "Komi Monitor Dashboard",
-        caption: "Komi Real-time Monitoring Interface",
+        url: "/images/komi-temperature-sensors.png",
+        alt: "Komi Temperature Sensor Dashboard",
+        caption: "Four Temperature Sensors with Real-time Monitoring and Alerts",
       },
       {
-        url: "https://images.squarespace-cdn.com/content/v1/619512257bd2ba0708fcc8bc/1653325479705-F7M1QEXQ3L5D7TD3155A/image-asset__6_-removebg-preview.png",
-        alt: "Komi Device",
-        caption: "Komi Temperature & Humidity Monitor",
+        url: "/images/komi-sensor-overview.png",
+        alt: "Komi Sensor Configuration",
+        caption: "Sensor Configuration and Monitoring Interface",
       },
     ],
     features: [
@@ -182,9 +182,7 @@ export const products: Record<string, Product> = {
       Protokolle: ["SNMP", "E-Mail"],
       Alarmsystem: "Schwellenwertbasierte Benachrichtigungen",
     },
-    links: {
-      handbook: "https://www.duebon-engineering.de/products/komi-temperature-and-humidity-monitor",
-    },
+    links: {},
     relatedProducts: ["lorawan-gateway"],
   },
 
