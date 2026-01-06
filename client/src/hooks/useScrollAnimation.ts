@@ -1,13 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, RefObject } from 'react';
 
 /**
  * Custom hook for triggering fade-in and slide-up animations on scroll
  * Observes elements with the 'scroll-animation' class and triggers animation when visible
  */
-export function useScrollAnimation() {
-  const elementsRef = useRef<IntersectionObserver | null>(null);
+export function useScrollAnimation(): { ref: RefObject<HTMLDivElement | null> } {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    if (!elementRef.current) return;
+
     // Create intersection observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
@@ -26,19 +29,16 @@ export function useScrollAnimation() {
       }
     );
 
-    // Observe all elements with scroll-animation class
-    const animatedElements = document.querySelectorAll('.scroll-animation');
-    animatedElements.forEach((element) => {
-      observer.observe(element);
-    });
-
-    elementsRef.current = observer;
+    observer.observe(elementRef.current);
+    observerRef.current = observer;
 
     return () => {
       // Cleanup observer on unmount
-      if (elementsRef.current) {
-        elementsRef.current.disconnect();
+      if (observerRef.current) {
+        observerRef.current.disconnect();
       }
     };
   }, []);
+
+  return { ref: elementRef };
 }

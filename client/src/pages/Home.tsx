@@ -432,12 +432,21 @@ export default function Home() {
                       {product.description}
                     </p>
                   </div>
-                  <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer">
-                    <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
-                      {t.productsHub.learnMore}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </a>
+                  {product.id === 'motionc-flex' || product.id === 'komi-monitor' || product.id === 'lorawan-gateway' || product.id === 'zynq-pcie' ? (
+                    <Link href={`/product/${product.id}`}>
+                      <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
+                        {t.productsHub.learnMore}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  ) : (
+                    <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer">
+                      <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
+                        {t.productsHub.learnMore}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </a>
+                  )}
                 </CardContent>
               </Card>
             ))}
