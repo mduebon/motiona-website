@@ -408,6 +408,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Products Hub Section */}
+      <section className="py-24 bg-background scroll-animation">
+        <div className="container">
+          <div className="text-center mb-16 space-y-4">
+            <div className="section-label text-primary">{t.productsHub.label}</div>
+            <h2 className="text-4xl md:text-5xl font-bold">{t.productsHub.title}</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t.productsHub.description}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {t.productsHub.products.map((product, index) => (
+              <Card key={product.id} className="hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-6 space-y-4 h-full flex flex-col">
+                  <div className="flex-1">
+                    <div className="inline-block px-3 py-1 bg-primary/10 rounded-full mb-3">
+                      <span className="text-xs font-semibold text-primary">{product.category}</span>
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">{product.name}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {product.description}
+                    </p>
+                  </div>
+                  <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
+                      {t.productsHub.learnMore}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-muted/30 scroll-animation">
         <div className="container">

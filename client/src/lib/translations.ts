@@ -191,6 +191,69 @@ export const translations = {
       ],
       viewPricing: 'View Pricing & TCO',
     },
+    // Products Hub Section
+    productsHub: {
+      label: 'ALL PRODUCTS',
+      title: 'Our Complete Product Portfolio',
+      description: 'Explore our comprehensive range of motion control solutions, IoT connectivity, FPGA systems, and engineering services.',
+      categories: {
+        motionControl: 'Motion Control',
+        iotConnectivity: 'IoT & Connectivity',
+        fpgaSolutions: 'FPGA Solutions',
+        services: 'Services',
+      },
+      products: [
+        {
+          id: 'motiona',
+          name: 'MotionA',
+          category: 'Motion Control',
+          description: 'Advanced motion control solution for flexible robotic systems with real-time performance.',
+        },
+        {
+          id: 'motionc-flex',
+          name: 'MotionC++ Flex',
+          category: 'Motion Control',
+          description: 'Flexible control system board for versatile motion applications.',
+        },
+        {
+          id: 'komi-monitor',
+          name: 'Komi Temperature & Humidity Monitor',
+          category: 'IoT & Connectivity',
+          description: 'Real-time environmental monitoring with network connectivity.',
+        },
+        {
+          id: 'zynq-pcie',
+          name: 'ZYNQ PCIe Board',
+          category: 'FPGA Solutions',
+          description: 'High-performance FPGA board for advanced computing applications.',
+        },
+        {
+          id: 'realtime-control',
+          name: 'Real-Time Control Systems',
+          category: 'FPGA Solutions',
+          description: 'Deterministic control systems for mission-critical applications.',
+        },
+        {
+          id: 'bbb-fpga',
+          name: 'BBB FPGA Extension Board',
+          category: 'FPGA Solutions',
+          description: 'FPGA extension for BeagleBone Black platform.',
+        },
+        {
+          id: 'lorawan-gateway',
+          name: 'LoraWAN Gateway',
+          category: 'IoT & Connectivity',
+          description: 'Long-range wireless connectivity for IoT applications.',
+        },
+        {
+          id: 'sensor-antenna',
+          name: 'Sensor & Antenna Design',
+          category: 'Services',
+          description: 'Custom sensor and antenna design services for specialized applications.',
+        },
+      ],
+      learnMore: 'Learn More',
+    },
     // Contact Section
     contact: {
       label: 'GET IN TOUCH',
@@ -421,6 +484,69 @@ export const translations = {
         },
       ],
       viewPricing: 'Preise & TCO anzeigen',
+    },
+    // Products Hub Section
+    productsHub: {
+      label: 'ALLE PRODUKTE',
+      title: 'Unser vollstaendiges Produktportfolio',
+      description: 'Erkunden Sie unsere umfassende Palette von Bewegungssteuerungsloesungen, IoT-Konnektivitaet, FPGA-Systemen und Engineering-Services.',
+      categories: {
+        motionControl: 'Bewegungssteuerung',
+        iotConnectivity: 'IoT & Konnektivitaet',
+        fpgaSolutions: 'FPGA-Loesungen',
+        services: 'Services',
+      },
+      products: [
+        {
+          id: 'motiona',
+          name: 'MotionA',
+          category: 'Bewegungssteuerung',
+          description: 'Fortgeschrittene Bewegungssteuerungslosung fuer flexible Robotersysteme mit Echtzeit-Leistung.',
+        },
+        {
+          id: 'motionc-flex',
+          name: 'MotionC++ Flex',
+          category: 'Bewegungssteuerung',
+          description: 'Flexible Steuerungsplatine fuer vielseitige Bewegungsanwendungen.',
+        },
+        {
+          id: 'komi-monitor',
+          name: 'Komi Temperatur- & Feuchtigkeitsmonitor',
+          category: 'IoT & Konnektivitaet',
+          description: 'Echtzeit-Umgebungsueberwachung mit Netzwerkanbindung.',
+        },
+        {
+          id: 'zynq-pcie',
+          name: 'ZYNQ PCIe Board',
+          category: 'FPGA-Loesungen',
+          description: 'Hochleistungs-FPGA-Platine fuer fortschrittliche Rechenanwendungen.',
+        },
+        {
+          id: 'realtime-control',
+          name: 'Echtzeit-Steuerungssysteme',
+          category: 'FPGA-Loesungen',
+          description: 'Deterministische Steuerungssysteme fuer sicherheitskritische Anwendungen.',
+        },
+        {
+          id: 'bbb-fpga',
+          name: 'BBB FPGA Extension Board',
+          category: 'FPGA-Loesungen',
+          description: 'FPGA-Erweiterung fuer BeagleBone Black Plattform.',
+        },
+        {
+          id: 'lorawan-gateway',
+          name: 'LoraWAN Gateway',
+          category: 'IoT & Konnektivitaet',
+          description: 'Langreichweitige drahtlose Konnektivitaet fuer IoT-Anwendungen.',
+        },
+        {
+          id: 'sensor-antenna',
+          name: 'Sensor- & Antennendesign',
+          category: 'Services',
+          description: 'Massgeschneidertes Sensor- und Antennendesign fuer spezialisierte Anwendungen.',
+        },
+      ],
+      learnMore: 'Mehr erfahren',
     },
     // Contact Section
     contact: {
