@@ -133,6 +133,11 @@ export const products: Record<string, Product> = {
         alt: "Komi Sensor Configuration",
         caption: "Sensor Configuration and Monitoring Interface",
       },
+      {
+        url: "/images/komi-hardware-device.png",
+        alt: "Komi Monitor Hardware Device",
+        caption: "Komi Monitor with LAN Port and 4 Sensor Connections",
+      },
     ],
     features: [
       {
