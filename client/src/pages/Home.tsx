@@ -33,9 +33,11 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Home() {
   const { language, setLanguage, t } = useLanguage();
+  useScrollAnimation();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -125,10 +127,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section id="features" className="py-24 bg-muted/30">
+      </section>      {/* Use Cases Section */}
+      <section id="features" className="py-24 bg-background scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="section-label text-primary">{t.useCases.label}</div>
@@ -155,7 +155,7 @@ export default function Home() {
       </section>
 
       {/* Core Capabilities Section */}
-      <section className="py-24">
+      <section className="py-24 bg-muted/30 scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="section-label text-primary">{t.coreCapabilities.label}</div>
@@ -190,8 +190,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Advanced Capabilities Section with Dashboard */}
-      <section className="py-24 bg-muted/30">
+      {/* Advanced Capabilities Section */}
+      <section className="py-24 bg-background scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="section-label text-primary">{t.advancedCapabilities.label}</div>
@@ -268,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* Solutions Section */}
-      <section id="products" className="py-24 bg-muted/30 relative overflow-hidden">
+      <section className="py-24 bg-background scroll-animation relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <img src="/images/abstract-tech-pattern.png" alt="" className="w-full h-full object-cover" />
         </div>
@@ -353,7 +353,7 @@ export default function Home() {
       </section>
 
       {/* Resources Section */}
-      <section className="py-24">
+      <section className="py-24 bg-muted/30 scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="section-label text-primary">{t.resources.label}</div>
@@ -409,7 +409,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-muted/30">
+      <section id="contact" className="py-24 bg-muted/30 scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="section-label text-primary">{t.contact.label}</div>

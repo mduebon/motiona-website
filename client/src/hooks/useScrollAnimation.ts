@@ -1,0 +1,44 @@
+import { useEffect, useRef } from 'react';
+
+/**
+ * Custom hook for triggering fade-in and slide-up animations on scroll
+ * Observes elements with the 'scroll-animation' class and triggers animation when visible
+ */
+export function useScrollAnimation() {
+  const elementsRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    // Create intersection observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add animation class when element enters viewport
+            entry.target.classList.add('animate-fade-in-up');
+            // Stop observing this element to prevent re-triggering
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: '0px 0px -50px 0px', // Start animation slightly before element is fully visible
+      }
+    );
+
+    // Observe all elements with scroll-animation class
+    const animatedElements = document.querySelectorAll('.scroll-animation');
+    animatedElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    elementsRef.current = observer;
+
+    return () => {
+      // Cleanup observer on unmount
+      if (elementsRef.current) {
+        elementsRef.current.disconnect();
+      }
+    };
+  }, []);
+}
