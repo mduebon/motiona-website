@@ -267,9 +267,7 @@ export const products: Record<string, Product> = {
       Reichweite: "Langstrecken-Funk",
       Netzwerktyp: "IoT",
     },
-    links: {
-      documentation: "https://www.duebon-engineering.de/lorawan-gateway",
-    },
+    links: {},
     relatedProducts: ["komi-monitor"],
   },
 
