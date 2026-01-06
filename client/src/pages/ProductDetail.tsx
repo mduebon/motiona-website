@@ -1,7 +1,7 @@
 import { useParams, useLocation } from "wouter";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getProductBySlug, getRelatedProducts } from "@/lib/products";
+import { getProductBySlug } from "@/lib/products";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { useState } from "react";
@@ -36,7 +36,7 @@ export default function ProductDetail() {
   const features = isDE ? product.featuresDE : product.features;
   const specifications = isDE ? product.specificationsDE : product.specifications;
   const description = isDE ? product.descriptionDE : product.description;
-  const relatedProducts = getRelatedProducts(product.id);
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -215,52 +215,7 @@ export default function ProductDetail() {
         </section>
       )}
 
-      {/* Related Products Section */}
-      {relatedProducts.length > 0 && (
-        <section className="scroll-animation py-16 md:py-24 bg-secondary/30">
-          <div className="container">
-            <div className="mb-12">
-              <span className="section-label text-primary">
-                {isDE ? "VERWANDTE PRODUKTE" : "RELATED PRODUCTS"}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold">
-                {isDE ? "Entdecken Sie ähnliche Produkte" : "Discover Similar Products"}
-              </h2>
-            </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {relatedProducts.map((relatedProduct) => (
-                <div
-                  key={relatedProduct.id}
-                  className="bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-all hover:shadow-lg cursor-pointer group"
-                  onClick={() => navigate(`/product/${relatedProduct.slug}`)}
-                >
-                  <div className="aspect-video bg-secondary/50 overflow-hidden flex items-center justify-center">
-                    {relatedProduct.images[0]?.url && (
-                      <img
-                        src={relatedProduct.images[0].url}
-                        alt={relatedProduct.name}
-                        className="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform"
-                      />
-                    )}
-                  </div>
-                  <div className="p-6">
-                    <p className="text-sm text-primary font-medium mb-2">
-                      {relatedProduct.category}
-                    </p>
-                    <h3 className="text-lg font-semibold mb-2">{relatedProduct.name}</h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {isDE
-                        ? relatedProduct.shortDescriptionDE
-                        : relatedProduct.shortDescription}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
