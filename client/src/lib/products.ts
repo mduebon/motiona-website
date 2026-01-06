@@ -334,7 +334,7 @@ export const products: Record<string, Product> = {
       Repository: "https://bitbucket.org/ingdb/tec0097.git",
     },
     links: {
-      documentation: "https://www.duebon-engineering.de/zynq-pcie-board",
+      documentation: "https://drive.google.com/drive/folders/1tsH49wlNh63odSeVSHUfIBW6YdH-qtiT",
       repository: "https://bitbucket.org/ingdb/tec0097.git",
     },
     relatedProducts: ["motionc-flex"],
