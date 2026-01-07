@@ -48,9 +48,9 @@ export default function CookieConsent() {
                 {t.cookieConsent.description}
               </p>
               <Link href="/privacy">
-                <a className="text-teal-600 hover:text-teal-700 text-sm font-medium underline">
+                <span className="text-teal-600 hover:text-teal-700 text-sm font-medium underline cursor-pointer">
                   {t.cookieConsent.learnMore}
-                </a>
+                </span>
               </Link>
             </div>
 
