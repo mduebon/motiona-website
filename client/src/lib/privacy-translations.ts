@@ -1,0 +1,142 @@
+export const privacyContent = {
+  en: {
+    title: 'Privacy Policy',
+    intro: [
+      'We are very delighted that you have shown interest in our enterprise. Data protection is of a particularly high priority for the management of the Dübon Engineering GmbH. The use of the Internet pages of the Dübon Engineering GmbH is possible without any indication of personal data; however, if a data subject wants to use special enterprise services via our website, processing of personal data could become necessary. If the processing of personal data is necessary and there is no statutory basis for such processing, we generally obtain consent from the data subject.',
+      'The processing of personal data, such as the name, address, e-mail address, or telephone number of a data subject shall always be in line with the General Data Protection Regulation (GDPR), and in accordance with the country-specific data protection regulations applicable to the Dübon Engineering GmbH. By means of this data protection declaration, our enterprise would like to inform the general public of the nature, scope, and purpose of the personal data we collect, use and process. Furthermore, data subjects are informed, by means of this data protection declaration, of the rights to which they are entitled.',
+      'As the controller, the Dübon Engineering GmbH has implemented numerous technical and organizational measures to ensure the most complete protection of personal data processed through this website. However, Internet-based data transmissions may in principle have security gaps, so absolute protection may not be guaranteed. For this reason, every data subject is free to transfer personal data to us via alternative means, e.g. by telephone.'
+    ],
+    sections: {
+      definitions: {
+        title: 'Definitions',
+        intro: 'The data protection declaration of the Dübon Engineering GmbH is based on the terms used by the European legislator for the adoption of the General Data Protection Regulation (GDPR). Our data protection declaration should be legible and understandable for the general public, as well as our customers and business partners. To ensure this, we would like to first explain the terminology used.',
+        terms: 'In this data protection declaration, we use, inter alia, the following terms:'
+      },
+      controller: {
+        title: 'Name and Address of the controller',
+        intro: 'Controller for the purposes of the General Data Protection Regulation (GDPR), other data protection laws applicable in Member states of the European Union and other provisions related to data protection is:'
+      },
+      collection: {
+        title: 'Collection of general data and information'
+      },
+      contact: {
+        title: 'Contact possibility via the website'
+      },
+      erasure: {
+        title: 'Routine erasure and blocking of personal data'
+      },
+      rights: {
+        title: 'Rights of the data subject'
+      },
+      legal: {
+        title: 'Legal basis for the processing'
+      },
+      interests: {
+        title: 'The legitimate interests pursued by the controller or by a third party'
+      },
+      storage: {
+        title: 'Period for which the personal data will be stored'
+      },
+      provision: {
+        title: 'Provision of personal data as statutory or contractual requirement'
+      },
+      automated: {
+        title: 'Existence of automated decision-making'
+      }
+    },
+    terms: {
+      personalData: 'Personal data',
+      dataSubject: 'Data subject',
+      processing: 'Processing',
+      restriction: 'Restriction of processing',
+      profiling: 'Profiling',
+      pseudonymisation: 'Pseudonymisation',
+      controller: 'Controller or controller responsible for the processing',
+      processor: 'Processor',
+      recipient: 'Recipient',
+      thirdParty: 'Third party',
+      consent: 'Consent'
+    },
+    rightsTerms: {
+      confirmation: 'Right of confirmation',
+      access: 'Right of access',
+      rectification: 'Right to rectification',
+      erasure: 'Right to erasure (Right to be forgotten)',
+      restriction: 'Right of restriction of processing',
+      portability: 'Right to data portability',
+      object: 'Right to object',
+      automated: 'Automated individual decision-making, including profiling',
+      withdraw: 'Right to withdraw data protection consent'
+    }
+  },
+  de: {
+    title: 'Datenschutzerklärung',
+    intro: [
+      'Wir freuen uns sehr über Ihr Interesse an unserem Unternehmen. Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung der Dübon Engineering GmbH. Die Nutzung der Internetseiten der Dübon Engineering GmbH ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein.',
+      'Die Verarbeitung personenbezogener Daten, beispielsweise des Namens, der Anschrift, E-Mail-Adresse oder Telefonnummer einer betroffenen Person, erfolgt stets im Einklang mit der Datenschutz-Grundverordnung (DSGVO) und in Übereinstimmung mit den für die Dübon Engineering GmbH geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchte unser Unternehmen die Öffentlichkeit über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren. Ferner werden betroffene Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte aufgeklärt.',
+      'Die Dübon Engineering GmbH hat als für die Verarbeitung Verantwortlicher zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, sodass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es jeder betroffenen Person frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch, an uns zu übermitteln.'
+    ],
+    sections: {
+      definitions: {
+        title: 'Begriffsbestimmungen',
+        intro: 'Die Datenschutzerklärung der Dübon Engineering GmbH beruht auf den Begrifflichkeiten, die durch den Europäischen Richtlinien- und Verordnungsgeber beim Erlass der Datenschutz-Grundverordnung (DSGVO) verwendet wurden. Unsere Datenschutzerklärung soll sowohl für die Öffentlichkeit als auch für unsere Kunden und Geschäftspartner einfach lesbar und verständlich sein. Um dies zu gewährleisten, möchten wir vorab die verwendeten Begrifflichkeiten erläutern.',
+        terms: 'Wir verwenden in dieser Datenschutzerklärung unter anderem die folgenden Begriffe:'
+      },
+      controller: {
+        title: 'Name und Anschrift des für die Verarbeitung Verantwortlichen',
+        intro: 'Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO), sonstiger in den Mitgliedstaaten der Europäischen Union geltenden Datenschutzgesetze und anderer Bestimmungen mit datenschutzrechtlichem Charakter ist die:'
+      },
+      collection: {
+        title: 'Erfassung von allgemeinen Daten und Informationen'
+      },
+      contact: {
+        title: 'Kontaktmöglichkeit über die Internetseite'
+      },
+      erasure: {
+        title: 'Routinemäßige Löschung und Sperrung von personenbezogenen Daten'
+      },
+      rights: {
+        title: 'Rechte der betroffenen Person'
+      },
+      legal: {
+        title: 'Rechtsgrundlage der Verarbeitung'
+      },
+      interests: {
+        title: 'Berechtigte Interessen an der Verarbeitung, die von dem Verantwortlichen oder einem Dritten verfolgt werden'
+      },
+      storage: {
+        title: 'Dauer, für die die personenbezogenen Daten gespeichert werden'
+      },
+      provision: {
+        title: 'Bereitstellung personenbezogener Daten als gesetzliche oder vertragliche Anforderung'
+      },
+      automated: {
+        title: 'Bestehen einer automatisierten Entscheidungsfindung'
+      }
+    },
+    terms: {
+      personalData: 'Personenbezogene Daten',
+      dataSubject: 'Betroffene Person',
+      processing: 'Verarbeitung',
+      restriction: 'Einschränkung der Verarbeitung',
+      profiling: 'Profiling',
+      pseudonymisation: 'Pseudonymisierung',
+      controller: 'Verantwortlicher oder für die Verarbeitung Verantwortlicher',
+      processor: 'Auftragsverarbeiter',
+      recipient: 'Empfänger',
+      thirdParty: 'Dritter',
+      consent: 'Einwilligung'
+    },
+    rightsTerms: {
+      confirmation: 'Recht auf Bestätigung',
+      access: 'Auskunftsrecht',
+      rectification: 'Recht auf Berichtigung',
+      erasure: 'Recht auf Löschung (Recht auf Vergessenwerden)',
+      restriction: 'Recht auf Einschränkung der Verarbeitung',
+      portability: 'Recht auf Datenübertragbarkeit',
+      object: 'Widerspruchsrecht',
+      automated: 'Automatisierte Entscheidungen im Einzelfall einschließlich Profiling',
+      withdraw: 'Recht auf Widerruf einer datenschutzrechtlichen Einwilligung'
+    }
+  }
+};
