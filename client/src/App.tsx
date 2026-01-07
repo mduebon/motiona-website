@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
+import Imprint from "./pages/Imprint";
 
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/product/:slug"} component={ProductDetail} />
+      <Route path={"/imprint"} component={Imprint} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

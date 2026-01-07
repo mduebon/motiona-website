@@ -566,7 +566,13 @@ export default function Home() {
           
           <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-80">
             <p>{t.footer.copyright}</p>
-            <p>{t.footer.footerAddress}</p>
+            <div className="flex items-center gap-4">
+              <Link href="/imprint" className="hover:opacity-100 transition-opacity">
+                {t.footer.imprint}
+              </Link>
+              <span>|</span>
+              <p>{t.footer.footerAddress}</p>
+            </div>
           </div>
         </div>
       </footer>
