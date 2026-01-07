@@ -571,6 +571,10 @@ export default function Home() {
                 {t.footer.imprint}
               </Link>
               <span>|</span>
+              <Link href="/privacy" className="hover:opacity-100 transition-opacity">
+                {language === 'de' ? 'Datenschutz' : 'Privacy Policy'}
+              </Link>
+              <span>|</span>
               <p>{t.footer.footerAddress}</p>
             </div>
           </div>
