@@ -15,8 +15,8 @@ export const translations = {
     hero: {
       label: 'Advanced Motion Control Solution',
       title1: 'MotionA',
-      title2: 'Unlock Your',
-      title3: 'Robotic Potential',
+      title2: 'Power in Motion',
+      title3: '',
       description: 'The advanced motion control solution from Dübon Engineering GmbH. Seamlessly integrate into any robotic system with unmatched flexibility and precision.',
       exploreSolutions: 'Explore Solutions',
       watchDemo: 'Watch Demo',
