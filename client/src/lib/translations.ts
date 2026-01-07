@@ -288,6 +288,14 @@ export const translations = {
       website: 'Website',
       websiteValue: 'www.duebon-engineering.de',
     },
+    // Cookie Consent
+    cookieConsent: {
+      title: 'Cookie Settings',
+      description: 'We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.',
+      accept: 'Accept',
+      decline: 'Decline',
+      learnMore: 'Learn more in our Privacy Policy',
+    },
   },
   de: {
     // Header
@@ -574,6 +582,14 @@ export const translations = {
       emailValue: 'mail@duebon-engineering.de',
       website: 'Website',
       websiteValue: 'www.duebon-engineering.de',
+    },
+    // Cookie Consent
+    cookieConsent: {
+      title: 'Cookie-Einstellungen',
+      description: 'Wir verwenden Cookies, um Ihr Browsing-Erlebnis zu verbessern und unseren Traffic zu analysieren. Durch Klicken auf "Akzeptieren" stimmen Sie der Verwendung von Cookies zu.',
+      accept: 'Akzeptieren',
+      decline: 'Ablehnen',
+      learnMore: 'Mehr erfahren in unserer Datenschutzerklärung',
     },
   },
 };

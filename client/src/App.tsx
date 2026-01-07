@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import CookieConsent from "./components/CookieConsent";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import Imprint from "./pages/Imprint";
@@ -35,6 +36,7 @@ function App() {
           <TooltipProvider>
             <Toaster />
             <Router />
+            <CookieConsent />
           </TooltipProvider>
         </LanguageProvider>
       </ThemeProvider>
