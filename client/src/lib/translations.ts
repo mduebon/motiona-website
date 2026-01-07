@@ -193,9 +193,9 @@ export const translations = {
     },
     // Products Hub Section
     productsHub: {
-      label: 'ALL PRODUCTS',
-      title: 'Our Complete Product Portfolio',
-      description: 'Explore our comprehensive range of motion control solutions, IoT connectivity, FPGA systems, and engineering services.',
+      label: 'CORE PORTFOLIO HIGHLIGHTS',
+      title: 'Core Portfolio Highlights',
+      description: 'Explore examples of our work. Contact us to discuss our full range of standard products and custom services.',
       categories: {
         motionControl: 'Motion Control',
         iotConnectivity: 'IoT & Connectivity',
@@ -237,7 +237,7 @@ export const translations = {
       },
       phone: {
         title: 'Phone',
-        number: '070711384161-0',
+        number: '07071/1384161-0',
       },
       email: {
         title: 'Email',
@@ -282,7 +282,7 @@ export const translations = {
       vatId: 'VAT ID',
       vatIdValue: 'DE311221880',
       phone: 'Phone',
-      phoneValue: '+49 (0) 70711384161-0',
+      phoneValue: '+49 (0) 07071/1384161-0',
       email: 'Email',
       emailValue: 'mail@duebon-engineering.de',
       website: 'Website',
@@ -488,9 +488,9 @@ export const translations = {
     },
     // Products Hub Section
     productsHub: {
-      label: 'ALLE PRODUKTE',
-      title: 'Unser vollständiges Produktportfolio',
-      description: 'Entdecken Sie unsere Palette an Motion-Control-Lösungen, IoT-Konnektivität, FPGA-Systemen und Engineering-Services.',
+      label: 'KERN-PORTFOLIO HIGHLIGHTS',
+      title: 'Kern-Portfolio Highlights',
+      description: 'Entdecken Sie Beispiele unserer Arbeit. Kontaktieren Sie uns, um unser vollständiges Angebot an Standardprodukten und kundenspezifischen Dienstleistungen zu besprechen.',
       categories: {
         motionControl: 'Motion Control',
         iotConnectivity: 'IoT & Konnektivität',
@@ -532,7 +532,7 @@ export const translations = {
       },
       phone: {
         title: 'Telefon',
-        number: '070711384161-0',
+        number: '07071/1384161-0',
       },
       email: {
         title: 'E-Mail',
@@ -577,7 +577,7 @@ export const translations = {
       vatId: 'USt-IdNr.',
       vatIdValue: 'DE311221880',
       phone: 'Telefon',
-      phoneValue: '+49 (0) 70711384161-0',
+      phoneValue: '+49 (0) 07071/1384161-0',
       email: 'E-Mail',
       emailValue: 'mail@duebon-engineering.de',
       website: 'Website',
