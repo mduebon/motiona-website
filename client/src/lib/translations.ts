@@ -237,7 +237,7 @@ export const translations = {
       },
       phone: {
         title: 'Phone',
-        number: '07071 / 138 416 109',
+        number: '070711384161-0',
       },
       email: {
         title: 'Email',
@@ -282,7 +282,7 @@ export const translations = {
       vatId: 'VAT ID',
       vatIdValue: 'DE311221880',
       phone: 'Phone',
-      phoneValue: '+49 (0) 7071.1384161-0',
+      phoneValue: '+49 (0) 70711384161-0',
       email: 'Email',
       emailValue: 'mail@duebon-engineering.de',
       website: 'Website',
@@ -532,7 +532,7 @@ export const translations = {
       },
       phone: {
         title: 'Telefon',
-        number: '07071 / 138 416 109',
+        number: '070711384161-0',
       },
       email: {
         title: 'E-Mail',
@@ -577,7 +577,7 @@ export const translations = {
       vatId: 'USt-IdNr.',
       vatIdValue: 'DE311221880',
       phone: 'Telefon',
-      phoneValue: '+49 (0) 7071.1384161-0',
+      phoneValue: '+49 (0) 70711384161-0',
       email: 'E-Mail',
       emailValue: 'mail@duebon-engineering.de',
       website: 'Website',

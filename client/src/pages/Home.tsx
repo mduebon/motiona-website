@@ -486,7 +486,7 @@ export default function Home() {
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-bold">{t.contact.phone.title}</h3>
-                <a href="tel:+4970711384" className="text-sm text-primary hover:underline block">
+                <a href="tel:+4970711384161" className="text-sm text-primary hover:underline block">
                   {t.contact.phone.number}
                 </a>
               </CardContent>
