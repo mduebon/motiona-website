@@ -409,7 +409,7 @@ export default function Home() {
       </section>
 
       {/* Products Hub Section */}
-      <section className="py-24 bg-background scroll-animation">
+      <section id="products" className="py-24 bg-background scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="section-label text-primary">{t.productsHub.label}</div>
