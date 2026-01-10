@@ -243,7 +243,6 @@ export const translations = {
         title: 'Email',
         address: 'mail@duebon-engineering.de',
       },
-      visitWebsite: 'Visit Website',
       funding: 'MotionA received research funding from the BSFZ due to its innovative nature.',
     },
     // Footer
@@ -538,7 +537,6 @@ export const translations = {
         title: 'E-Mail',
         address: 'mail@duebon-engineering.de',
       },
-      visitWebsite: 'Website besuchen',
       funding: 'MotionA wird aufgrund seiner innovativen Natur durch das BSFZ gefördert.',
     },
     // Footer
