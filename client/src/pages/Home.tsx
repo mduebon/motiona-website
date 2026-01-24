@@ -103,10 +103,12 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
-                <Button size="lg" variant="outline">
-                  <Play className="mr-2 h-4 w-4" />
-                  {t.hero.watchDemo}
-                </Button>
+                <a href="https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline">
+                    <Play className="mr-2 h-4 w-4" />
+                    {t.hero.watchDemo}
+                  </Button>
+                </a>
               </div>
             </div>
 
