@@ -12,6 +12,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
   CheckCircle2,
   Cpu,
   Layers,
@@ -31,6 +38,13 @@ import {
   Code2,
   CircuitBoard
 } from "lucide-react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -38,6 +52,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 export default function Home() {
   const { language, setLanguage, t } = useLanguage();
   useScrollAnimation();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -203,13 +218,56 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mb-16">
-            <img
-              src="/images/dashboard-interface.png"
-              alt="MotionA Analytics Dashboard"
-              className="w-full rounded-lg border border-border shadow-2xl"
-            />
+          <div className="mb-16 px-12 relative group">
+            <Carousel className="w-full max-w-5xl mx-auto" opts={{ loop: true }}>
+              <CarouselContent className="-ml-4">
+                {[
+                  "/images/caroussel/Screenshot 2026-02-18 110631.png",
+                  "/images/caroussel/Screenshot 2026-02-18 110649.png",
+                  "/images/caroussel/Screenshot 2026-02-18 110808.png",
+                  "/images/caroussel/Screenshot 2026-02-18 110819.png",
+                  "/images/caroussel/Screenshot 2026-02-18 110911.png",
+                  "/images/caroussel/Screenshot 2026-02-18 110919.png"
+                ].map((imagePath, index) => (
+                  <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <div
+                      className="p-1 cursor-pointer"
+                      onClick={() => setSelectedImage(imagePath)}
+                    >
+                      <div className="border border-border rounded-lg shadow-2xl overflow-hidden relative aspect-video">
+                        <img
+                          src={imagePath}
+                          alt={`MotionA Interface Screenshot ${index + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                          <span className="text-white font-medium">Click to Enlarge</span>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-4 lg:-left-12 bg-background/80 hover:bg-primary hover:text-primary-foreground border-primary/20 backdrop-blur-sm" />
+              <CarouselNext className="-right-4 lg:-right-12 bg-background/80 hover:bg-primary hover:text-primary-foreground border-primary/20 backdrop-blur-sm" />
+            </Carousel>
           </div>
+
+          <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+            <DialogContent className="sm:max-w-[90vw] max-w-[95vw] max-h-[95vh] w-fit p-0 border-none bg-transparent shadow-none flex justify-center items-center gap-0">
+              <DialogTitle className="sr-only">Enlarged Image</DialogTitle>
+              <DialogDescription className="sr-only">A larger view of the selected screenshot</DialogDescription>
+              {selectedImage && (
+                <div className="relative flex items-center justify-center">
+                  <img
+                    src={selectedImage}
+                    alt="Enlarged view"
+                    className="w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl ring-1 ring-white/10"
+                  />
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
