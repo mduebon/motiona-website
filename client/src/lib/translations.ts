@@ -13,15 +13,33 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      label: 'Advanced Motion Control Solution',
-      title1: 'MotionA',
-      title2: 'Power in Motion',
-      title3: '',
-      description: 'The advanced motion control solution from Dübon Engineering GmbH. Seamlessly integrate into any robotic system with unmatched flexibility and precision.',
+      label: 'Embedded · Real-Time · AI · Motion Control',
+      title1: 'Engineering for',
+      title2: 'embedded real-time',
+      title3: 'and AI systems.',
+      description: 'Dübon Engineering GmbH builds embedded, real-time and AI systems for industrial automation — with MotionA as our flagship motion control product.',
       exploreSolutions: 'Explore Solutions',
       watchDemo: 'Watch Demo',
       realtime: 'Real-time',
       precise: 'Precise',
+      flagshipBadge: 'Flagship product',
+      flagshipTitle: 'MotionA',
+      flagshipSubtitle: 'Motion control, reimagined.',
+    },
+    // Trust Strip
+    trustStrip: {
+      research: {
+        title: 'BSFZ-certified R&D',
+        description: 'Recognised under the German research allowance (Forschungszulage) for our innovative work.',
+      },
+      company: {
+        title: 'GmbH since 2017',
+        description: 'Established engineering firm — accountable, contract-ready, long-term partner.',
+      },
+      investment: {
+        title: 'Self-funded R&D',
+        description: 'Independent, owner-led — we reinvest into our own platform and research.',
+      },
     },
     // Use Cases Section
     useCases: {
@@ -308,15 +326,33 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      label: 'Advanced Motion Control Solution',
-      title1: 'MotionA',
-      title2: 'Power in Motion',
-      title3: '',
-      description: 'Die fortschrittliche Motion-Control-Lösung der Dübon Engineering GmbH. Nahtlose Integration in jedes Robotersystem bei höchster Flexibilität und Präzision.',
+      label: 'Embedded · Echtzeit · KI · Motion Control',
+      title1: 'Engineering für',
+      title2: 'eingebettete Echtzeit-',
+      title3: 'und KI-Systeme.',
+      description: 'Die Dübon Engineering GmbH entwickelt eingebettete Echtzeit- und KI-Systeme für die industrielle Automation — mit MotionA als unserem Flaggschiff im Motion Control.',
       exploreSolutions: 'Lösungen entdecken',
       watchDemo: 'Demo ansehen',
       realtime: 'Echtzeit',
       precise: 'Präzise',
+      flagshipBadge: 'Flaggschiff-Produkt',
+      flagshipTitle: 'MotionA',
+      flagshipSubtitle: 'Motion Control neu gedacht.',
+    },
+    // Trust Strip
+    trustStrip: {
+      research: {
+        title: 'BSFZ-zertifizierte F&E',
+        description: 'Anerkannt im Rahmen der deutschen Forschungszulage für innovative Entwicklungstätigkeit.',
+      },
+      company: {
+        title: 'GmbH seit 2017',
+        description: 'Etabliertes Ingenieurbüro — verlässlich, vertragsfähig, langfristiger Partner.',
+      },
+      investment: {
+        title: 'Eigenfinanzierte F&E',
+        description: 'Inhabergeführt und unabhängig — wir reinvestieren in unsere eigene Plattform und Forschung.',
+      },
     },
     // Use Cases Section
     useCases: {

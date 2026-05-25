@@ -124,17 +124,17 @@ export const products: Record<string, Product> = {
     shortDescriptionDE: "Echtzeit-Umweltüberwachung mit IoT-Konnektivität.",
     images: [
       {
-        url: "/images/komi-temperature-sensors.png",
+        url: "/images/komi-temperature-sensors.webp",
         alt: "Komi Temperature Sensor Dashboard",
         caption: "Four Temperature Sensors with Real-time Monitoring and Alerts",
       },
       {
-        url: "/images/komi-sensor-overview.png",
+        url: "/images/komi-sensor-overview.webp",
         alt: "Komi Sensor Configuration",
         caption: "Sensor Configuration and Monitoring Interface",
       },
       {
-        url: "/images/komi-hardware-device.png",
+        url: "/images/komi-hardware-device.webp",
         alt: "Komi Monitor Hardware Device",
         caption: "Komi Monitor with LAN Port and 4 Sensor Connections",
       },
@@ -214,7 +214,7 @@ export const products: Record<string, Product> = {
         caption: "LoraWAN Gateway",
       },
       {
-        url: "/images/lorawan-gateway-hardware.png",
+        url: "/images/lorawan-gateway-hardware.webp",
         alt: "LoraWAN Gateway Hardware",
         caption: "LoraWAN Gateway Hardware with Antenna Connection",
       },
@@ -289,7 +289,7 @@ export const products: Record<string, Product> = {
         caption: "ZYNQ PCIe Board with FMC Connector",
       },
       {
-        url: "/images/zynq-fmc-diagram.png",
+        url: "/images/zynq-fmc-diagram.webp",
         alt: "FMC and Carrier Board Architecture",
         caption: "FMC Expansion Cards and Carrier Board Architecture",
       },

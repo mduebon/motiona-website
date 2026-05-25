@@ -59,6 +59,8 @@ export default function ProductDetail() {
                     src={currentImage.url}
                     alt={currentImage.alt}
                     className="w-full h-full object-contain p-8"
+                    fetchPriority="high"
+                    decoding="async"
                   />
                 ) : (
                   <div className="text-center text-muted-foreground">
@@ -89,6 +91,8 @@ export default function ProductDetail() {
                         src={product.images[index].url}
                         alt={`View ${index + 1}`}
                         className="w-full h-full object-contain p-2"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </button>
                   ))}

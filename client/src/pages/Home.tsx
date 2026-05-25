@@ -36,7 +36,10 @@ import {
   MapPin,
   Play,
   Code2,
-  CircuitBoard
+  CircuitBoard,
+  Award,
+  Building2,
+  FlaskConical
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -99,17 +102,35 @@ export default function Home() {
                 {t.hero.label}
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="text-primary">{t.hero.title1}</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                {t.hero.title1}
                 <br />
                 {t.hero.title2}
                 <br />
-                {t.hero.title3}
+                <span className="text-primary">{t.hero.title3}</span>
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                 {t.hero.description}
               </p>
+
+              <a href="#products" className="block group">
+                <div className="inline-flex items-center gap-4 border border-border rounded-lg px-4 py-3 hover:border-primary transition-colors max-w-xl">
+                  <div className="flex-shrink-0 w-10 h-10 rounded bg-primary/10 flex items-center justify-center">
+                    <Code2 className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      {t.hero.flagshipBadge}
+                    </div>
+                    <div className="font-bold text-base leading-tight">
+                      {t.hero.flagshipTitle}
+                      <span className="font-normal text-muted-foreground"> — {t.hero.flagshipSubtitle}</span>
+                    </div>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
 
               <div className="flex flex-wrap gap-4">
                 <a href="#products">
@@ -132,6 +153,8 @@ export default function Home() {
                 src="/images/hero-robot-arm.png"
                 alt="Delta Robot Arm with Technical Diagram"
                 className="w-full h-auto"
+                fetchPriority="high"
+                decoding="async"
               />
               <div className="absolute bottom-8 right-8 flex gap-4">
                 <div className="bg-background/90 backdrop-blur border border-border rounded px-3 py-2 text-sm font-medium">
@@ -144,7 +167,55 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>      {/* Use Cases Section */}
+      </section>
+
+      {/* Trust Strip — substance signals: research grant, GmbH status, R&D investment */}
+      <section className="border-y border-border bg-muted/30">
+        <div className="container py-10">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-11 h-11 rounded bg-primary/10 flex items-center justify-center">
+                <Award className="h-5 w-5 text-primary" />
+              </div>
+              <div className="space-y-1">
+                <div className="font-bold text-base flex items-center gap-2">
+                  {t.trustStrip.research.title}
+                  <img src="/images/bsfz-logo.png" alt="BSFZ" className="h-5 w-auto" loading="lazy" />
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {t.trustStrip.research.description}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-11 h-11 rounded bg-primary/10 flex items-center justify-center">
+                <Building2 className="h-5 w-5 text-primary" />
+              </div>
+              <div className="space-y-1">
+                <div className="font-bold text-base">{t.trustStrip.company.title}</div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {t.trustStrip.company.description}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-11 h-11 rounded bg-primary/10 flex items-center justify-center">
+                <FlaskConical className="h-5 w-5 text-primary" />
+              </div>
+              <div className="space-y-1">
+                <div className="font-bold text-base">{t.trustStrip.investment.title}</div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {t.trustStrip.investment.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
       <section id="features" className="py-24 bg-background scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
@@ -222,12 +293,12 @@ export default function Home() {
             <Carousel className="w-full max-w-5xl mx-auto" opts={{ loop: true }}>
               <CarouselContent className="-ml-4">
                 {[
-                  "/images/caroussel/Screenshot 2026-02-18 110631.png",
-                  "/images/caroussel/Screenshot 2026-02-18 110649.png",
-                  "/images/caroussel/Screenshot 2026-02-18 110808.png",
-                  "/images/caroussel/Screenshot 2026-02-18 110819.png",
-                  "/images/caroussel/Screenshot 2026-02-18 110911.png",
-                  "/images/caroussel/Screenshot 2026-02-18 110919.png"
+                  "/images/caroussel/Screenshot 2026-02-18 110631.webp",
+                  "/images/caroussel/Screenshot 2026-02-18 110649.webp",
+                  "/images/caroussel/Screenshot 2026-02-18 110808.webp",
+                  "/images/caroussel/Screenshot 2026-02-18 110819.webp",
+                  "/images/caroussel/Screenshot 2026-02-18 110911.webp",
+                  "/images/caroussel/Screenshot 2026-02-18 110919.webp"
                 ].map((imagePath, index) => (
                   <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                     <div
@@ -239,6 +310,8 @@ export default function Home() {
                           src={imagePath}
                           alt={`MotionA Interface Screenshot ${index + 1}`}
                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                           <span className="text-white font-medium">Click to Enlarge</span>
@@ -263,6 +336,7 @@ export default function Home() {
                     src={selectedImage}
                     alt="Enlarged view"
                     className="w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl ring-1 ring-white/10"
+                    decoding="async"
                   />
                 </div>
               )}
@@ -308,9 +382,11 @@ export default function Home() {
 
           <div className="mb-12">
             <img
-              src="/images/robot-types-illustration.png"
+              src="/images/robot-types-illustration.webp"
               alt="Robot Types: SCARA, Delta, Gantry, Cobot, Custom"
               className="w-full h-auto"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -329,9 +405,14 @@ export default function Home() {
 
       {/* Solutions Section */}
       <section className="py-24 bg-background scroll-animation relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <img src="/images/abstract-tech-pattern.png" alt="" className="w-full h-full object-cover" />
-        </div>
+        <div
+          className="absolute inset-0 opacity-10 pointer-events-none"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 20% 20%, var(--color-primary) 0%, transparent 40%), radial-gradient(circle at 80% 80%, var(--color-accent) 0%, transparent 45%)',
+          }}
+        />
 
         <div className="container relative">
           <div className="text-center mb-16 space-y-4">
@@ -569,7 +650,7 @@ export default function Home() {
 
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-3 bg-background border border-border rounded-lg px-6 py-4">
-              <img src="/images/bsfz-logo.png" alt="BSFZ" className="h-12" />
+              <img src="/images/bsfz-logo.png" alt="BSFZ" className="h-12" loading="lazy" decoding="async" />
               <p className="text-sm text-muted-foreground">
                 {t.contact.funding}
               </p>
@@ -583,7 +664,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="space-y-4">
-              <img src="/images/dubon-logo.png" alt="Dübon Engineering" className="h-10" />
+              <img src="/images/dubon-logo.png" alt="Dübon Engineering" className="h-10" loading="lazy" decoding="async" />
               <p className="text-sm opacity-80">
                 {t.footer.tagline}
               </p>

@@ -104,3 +104,9 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# Project-specific
+.playwright-mcp/
+motiona-website.zip
+wave-a-*.png
+package-lock.json
