@@ -41,6 +41,15 @@ export const translations = {
         description: 'Independent, owner-led — we reinvest into our own platform and research.',
       },
     },
+    // Supporters / Funding Strip
+    supporters: {
+      label: 'SUPPORTED & FUNDED BY',
+      partners: [
+        { name: 'Covision', logo: '/images/covision-logo.jpg' },
+        { name: 'MFG', logo: '/images/mfg-logo.png' },
+        { name: 'BSFZ', logo: '/images/bsfz-logo.png' },
+      ],
+    },
     // Use Cases Section
     useCases: {
       label: 'USE CASES',
@@ -146,6 +155,40 @@ export const translations = {
         {
           title: 'Custom Systems',
           description: 'Tailored mechanical solutions ranging from complex specialized machinery to simplified automation, engineered into an intuitive robotic platform.',
+        },
+      ],
+    },
+    // Engineering Expertise Section
+    expertise: {
+      label: 'ENGINEERING EXPERTISE',
+      title: 'Beyond Motion Control',
+      description: 'As Dübon Engineering GmbH, we bring deep embedded and industrial engineering expertise to your project — from regulatory compliance to standardized hardware management.',
+      areas: [
+        {
+          tag: 'EU REGULATION',
+          title: 'Cyber Resilience Act (CRA)',
+          description: 'We make connected products CRA-ready: Software Bill of Materials (SBOM), secure boot, signed updates, coordinated vulnerability handling, and the technical documentation required for CE marking under the EU Cyber Resilience Act.',
+        },
+        {
+          tag: 'DMTF STANDARD',
+          title: 'Redfish Management',
+          description: 'Standardized, RESTful hardware management with the DMTF Redfish API: out-of-band/BMC integration, schema implementation on embedded Linux, and secure remote monitoring and control for your devices.',
+        },
+        {
+          title: 'Embedded Linux & FPGA',
+          description: 'Board bring-up, kernel and driver development, and Linux on Xilinx ZYNQ SoCs — bridging custom FPGA fabric with application software.',
+        },
+        {
+          title: 'Real-Time Control',
+          description: 'Deterministic control from bare-metal microcontrollers to RT-patched Linux, engineered for hard real-time requirements.',
+        },
+        {
+          title: 'Industrial Fieldbus',
+          description: 'Native EtherCAT and CANopen integration to connect your control system to drives, sensors, and the wider plant.',
+        },
+        {
+          title: 'Connectivity & IoT',
+          description: 'Secure remote monitoring and long-range connectivity via LoRaWAN, SNMP, and browser-based real-time dashboards.',
         },
       ],
     },
@@ -354,6 +397,15 @@ export const translations = {
         description: 'Inhabergeführt und unabhängig — wir reinvestieren in unsere eigene Plattform und Forschung.',
       },
     },
+    // Supporters / Funding Strip
+    supporters: {
+      label: 'UNTERSTÜTZT & GEFÖRDERT DURCH',
+      partners: [
+        { name: 'Covision', logo: '/images/covision-logo.jpg' },
+        { name: 'MFG', logo: '/images/mfg-logo.png' },
+        { name: 'BSFZ', logo: '/images/bsfz-logo.png' },
+      ],
+    },
     // Use Cases Section
     useCases: {
       label: 'ANWENDUNGSFÄLLE',
@@ -459,6 +511,40 @@ export const translations = {
         {
           title: 'Sondermaschinen',
           description: 'Maßgeschneiderte mechanische Lösungen – von komplexen Spezialmaschinen bis zur einfachen Automatisierung.',
+        },
+      ],
+    },
+    // Engineering Expertise Section
+    expertise: {
+      label: 'ENGINEERING-KOMPETENZ',
+      title: 'Mehr als Motion Control',
+      description: 'Als Dübon Engineering GmbH bringen wir tiefes Embedded- und Industrie-Know-how in Ihr Projekt ein – von regulatorischer Compliance bis zum standardisierten Hardware-Management.',
+      areas: [
+        {
+          tag: 'EU-VERORDNUNG',
+          title: 'Cyber Resilience Act (CRA)',
+          description: 'Wir machen vernetzte Produkte CRA-fähig: Software Bill of Materials (SBOM), Secure Boot, signierte Updates, koordiniertes Schwachstellen-Management und die technische Dokumentation für die CE-Kennzeichnung nach dem EU Cyber Resilience Act.',
+        },
+        {
+          tag: 'DMTF-STANDARD',
+          title: 'Redfish-Management',
+          description: 'Standardisiertes, RESTful Hardware-Management mit der DMTF-Redfish-API: Out-of-Band-/BMC-Integration, Schema-Implementierung auf Embedded Linux sowie sichere Fernüberwachung und -steuerung Ihrer Geräte.',
+        },
+        {
+          title: 'Embedded Linux & FPGA',
+          description: 'Board-Bring-up, Kernel- und Treiberentwicklung sowie Linux auf Xilinx-ZYNQ-SoCs – die Brücke zwischen kundenspezifischer FPGA-Logik und Anwendungssoftware.',
+        },
+        {
+          title: 'Echtzeit-Steuerung',
+          description: 'Deterministische Steuerung von Bare-Metal-Mikrocontrollern bis zu RT-gepatchtem Linux – ausgelegt für harte Echtzeitanforderungen.',
+        },
+        {
+          title: 'Industrieller Feldbus',
+          description: 'Native EtherCAT- und CANopen-Integration zur Anbindung Ihres Steuerungssystems an Antriebe, Sensoren und die gesamte Anlage.',
+        },
+        {
+          title: 'Konnektivität & IoT',
+          description: 'Sichere Fernüberwachung und Langstrecken-Konnektivität über LoRaWAN, SNMP und browserbasierte Echtzeit-Dashboards.',
         },
       ],
     },

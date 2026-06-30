@@ -39,7 +39,11 @@ import {
   CircuitBoard,
   Award,
   Building2,
-  FlaskConical
+  FlaskConical,
+  ShieldCheck,
+  Server,
+  Network,
+  Radio
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -211,6 +215,31 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Supporters / Funding Strip */}
+      <section className="border-b border-border bg-background">
+        <div className="container py-12">
+          <div className="section-label text-primary text-center mb-8">
+            {t.supporters.label}
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+            {t.supporters.partners.map((partner) => (
+              <div
+                key={partner.name}
+                className="flex items-center justify-center bg-white rounded-lg px-6 py-4 h-20 w-48 shadow-sm"
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-h-12 max-w-full w-auto object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -399,6 +428,56 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Engineering Expertise Section */}
+      <section className="py-24 bg-muted/30 scroll-animation">
+        <div className="container">
+          <div className="text-center mb-16 space-y-4">
+            <div className="section-label text-primary">{t.expertise.label}</div>
+            <h2 className="text-4xl md:text-5xl font-bold">{t.expertise.title}</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t.expertise.description}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: ShieldCheck },
+              { icon: Server },
+              { icon: CircuitBoard },
+              { icon: Gauge },
+              { icon: Network },
+              { icon: Radio },
+            ].map((item, index) => {
+              const area = t.expertise.areas[index];
+              const featured = index < 2;
+              return (
+                <Card
+                  key={index}
+                  className={`transition-colors ${featured ? 'border-2 border-primary' : 'border-border hover:border-primary'}`}
+                >
+                  <CardContent className="p-6 space-y-3 h-full flex flex-col">
+                    <div className="flex items-center justify-between">
+                      <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
+                        <item.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      {area.tag && (
+                        <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 rounded-full px-3 py-1">
+                          {area.tag}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="font-bold text-lg">{area.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {area.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -644,17 +723,6 @@ export default function Home() {
                 </a>
               </CardContent>
             </Card>
-          </div>
-
-
-
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-3 bg-background border border-border rounded-lg px-6 py-4">
-              <img src="/images/bsfz-logo.png" alt="BSFZ" className="h-12" loading="lazy" decoding="async" />
-              <p className="text-sm text-muted-foreground">
-                {t.contact.funding}
-              </p>
-            </div>
           </div>
         </div>
       </section>
