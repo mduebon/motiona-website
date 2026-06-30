@@ -225,16 +225,16 @@ export default function Home() {
           <div className="section-label text-primary text-center mb-8">
             {t.supporters.label}
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10">
             {t.supporters.partners.map((partner) => (
               <div
                 key={partner.name}
-                className="flex items-center justify-center bg-white rounded-lg px-6 py-4 h-20 w-48 shadow-sm"
+                className="flex items-center justify-center bg-white rounded-xl border-2 border-border hover:border-primary/40 px-8 py-6 h-28 w-64 shadow-md hover:shadow-lg transition-all"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-12 max-w-full w-auto object-contain"
+                  className="max-h-20 max-w-full w-auto object-contain"
                   loading="lazy"
                   decoding="async"
                 />
