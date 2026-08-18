@@ -1,7 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'wouter';
-import { X } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useState, useEffect } from "react";
+import { Link } from "wouter";
+import { X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  EINWILLIGUNG_KEY,
+  analyticsAufraeumen,
+  analyticsLaden,
+} from "@/lib/analytics";
 
 export default function CookieConsent() {
   const { t } = useLanguage();
@@ -9,22 +14,34 @@ export default function CookieConsent() {
 
   useEffect(() => {
     // Check if user has already made a choice
-    const consent = localStorage.getItem('cookieConsent');
+    const consent = localStorage.getItem(EINWILLIGUNG_KEY);
     if (!consent) {
       // Show banner after a short delay for better UX
       const timer = setTimeout(() => setShowBanner(true), 1000);
       return () => clearTimeout(timer);
     }
+    // Die Entscheidung aus einem früheren Besuch anwenden. Ohne diesen Zweig
+    // bliebe der localStorage-Eintrag folgenlos — genau das war der Fehler:
+    // der Banner hat die Wahl gespeichert und niemand hat sie gelesen.
+    if (consent === "accepted") {
+      analyticsLaden();
+    } else {
+      analyticsAufraeumen();
+    }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('cookieConsent', 'accepted');
+    localStorage.setItem(EINWILLIGUNG_KEY, "accepted");
     setShowBanner(false);
+    analyticsLaden();
   };
 
   const handleDecline = () => {
-    localStorage.setItem('cookieConsent', 'declined');
+    localStorage.setItem(EINWILLIGUNG_KEY, "declined");
     setShowBanner(false);
+    // Räumt _ga-Cookies weg, die aus der Zeit stammen, in der gtag.js
+    // ungefragt im <head> lief.
+    analyticsAufraeumen();
   };
 
   const handleClose = () => {

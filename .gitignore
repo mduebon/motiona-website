@@ -110,3 +110,9 @@ temp/
 motiona-website.zip
 wave-a-*.png
 package-lock.json
+
+# Lokale Tooling-Konfiguration
+.claude/
+
+# Lokale Skripte mit Zugangsdaten
+export_deepseek_env.ps1

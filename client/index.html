@@ -2,15 +2,12 @@
 <html lang="de">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8594372D0H"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-8594372D0H');
-  </script>
+  <!--
+    Google Analytics wird hier absichtlich NICHT geladen. Ein Skript-Tag an
+    dieser Stelle läuft vor jeder Einwilligung. Das Laden übernimmt
+    client/src/lib/analytics.ts, aufgerufen von components/CookieConsent.tsx,
+    erst nach einem Klick auf „Akzeptieren".
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <title>Dübon Engineering GmbH — Embedded, Real-Time & AI Systems</title>
