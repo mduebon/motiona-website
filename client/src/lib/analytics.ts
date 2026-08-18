@@ -110,3 +110,20 @@ export function analyticsAufraeumen() {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
   }
 }
+
+/**
+ * Widerruft eine erteilte Einwilligung.
+ *
+ * Nötig, weil der Cookie-Hinweis nur erscheint, solange nichts gespeichert
+ * ist: Wer einmal zugestimmt hat, sah ihn nie wieder und hatte damit keinen
+ * Weg zurück. Art. 7 Abs. 3 DSGVO verlangt aber, dass der Widerruf so einfach
+ * ist wie die Erteilung. Diese Funktion hängt deshalb an einer Schaltfläche
+ * auf der Datenschutzseite.
+ *
+ * Die Seite muss danach neu geladen werden — ein bereits geladenes gtag.js
+ * lässt sich nicht zuverlässig aus der laufenden Seite entfernen.
+ */
+export function einwilligungWiderrufen() {
+  localStorage.removeItem(EINWILLIGUNG_KEY);
+  analyticsAufraeumen();
+}

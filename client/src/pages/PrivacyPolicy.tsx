@@ -1,10 +1,13 @@
-import { useLanguage } from '@/contexts/LanguageContext';
-import { privacyContent } from '@/lib/privacy-translations';
+import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { privacyContent } from "@/lib/privacy-translations";
+import { einwilligungWiderrufen } from "@/lib/analytics";
 
 export default function PrivacyPolicy() {
   const { language } = useLanguage();
-  const isDE = language === 'de';
+  const isDE = language === "de";
   const content = privacyContent[language];
+  const [widerrufen, setWiderrufen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -20,7 +23,10 @@ export default function PrivacyPolicy() {
         {/* Introduction */}
         <div className="prose prose-slate max-w-none mb-8 space-y-4">
           {content.intro.map((paragraph, index) => (
-            <p key={index} className={`text-slate-700 leading-relaxed ${index === 0 ? 'text-lg' : ''}`}>
+            <p
+              key={index}
+              className={`text-slate-700 leading-relaxed ${index === 0 ? "text-lg" : ""}`}
+            >
               {paragraph}
             </p>
           ))}
@@ -40,79 +46,153 @@ export default function PrivacyPolicy() {
 
           <div className="space-y-6 pl-4">
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.personalData}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.personalData}
+              </h3>
               <p className="text-slate-700">
-                Personal data means any information relating to an identified or identifiable natural person ("data subject"). An identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.
+                Personal data means any information relating to an identified or
+                identifiable natural person ("data subject"). An identifiable
+                natural person is one who can be identified, directly or
+                indirectly, in particular by reference to an identifier such as
+                a name, an identification number, location data, an online
+                identifier or to one or more factors specific to the physical,
+                physiological, genetic, mental, economic, cultural or social
+                identity of that natural person.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.dataSubject}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.dataSubject}
+              </h3>
               <p className="text-slate-700">
-                Data subject is any identified or identifiable natural person, whose personal data is processed by the controller responsible for the processing.
+                Data subject is any identified or identifiable natural person,
+                whose personal data is processed by the controller responsible
+                for the processing.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.processing}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.processing}
+              </h3>
               <p className="text-slate-700">
-                Processing is any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction.
+                Processing is any operation or set of operations which is
+                performed on personal data or on sets of personal data, whether
+                or not by automated means, such as collection, recording,
+                organisation, structuring, storage, adaptation or alteration,
+                retrieval, consultation, use, disclosure by transmission,
+                dissemination or otherwise making available, alignment or
+                combination, restriction, erasure or destruction.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.restriction}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.restriction}
+              </h3>
               <p className="text-slate-700">
-                Restriction of processing is the marking of stored personal data with the aim of limiting their processing in the future.
+                Restriction of processing is the marking of stored personal data
+                with the aim of limiting their processing in the future.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.profiling}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.profiling}
+              </h3>
               <p className="text-slate-700">
-                Profiling means any form of automated processing of personal data consisting of the use of personal data to evaluate certain personal aspects relating to a natural person, in particular to analyse or predict aspects concerning that natural person's performance at work, economic situation, health, personal preferences, interests, reliability, behaviour, location or movements.
+                Profiling means any form of automated processing of personal
+                data consisting of the use of personal data to evaluate certain
+                personal aspects relating to a natural person, in particular to
+                analyse or predict aspects concerning that natural person's
+                performance at work, economic situation, health, personal
+                preferences, interests, reliability, behaviour, location or
+                movements.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.pseudonymisation}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.pseudonymisation}
+              </h3>
               <p className="text-slate-700">
-                Pseudonymisation is the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person.
+                Pseudonymisation is the processing of personal data in such a
+                manner that the personal data can no longer be attributed to a
+                specific data subject without the use of additional information,
+                provided that such additional information is kept separately and
+                is subject to technical and organisational measures to ensure
+                that the personal data are not attributed to an identified or
+                identifiable natural person.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.controller}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.controller}
+              </h3>
               <p className="text-slate-700">
-                Controller or controller responsible for the processing is the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data; where the purposes and means of such processing are determined by Union or Member State law, the controller or the specific criteria for its nomination may be provided for by Union or Member State law.
+                Controller or controller responsible for the processing is the
+                natural or legal person, public authority, agency or other body
+                which, alone or jointly with others, determines the purposes and
+                means of the processing of personal data; where the purposes and
+                means of such processing are determined by Union or Member State
+                law, the controller or the specific criteria for its nomination
+                may be provided for by Union or Member State law.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.processor}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.processor}
+              </h3>
               <p className="text-slate-700">
-                Processor is a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller.
+                Processor is a natural or legal person, public authority, agency
+                or other body which processes personal data on behalf of the
+                controller.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.recipient}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.recipient}
+              </h3>
               <p className="text-slate-700">
-                Recipient is a natural or legal person, public authority, agency or another body, to which the personal data are disclosed, whether a third party or not. However, public authorities which may receive personal data in the framework of a particular inquiry in accordance with Union or Member State law shall not be regarded as recipients; the processing of those data by those public authorities shall be in compliance with the applicable data protection rules according to the purposes of the processing.
+                Recipient is a natural or legal person, public authority, agency
+                or another body, to which the personal data are disclosed,
+                whether a third party or not. However, public authorities which
+                may receive personal data in the framework of a particular
+                inquiry in accordance with Union or Member State law shall not
+                be regarded as recipients; the processing of those data by those
+                public authorities shall be in compliance with the applicable
+                data protection rules according to the purposes of the
+                processing.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.thirdParty}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.thirdParty}
+              </h3>
               <p className="text-slate-700">
-                Third party is a natural or legal person, public authority, agency or body other than the data subject, controller, processor and persons who, under the direct authority of the controller or processor, are authorised to process personal data.
+                Third party is a natural or legal person, public authority,
+                agency or body other than the data subject, controller,
+                processor and persons who, under the direct authority of the
+                controller or processor, are authorised to process personal
+                data.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.terms.consent}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.terms.consent}
+              </h3>
               <p className="text-slate-700">
-                Consent of the data subject is any freely given, specific, informed and unambiguous indication of the data subject's wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her.
+                Consent of the data subject is any freely given, specific,
+                informed and unambiguous indication of the data subject's wishes
+                by which he or she, by a statement or by a clear affirmative
+                action, signifies agreement to the processing of personal data
+                relating to him or her.
               </p>
             </div>
           </div>
@@ -127,7 +207,9 @@ export default function PrivacyPolicy() {
             {content.sections.controller.intro}
           </p>
           <div className="bg-slate-50 p-6 rounded-lg space-y-2">
-            <p className="font-semibold text-slate-900">Dübon Engineering GmbH</p>
+            <p className="font-semibold text-slate-900">
+              Dübon Engineering GmbH
+            </p>
             <p className="text-slate-700">Teichäcker 4</p>
             <p className="text-slate-700">72127 Kusterdingen</p>
             <p className="text-slate-700">Deutschland</p>
@@ -135,14 +217,22 @@ export default function PrivacyPolicy() {
               <span className="font-semibold">Phone:</span> +49707113841610
             </p>
             <p className="text-slate-700">
-              <span className="font-semibold">Email:</span>{' '}
-              <a href="mailto:mail@duebon-engineering.de" className="text-teal-600 hover:text-teal-700">
+              <span className="font-semibold">Email:</span>{" "}
+              <a
+                href="mailto:mail@duebon-engineering.de"
+                className="text-teal-600 hover:text-teal-700"
+              >
                 mail@duebon-engineering.de
               </a>
             </p>
             <p className="text-slate-700">
-              <span className="font-semibold">Website:</span>{' '}
-              <a href="https://www.duebon-engineering.de" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700">
+              <span className="font-semibold">Website:</span>{" "}
+              <a
+                href="https://www.duebon-engineering.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-600 hover:text-teal-700"
+              >
                 www.duebon-engineering.de
               </a>
             </p>
@@ -155,10 +245,34 @@ export default function PrivacyPolicy() {
             3. {content.sections.collection.title}
           </h2>
           <p className="text-slate-700 mb-4 leading-relaxed">
-            The website of the Dübon Engineering GmbH collects a series of general data and information when a data subject or automated system calls up the website. This general data and information are stored in the server log files. Collected may be (1) the browser types and versions used, (2) the operating system used by the accessing system, (3) the website from which an accessing system reaches our website (so-called referrers), (4) the sub-websites, (5) the date and time of access to the Internet site, (6) an Internet protocol address (IP address), (7) the Internet service provider of the accessing system, and (8) any other similar data and information that may be used in the event of attacks on our information technology systems.
+            The website of the Dübon Engineering GmbH collects a series of
+            general data and information when a data subject or automated system
+            calls up the website. This general data and information are stored
+            in the server log files. Collected may be (1) the browser types and
+            versions used, (2) the operating system used by the accessing
+            system, (3) the website from which an accessing system reaches our
+            website (so-called referrers), (4) the sub-websites, (5) the date
+            and time of access to the Internet site, (6) an Internet protocol
+            address (IP address), (7) the Internet service provider of the
+            accessing system, and (8) any other similar data and information
+            that may be used in the event of attacks on our information
+            technology systems.
           </p>
           <p className="text-slate-700 leading-relaxed">
-            When using these general data and information, the Dübon Engineering GmbH does not draw any conclusions about the data subject. Rather, this information is needed to (1) deliver the content of our website correctly, (2) optimize the content of our website as well as its advertisement, (3) ensure the long-term viability of our information technology systems and website technology, and (4) provide law enforcement authorities with the information necessary for criminal prosecution in case of a cyber-attack. Therefore, the Dübon Engineering GmbH analyzes anonymously collected data and information statistically, with the aim of increasing the data protection and data security of our enterprise, and to ensure an optimal level of protection for the personal data we process. The anonymous data of the server log files are stored separately from all personal data provided by a data subject.
+            When using these general data and information, the Dübon Engineering
+            GmbH does not draw any conclusions about the data subject. Rather,
+            this information is needed to (1) deliver the content of our website
+            correctly, (2) optimize the content of our website as well as its
+            advertisement, (3) ensure the long-term viability of our information
+            technology systems and website technology, and (4) provide law
+            enforcement authorities with the information necessary for criminal
+            prosecution in case of a cyber-attack. Therefore, the Dübon
+            Engineering GmbH analyzes anonymously collected data and information
+            statistically, with the aim of increasing the data protection and
+            data security of our enterprise, and to ensure an optimal level of
+            protection for the personal data we process. The anonymous data of
+            the server log files are stored separately from all personal data
+            provided by a data subject.
           </p>
         </section>
 
@@ -168,7 +282,16 @@ export default function PrivacyPolicy() {
             4. {content.sections.contact.title}
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            The website of the Dübon Engineering GmbH contains information that enables a quick electronic contact to our enterprise, as well as direct communication with us, which also includes a general address of the so-called electronic mail (e-mail address). If a data subject contacts the controller by e-mail or via a contact form, the personal data transmitted by the data subject are automatically stored. Such personal data transmitted on a voluntary basis by a data subject to the data controller are stored for the purpose of processing or contacting the data subject. There is no transfer of this personal data to third parties.
+            The website of the Dübon Engineering GmbH contains information that
+            enables a quick electronic contact to our enterprise, as well as
+            direct communication with us, which also includes a general address
+            of the so-called electronic mail (e-mail address). If a data subject
+            contacts the controller by e-mail or via a contact form, the
+            personal data transmitted by the data subject are automatically
+            stored. Such personal data transmitted on a voluntary basis by a
+            data subject to the data controller are stored for the purpose of
+            processing or contacting the data subject. There is no transfer of
+            this personal data to third parties.
           </p>
         </section>
 
@@ -178,10 +301,17 @@ export default function PrivacyPolicy() {
             5. {content.sections.erasure.title}
           </h2>
           <p className="text-slate-700 mb-4 leading-relaxed">
-            The data controller shall process and store the personal data of the data subject only for the period necessary to achieve the purpose of storage, or as far as this is granted by the European legislator or other legislators in laws or regulations to which the controller is subject to.
+            The data controller shall process and store the personal data of the
+            data subject only for the period necessary to achieve the purpose of
+            storage, or as far as this is granted by the European legislator or
+            other legislators in laws or regulations to which the controller is
+            subject to.
           </p>
           <p className="text-slate-700 leading-relaxed">
-            If the storage purpose is not applicable, or if a storage period prescribed by the European legislator or another competent legislator expires, the personal data are routinely blocked or erased in accordance with legal requirements.
+            If the storage purpose is not applicable, or if a storage period
+            prescribed by the European legislator or another competent
+            legislator expires, the personal data are routinely blocked or
+            erased in accordance with legal requirements.
           </p>
         </section>
 
@@ -190,97 +320,200 @@ export default function PrivacyPolicy() {
           <h2 className="text-2xl font-semibold text-slate-800 mb-4 pb-2 border-b-2 border-teal-600">
             6. {content.sections.rights.title}
           </h2>
-          
+
           <div className="space-y-6 pl-4">
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.confirmation}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.confirmation}
+              </h3>
               <p className="text-slate-700">
-                Each data subject shall have the right granted by the European legislator to obtain from the controller the confirmation as to whether or not personal data concerning him or her are being processed. If a data subject wishes to avail himself of this right of confirmation, he or she may, at any time, contact any employee of the controller.
+                Each data subject shall have the right granted by the European
+                legislator to obtain from the controller the confirmation as to
+                whether or not personal data concerning him or her are being
+                processed. If a data subject wishes to avail himself of this
+                right of confirmation, he or she may, at any time, contact any
+                employee of the controller.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.access}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.access}
+              </h3>
               <p className="text-slate-700 mb-3">
-                Each data subject shall have the right granted by the European legislator to obtain from the controller free information about his or her personal data stored at any time and a copy of this information. Furthermore, the European directives and regulations grant the data subject access to the following information:
+                Each data subject shall have the right granted by the European
+                legislator to obtain from the controller free information about
+                his or her personal data stored at any time and a copy of this
+                information. Furthermore, the European directives and
+                regulations grant the data subject access to the following
+                information:
               </p>
               <ul className="list-disc list-inside space-y-2 text-slate-700 mb-3">
                 <li>the purposes of the processing;</li>
                 <li>the categories of personal data concerned;</li>
-                <li>the recipients or categories of recipients to whom the personal data have been or will be disclosed;</li>
-                <li>where possible, the envisaged period for which the personal data will be stored;</li>
-                <li>the existence of the right to request rectification, erasure, or restriction of processing;</li>
-                <li>the existence of the right to lodge a complaint with a supervisory authority;</li>
-                <li>where the personal data are not collected from the data subject, any available information as to their source;</li>
-                <li>the existence of automated decision-making, including profiling.</li>
+                <li>
+                  the recipients or categories of recipients to whom the
+                  personal data have been or will be disclosed;
+                </li>
+                <li>
+                  where possible, the envisaged period for which the personal
+                  data will be stored;
+                </li>
+                <li>
+                  the existence of the right to request rectification, erasure,
+                  or restriction of processing;
+                </li>
+                <li>
+                  the existence of the right to lodge a complaint with a
+                  supervisory authority;
+                </li>
+                <li>
+                  where the personal data are not collected from the data
+                  subject, any available information as to their source;
+                </li>
+                <li>
+                  the existence of automated decision-making, including
+                  profiling.
+                </li>
               </ul>
               <p className="text-slate-700">
-                If a data subject wishes to avail himself of this right of access, he or she may, at any time, contact any employee of the controller.
+                If a data subject wishes to avail himself of this right of
+                access, he or she may, at any time, contact any employee of the
+                controller.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.rectification}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.rectification}
+              </h3>
               <p className="text-slate-700">
-                Each data subject shall have the right granted by the European legislator to obtain from the controller without undue delay the rectification of inaccurate personal data concerning him or her. Taking into account the purposes of the processing, the data subject shall have the right to have incomplete personal data completed, including by means of providing a supplementary statement.
+                Each data subject shall have the right granted by the European
+                legislator to obtain from the controller without undue delay the
+                rectification of inaccurate personal data concerning him or her.
+                Taking into account the purposes of the processing, the data
+                subject shall have the right to have incomplete personal data
+                completed, including by means of providing a supplementary
+                statement.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.erasure}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.erasure}
+              </h3>
               <p className="text-slate-700 mb-3">
-                Each data subject shall have the right granted by the European legislator to obtain from the controller the erasure of personal data concerning him or her without undue delay, where one of the following grounds applies:
+                Each data subject shall have the right granted by the European
+                legislator to obtain from the controller the erasure of personal
+                data concerning him or her without undue delay, where one of the
+                following grounds applies:
               </p>
               <ul className="list-disc list-inside space-y-2 text-slate-700">
-                <li>The personal data are no longer necessary in relation to the purposes for which they were collected;</li>
-                <li>The data subject withdraws consent and there is no other legal ground for the processing;</li>
-                <li>The data subject objects to the processing and there are no overriding legitimate grounds;</li>
+                <li>
+                  The personal data are no longer necessary in relation to the
+                  purposes for which they were collected;
+                </li>
+                <li>
+                  The data subject withdraws consent and there is no other legal
+                  ground for the processing;
+                </li>
+                <li>
+                  The data subject objects to the processing and there are no
+                  overriding legitimate grounds;
+                </li>
                 <li>The personal data have been unlawfully processed;</li>
-                <li>The personal data must be erased for compliance with a legal obligation;</li>
+                <li>
+                  The personal data must be erased for compliance with a legal
+                  obligation;
+                </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.restriction}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.restriction}
+              </h3>
               <p className="text-slate-700 mb-3">
-                Each data subject shall have the right to obtain restriction of processing where one of the following applies:
+                Each data subject shall have the right to obtain restriction of
+                processing where one of the following applies:
               </p>
               <ul className="list-disc list-inside space-y-2 text-slate-700">
-                <li>The accuracy of the personal data is contested by the data subject;</li>
-                <li>The processing is unlawful and the data subject opposes erasure;</li>
-                <li>The controller no longer needs the data but they are required by the data subject for legal claims;</li>
-                <li>The data subject has objected to processing pending verification.</li>
+                <li>
+                  The accuracy of the personal data is contested by the data
+                  subject;
+                </li>
+                <li>
+                  The processing is unlawful and the data subject opposes
+                  erasure;
+                </li>
+                <li>
+                  The controller no longer needs the data but they are required
+                  by the data subject for legal claims;
+                </li>
+                <li>
+                  The data subject has objected to processing pending
+                  verification.
+                </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.portability}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.portability}
+              </h3>
               <p className="text-slate-700">
-                Each data subject shall have the right to receive the personal data concerning him or her in a structured, commonly used and machine-readable format, and have the right to transmit those data to another controller without hindrance, where the processing is based on consent or contract and is carried out by automated means.
+                Each data subject shall have the right to receive the personal
+                data concerning him or her in a structured, commonly used and
+                machine-readable format, and have the right to transmit those
+                data to another controller without hindrance, where the
+                processing is based on consent or contract and is carried out by
+                automated means.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.object}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.object}
+              </h3>
               <p className="text-slate-700 mb-3">
-                Each data subject shall have the right to object, on grounds relating to his or her particular situation, at any time, to processing of personal data concerning him or her. The Dübon Engineering GmbH shall no longer process the personal data unless we can demonstrate compelling legitimate grounds for the processing which override the interests, rights and freedoms of the data subject.
+                Each data subject shall have the right to object, on grounds
+                relating to his or her particular situation, at any time, to
+                processing of personal data concerning him or her. The Dübon
+                Engineering GmbH shall no longer process the personal data
+                unless we can demonstrate compelling legitimate grounds for the
+                processing which override the interests, rights and freedoms of
+                the data subject.
               </p>
               <p className="text-slate-700">
-                If the Dübon Engineering GmbH processes personal data for direct marketing purposes, the data subject shall have the right to object at any time to such processing.
+                If the Dübon Engineering GmbH processes personal data for direct
+                marketing purposes, the data subject shall have the right to
+                object at any time to such processing.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.automated}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.automated}
+              </h3>
               <p className="text-slate-700">
-                Each data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her, unless the decision is necessary for entering into a contract, is authorized by law, or is based on the data subject's explicit consent.
+                Each data subject shall have the right not to be subject to a
+                decision based solely on automated processing, including
+                profiling, which produces legal effects concerning him or her,
+                unless the decision is necessary for entering into a contract,
+                is authorized by law, or is based on the data subject's explicit
+                consent.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold text-slate-800 mb-2">{content.rightsTerms.withdraw}</h3>
+              <h3 className="font-semibold text-slate-800 mb-2">
+                {content.rightsTerms.withdraw}
+              </h3>
               <p className="text-slate-700">
-                Each data subject shall have the right to withdraw his or her consent to processing of personal data at any time. If the data subject wishes to exercise this right, he or she may contact any employee of the Dübon Engineering GmbH.
+                Each data subject shall have the right to withdraw his or her
+                consent to processing of personal data at any time. If the data
+                subject wishes to exercise this right, he or she may contact any
+                employee of the Dübon Engineering GmbH.
               </p>
             </div>
           </div>
@@ -292,7 +525,18 @@ export default function PrivacyPolicy() {
             7. {content.sections.legal.title}
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            Art. 6(1) lit. a GDPR serves as the legal basis for processing operations for which we obtain consent. If the processing of personal data is necessary for the performance of a contract, the processing is based on Article 6(1) lit. b GDPR. The same applies to processing operations necessary for pre-contractual measures. Where processing is required to comply with a legal obligation, the processing is based on Art. 6(1) lit. c GDPR. In rare cases, processing may be necessary to protect vital interests, based on Art. 6(1) lit. d GDPR. Finally, processing operations could be based on Article 6(1) lit. f GDPR for legitimate interests pursued by our company or a third party, except where such interests are overridden by the data subject's interests or fundamental rights and freedoms.
+            Art. 6(1) lit. a GDPR serves as the legal basis for processing
+            operations for which we obtain consent. If the processing of
+            personal data is necessary for the performance of a contract, the
+            processing is based on Article 6(1) lit. b GDPR. The same applies to
+            processing operations necessary for pre-contractual measures. Where
+            processing is required to comply with a legal obligation, the
+            processing is based on Art. 6(1) lit. c GDPR. In rare cases,
+            processing may be necessary to protect vital interests, based on
+            Art. 6(1) lit. d GDPR. Finally, processing operations could be based
+            on Article 6(1) lit. f GDPR for legitimate interests pursued by our
+            company or a third party, except where such interests are overridden
+            by the data subject's interests or fundamental rights and freedoms.
           </p>
         </section>
 
@@ -302,7 +546,9 @@ export default function PrivacyPolicy() {
             8. {content.sections.interests.title}
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            Where the processing of personal data is based on Article 6(1) lit. f GDPR our legitimate interest is to carry out our business in favor of the well-being of all our employees and the shareholders.
+            Where the processing of personal data is based on Article 6(1) lit.
+            f GDPR our legitimate interest is to carry out our business in favor
+            of the well-being of all our employees and the shareholders.
           </p>
         </section>
 
@@ -312,7 +558,11 @@ export default function PrivacyPolicy() {
             9. {content.sections.storage.title}
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            The criteria used to determine the period of storage of personal data is the respective statutory retention period. After expiration of that period, the corresponding data is routinely deleted, as long as it is no longer necessary for the fulfillment of the contract or the initiation of a contract.
+            The criteria used to determine the period of storage of personal
+            data is the respective statutory retention period. After expiration
+            of that period, the corresponding data is routinely deleted, as long
+            as it is no longer necessary for the fulfillment of the contract or
+            the initiation of a contract.
           </p>
         </section>
 
@@ -322,7 +572,18 @@ export default function PrivacyPolicy() {
             10. {content.sections.provision.title}
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            We clarify that the provision of personal data is partly required by law (e.g. tax regulations) or can also result from contractual provisions. Sometimes it may be necessary to conclude a contract that the data subject provides us with personal data, which must subsequently be processed by us. The data subject is, for example, obliged to provide us with personal data when our company signs a contract with him or her. The non-provision of the personal data would have the consequence that the contract could not be concluded. Before personal data is provided, the data subject must contact any employee who will clarify whether the provision of the personal data is required by law or contract or is necessary for the conclusion of the contract.
+            We clarify that the provision of personal data is partly required by
+            law (e.g. tax regulations) or can also result from contractual
+            provisions. Sometimes it may be necessary to conclude a contract
+            that the data subject provides us with personal data, which must
+            subsequently be processed by us. The data subject is, for example,
+            obliged to provide us with personal data when our company signs a
+            contract with him or her. The non-provision of the personal data
+            would have the consequence that the contract could not be concluded.
+            Before personal data is provided, the data subject must contact any
+            employee who will clarify whether the provision of the personal data
+            is required by law or contract or is necessary for the conclusion of
+            the contract.
           </p>
         </section>
 
@@ -332,8 +593,43 @@ export default function PrivacyPolicy() {
             11. {content.sections.automated.title}
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            As a responsible company, we do not use automatic decision-making or profiling.
+            As a responsible company, we do not use automatic decision-making or
+            profiling.
           </p>
+        </section>
+
+        {/*
+          Abschnitt 12: Google Analytics. Anders als die Abschnitte darüber
+          stehen die Absätze hier in privacy-translations.ts und nicht fest im
+          JSX — gerade dieser Text muss in der gewählten Sprache lesbar sein.
+
+          Die Schaltfläche ist kein Zierrat: der Cookie-Hinweis erscheint nur,
+          solange nichts gespeichert ist. Ohne sie gäbe es nach einem Klick auf
+          „Akzeptieren" keinen Weg zurück, und Art. 7 Abs. 3 DSGVO verlangt,
+          dass der Widerruf so einfach ist wie die Erteilung.
+        */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-4 pb-2 border-b-2 border-teal-600">
+            12. {content.sections.analytics.title}
+          </h2>
+          {content.sections.analytics.paragraphs.map((absatz, i) => (
+            <p key={i} className="text-slate-700 mb-4 leading-relaxed">
+              {absatz}
+            </p>
+          ))}
+          <button
+            type="button"
+            onClick={() => {
+              einwilligungWiderrufen();
+              setWiderrufen(true);
+            }}
+            disabled={widerrufen}
+            className="mt-2 px-6 py-2.5 rounded-lg font-medium transition-colors duration-200 bg-slate-100 text-slate-700 hover:bg-slate-200 disabled:cursor-default disabled:bg-teal-50 disabled:text-teal-700"
+          >
+            {widerrufen
+              ? content.sections.analytics.revoked
+              : content.sections.analytics.revoke}
+          </button>
         </section>
       </div>
     </div>

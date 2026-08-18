@@ -144,6 +144,19 @@ im Server entfernen, Link in die Navigation aufnehmen.
   Vorschaubild. Videos nie per direktem `<iframe>` einbauen.
 - Es gibt einen Cookie-Banner (`components/CookieConsent.tsx`) und eine
   Datenschutzseite. Neue externe Einbindungen dort berücksichtigen.
+- **Google Analytics lädt ausschließlich nach Einwilligung**, über
+  `lib/analytics.ts` und nie aus `index.html`. Auf nicht öffentlichen Pfaden
+  (Positivliste in `analytics.ts`) lädt es gar nicht, sonst ginge der geheime
+  Kinetik-Pfad als `page_view` an Google. „Ablehnen" löscht die `_ga`-Cookies.
+- **Schriften liegen lokal** unter `client/public/fonts/`, eingebunden per
+  `@font-face` in `index.css`. Kein Verweis auf `fonts.googleapis.com` — der
+  überträgt die IP der Besucher an Google, bevor ein Banner erscheinen kann.
+  Im ausgelieferten `index.html` steht deshalb **kein einziger externer
+  `href` oder `src`**. Das bitte so lassen.
+- Der Widerruf sitzt in Abschnitt 12 der Datenschutzseite
+  (`einwilligungWiderrufen()`). Nötig, weil der Banner nur erscheint, solange
+  nichts gespeichert ist — ohne die Schaltfläche gäbe es nach „Akzeptieren"
+  keinen Weg zurück.
 
 ## Deployment
 
@@ -161,6 +174,12 @@ im Server entfernen, Link in die Navigation aufnehmen.
 - [ ] Von den fünf Beispielen sagt nur eines, ob es real oder simuliert ist
       (Cobots: „in der Simulation"). CLAUDE.md verlangt die Angabe — für
       Omniwheel, Cobot/Delta/SCARA und Drohnenformation nachtragen
-- [ ] Google Fonts lädt ungefragt von `fonts.googleapis.com`; Schriften lokal
-      ablegen oder in die Einwilligung aufnehmen
-- [ ] Datenschutzseite erwähnt Google Analytics nicht (`privacy-translations.ts`)
+- [ ] Der Fließtext läuft auf `system-ui`, nicht auf Inter: `--font-body` in
+      `index.css` nennt Inter, geladen wurde es nie. Entweder Inter lokal
+      ergänzen oder das Token an die Wirklichkeit anpassen
+- [ ] Die Datenschutzseite hat ihre Absätze fest im JSX auf Englisch; nur die
+      Überschriften sind übersetzt. Der deutsche Aufruf zeigt also englischen
+      Rechtstext. Ausnahme ist der neue Abschnitt 12, der zweisprachig in
+      `privacy-translations.ts` steht
+- [ ] Datenschutzseite juristisch prüfen lassen — Abschnitt 12 beschreibt
+      wahrheitsgemäß, was der Code tut, ist aber keine Rechtsberatung
