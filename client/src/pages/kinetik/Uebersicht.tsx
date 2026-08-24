@@ -12,6 +12,22 @@ import KinetikLayout from "./KinetikLayout";
 import { KONTAKT_MAIL, SPALTE, SPALTE_EINGERUECKT } from "./seiten";
 import { useKinetikTexte } from "./texte";
 
+/**
+ * Förderer. Dieselben Logodateien wie im Supporter-Strip der Startseite (siehe
+ * `supporters` in lib/translations.ts), damit beide Auftritte dasselbe sagen.
+ *
+ * Feste Box je Logo statt einheitlicher Höhe: Die drei Marken haben sehr
+ * unterschiedliche Formate — Covision ist breit, BSFZ ein rundes Zeichen. Bei
+ * gleicher Höhe dominiert Covision und BSFZ schrumpft auf einen Punkt. Weißer
+ * Grund, weil mindestens ein Logo eine weiße Fläche mitbringt und sonst als
+ * Kasten im Seitenhintergrund steht.
+ */
+const FOERDERER = [
+  { name: "Covision", logo: "/images/covision-logo.jpg" },
+  { name: "MFG", logo: "/images/mfg-logo.png" },
+  { name: "BSFZ", logo: "/images/bsfz-logo.png" },
+];
+
 /** Ein Beispiel aus „Was sich damit beschreiben lässt". */
 function Miniatur({
   titel,
@@ -67,6 +83,34 @@ export default function Uebersicht() {
         <p className="mt-8 text-xl font-medium leading-snug">{s.kernsatz}</p>
         <p className="mt-6 leading-relaxed text-foreground/90">
           {s.einleitung}
+        </p>
+      </section>
+
+      {/*
+        Förderband weit oben, direkt unter dem Aufmacher: Förderungen sind
+        Referenzen. Dass die Entwicklung geprüft und getragen wird, schafft
+        Vertrauen, bevor das erste technische Argument gelesen wird — deshalb
+        hier und nicht als Fußnote auf einer späteren Seite.
+      */}
+      <section className="mt-12">
+        <p className="section-label text-muted-foreground">{s.foerderLabel}</p>
+        <div className="mt-4 flex flex-wrap items-center gap-4">
+          {FOERDERER.map(f => (
+            <div
+              key={f.name}
+              className="flex h-16 w-36 items-center justify-center rounded-sm border border-border bg-white px-4"
+            >
+              <img
+                src={f.logo}
+                alt={f.name}
+                className="max-h-10 w-auto max-w-full object-contain"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
+        <p className={`mt-5 ${SPALTE} text-sm leading-relaxed text-muted-foreground`}>
+          {s.foerderText}
         </p>
       </section>
 

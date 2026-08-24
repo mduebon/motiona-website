@@ -77,6 +77,15 @@ export interface KinetikTexte {
     kontaktH: string;
     kontakt: string[];
     signatur: string;
+    /**
+     * Förderband, prominent auf der Einstiegsseite direkt unter dem Aufmacher.
+     * Förderungen sind Referenzen — BSFZ, MFG und Covision belegen, dass die
+     * Entwicklung geprüft und getragen wird, und das schafft Vertrauen, bevor
+     * irgendein technisches Argument gelesen wird. Deshalb weit oben und nicht
+     * als Fußnote.
+     */
+    foerderLabel: string;
+    foerderText: string;
   };
 
   beispiele: {
@@ -252,6 +261,9 @@ const de: KinetikTexte = {
       "Eine Skizze, ein Video, eine Bewegungsbeschreibung oder eine grobe Idee genügt. Technisch ausgearbeitet muss sie nicht sein — das klären wir gemeinsam.",
     ],
     signatur: "Matthias Dübon · Dübon Engineering GmbH · Kusterdingen",
+    foerderLabel: "Unterstützt und gefördert durch",
+    foerderText:
+      "Die Entwicklung an MotionA ist im Rahmen der Forschungszulage als Forschung und Entwicklung anerkannt (BSFZ) und wird von Covision und der MFG Baden-Württemberg unterstützt. Dübon Engineering ist seit 2017 eine GmbH, inhabergeführt.",
   },
 
   beispiele: {
@@ -495,6 +507,9 @@ const en: KinetikTexte = {
       "A sketch, a video, a description of the movement or a rough idea is enough. It does not have to be worked out technically — that is what we do together.",
     ],
     signatur: "Matthias Dübon · Dübon Engineering GmbH · Kusterdingen, Germany",
+    foerderLabel: "Supported and funded by",
+    foerderText:
+      "Work on MotionA is recognised as research and development under the German research allowance (BSFZ) and is supported by Covision and MFG Baden-Württemberg. Dübon Engineering has been a GmbH since 2017, owner-led.",
   },
 
   beispiele: {

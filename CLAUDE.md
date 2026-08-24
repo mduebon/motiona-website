@@ -146,6 +146,16 @@ im Server entfernen, Link in die Navigation aufnehmen.
   betriebenen Anlage, nicht einer Software.
 - **Keine Kontron-Referenz auf der Kinetik-Seite.** Bewusst entfernt, passt
   nicht zur Zielgruppe.
+- **Förderungen sind Referenzen und stehen prominent.** Auf Seite 01
+  („Übersicht") folgt direkt unter dem Aufmacher das Band „Unterstützt und
+  gefördert durch" mit Covision, MFG und BSFZ — dieselben Logodateien wie im
+  Supporter-Strip der Startseite —, darunter ein kurzer Satz zu
+  Forschungszulage/BSFZ und GmbH seit 2017. Absicht: Dass die Entwicklung
+  geprüft und getragen wird, schafft Vertrauen, **bevor** das erste technische
+  Argument gelesen wird. Nicht kleinreden und nicht nach hinten schieben; eine
+  frühere Fassung stand am Fuß von Seite 04 mit dem Zusatz „das sagt nichts
+  über den künstlerischen Wert" — dieser relativierende Halbsatz ist bewusst
+  entfernt.
 - Keine Zahlen ohne Beleg: keine Prozentangaben zu Einsparungen, keine Preise.
 - Ton: sachlich, direkt, keine Superlative, keine Ausrufezeichen. Wenn ein Satz
   eine Behauptung aufstellt, muss der nächste sie belegen. Anrede: Sie.
