@@ -39,43 +39,22 @@ export const KONTAKT_MAIL = "matthias.duebon@duebon-engineering.de";
 export interface Seite {
   /** Pfadsegment unter dem Basispfad. Leer für die Einstiegsseite. */
   segment: string;
-  /** Kurzform für die Seitennavigation im Kopf. */
-  kurz: string;
-  /** Überschrift der Seite. Wird vom Layout als h1 gesetzt. */
-  titel: string;
 }
 
-/** Reihenfolge des Bereichs. Sie bestimmt Navigation und „Weiter"-Verweise. */
+/**
+ * Reihenfolge des Bereichs. Sie bestimmt Navigation und „Weiter"-Verweise.
+ *
+ * Hier stehen nur noch die Pfade. Navigationsname und Überschrift jeder Seite
+ * liegen sprachabhängig in `texte.ts` unter `seiten` — **in derselben
+ * Reihenfolge**. Wer hier eine Seite einfügt, muss sie dort in beiden Sprachen
+ * an derselben Position ergänzen.
+ */
 export const SEITEN: Seite[] = [
-  {
-    segment: "",
-    kurz: "Übersicht",
-    // Die Überschrift trägt den Gedanken, der Fließtext das Problem. Die
-    // frühere Fassung („Bewegung, die bisher zu aufwendig war") schrieb den
-    // Aufwand der Bewegung zu statt der Steuerung und nahm damit den zweiten
-    // Absatz vorweg, der es genauer sagt.
-    titel: "Bewegung beschreiben statt programmieren",
-  },
-  {
-    segment: "beispiele",
-    kurz: "Beispiele",
-    titel: "So sieht das konkret aus",
-  },
-  {
-    segment: "wie-das-funktioniert",
-    kurz: "Technik",
-    titel: "Wie das funktioniert",
-  },
-  {
-    segment: "woher-die-technik-kommt",
-    kurz: "Herkunft",
-    titel: "Woher die Technik kommt",
-  },
-  {
-    segment: "aufwand-und-perspektive",
-    kurz: "Aufwand",
-    titel: "Aufwand und Perspektive",
-  },
+  { segment: "" },
+  { segment: "beispiele" },
+  { segment: "wie-das-funktioniert" },
+  { segment: "woher-die-technik-kommt" },
+  { segment: "aufwand-und-perspektive" },
 ];
 
 export function pfad(seite: Seite) {

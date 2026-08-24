@@ -9,8 +9,27 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+/**
+ * Startsprache aus der Adresse: `?lang=en` bzw. `?lang=de`.
+ *
+ * Gebraucht wird das für den Kinetik-Bereich. Dessen Link wird einzeln an
+ * Empfänger verschickt, teils an englischsprachige — ohne diesen Parameter
+ * landen sie auf deutschem Fließtext und müssten erst den Umschalter finden.
+ *
+ * Bewusst kein localStorage: eine gespeicherte Sprachwahl wäre ein weiterer
+ * Eintrag im Browser des Besuchers und damit ein Fall für die
+ * Datenschutzerklärung. Innerhalb der Anwendung bleibt die Wahl ohnehin
+ * erhalten, weil die Navigation clientseitig läuft; verloren geht sie nur beim
+ * harten Neuladen.
+ */
+function startSprache(): Language {
+  if (typeof window === 'undefined') return 'de';
+  const wunsch = new URLSearchParams(window.location.search).get('lang');
+  return wunsch === 'en' || wunsch === 'de' ? wunsch : 'de';
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('de');
+  const [language, setLanguage] = useState<Language>(startSprache);
 
   const value: LanguageContextType = {
     language,

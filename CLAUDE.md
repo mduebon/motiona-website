@@ -66,8 +66,20 @@ Die Website ist zweisprachig (Englisch als Standard, Deutsch umschaltbar).
 Texte liegen in `client/src/lib/translations.ts` und werden über
 `useLanguage()` als `t.…` abgerufen.
 
-**Ausnahme: der Kinetik-Bereich ist bewusst einsprachig deutsch** und hat keine
-Sprachumschaltung. Seine Texte stehen direkt in den Komponenten.
+Der **Kinetik-Bereich** ist ebenfalls zweisprachig, hält seine Texte aber
+getrennt: `client/src/pages/kinetik/texte.ts`, abgerufen über
+`useKinetikTexte()`. Grund: `lib/translations.ts` gehört zum öffentlichen
+Auftritt, der Kinetik-Bereich ist unverlinkt und wird unabhängig überarbeitet.
+Die Sprache selbst kommt aus demselben `LanguageContext` — der Umschalter im
+Kopf des Bereichs schaltet also auch die öffentlichen Seiten.
+
+**Startsprache über die Adresse:** `?lang=en` bzw. `?lang=de` (ausgewertet in
+`LanguageContext`). Damit lässt sich ein englischer Link verschicken, ohne dass
+der Empfänger erst umschalten muss. Bewusst **kein localStorage** — eine
+gespeicherte Sprachwahl wäre ein Eintrag im Browser des Besuchers und damit ein
+Fall für die Datenschutzerklärung. Innerhalb der Anwendung bleibt die Wahl
+erhalten, weil die Navigation clientseitig läuft; verloren geht sie nur beim
+harten Neuladen.
 
 ## Der unverlinkte Kinetik-Bereich
 
@@ -88,9 +100,11 @@ Fünf Seiten in fester Reihenfolge, definiert durch `SEITEN` in `seiten.ts`:
 | 04 | `woher-die-technik-kommt` | `WoherDieTechnikKommt.tsx` |
 | 05 | `aufwand-und-perspektive` | `AufwandUndPerspektive.tsx` |
 
-`KinetikLayout.tsx` trägt Kopf, Seitennavigation, Zähler (01/05), Überschrift,
-Weiter/Zurück und Fuß. Eine neue Seite braucht drei Schritte: Eintrag in
-`SEITEN`, Komponente anlegen, Route in `App.tsx`. Der Noindex-Schutz greift
+`KinetikLayout.tsx` trägt Kopf, Seitennavigation, Sprachumschalter, Zähler
+(Teil 1 von 5), Überschrift, Weiter/Zurück und Fuß. Eine neue Seite braucht vier
+Schritte: Eintrag in `SEITEN` (nur der Pfad), Navigationsname und Überschrift in
+`texte.ts` unter `seiten` **an derselben Position in beiden Sprachen**,
+Komponente anlegen, Route in `App.tsx`. Der Noindex-Schutz greift
 automatisch, weil er auf dem Präfix sitzt.
 
 Regeln:
