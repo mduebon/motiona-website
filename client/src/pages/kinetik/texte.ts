@@ -338,7 +338,7 @@ const de: KinetikTexte = {
     dauerbetriebH: "Was Dauerbetrieb verlangt",
     dauerbetrieb: [
       "Eine Installation im Foyer, im Museum oder auf der Bühne muss über Jahre laufen, ohne dass jemand danebensteht. Das ist eine andere Anforderung als ein Aufbau, der zur Eröffnung funktioniert.",
-      "MotionA ist nicht aus einem Kunstprojekt entstanden, sondern aus fünfzehn Jahren Embedded-Entwicklung: EtherCAT, CANopen, Mikrocontroller bis Linux-Echtzeitsysteme. Dübon Engineering GmbH entwickelt daneben Steuerungstechnik für Industriekunden — Geräte, die in Serie gehen und über Jahre im Feld laufen müssen.",
+      "MotionA kommt aus fünfzehn Jahren Embedded-Entwicklung, von Mikrocontrollern bis zu Linux-Echtzeitsystemen. Dübon Engineering baut Steuerungstechnik für Industriekunden — Geräte, die in Serie gehen und über Jahre im Feld laufen, ohne dass jemand danebensteht. Für MotionA gelten dieselben Maßstäbe.",
     ],
     praegtEinleitung: "Das prägt, wie MotionA gebaut ist:",
     eigenschaften: [
@@ -584,7 +584,7 @@ const en: KinetikTexte = {
     dauerbetriebH: "What continuous operation demands",
     dauerbetrieb: [
       "An installation in a foyer, a museum or on stage has to run for years without anyone standing next to it. That is a different requirement from a setup that works on opening night.",
-      "MotionA did not grow out of an art project but out of fifteen years of embedded development: EtherCAT, CANopen, microcontrollers through to Linux real-time systems. Alongside this, Dübon Engineering GmbH develops control technology for industrial customers — devices that go into series production and have to run in the field for years.",
+      "MotionA comes out of fifteen years of embedded development, from microcontrollers through to Linux real-time systems. Dübon Engineering builds control technology for industrial customers — devices that go into series production and run in the field for years without anyone standing next to them. The same standards apply to MotionA.",
     ],
     praegtEinleitung: "That shapes how MotionA is built:",
     eigenschaften: [
