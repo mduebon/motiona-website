@@ -191,12 +191,13 @@ const de: KinetikTexte = {
       " bei den Motoren. Steuerung, räumliches Modell, Choreografie, Simulation und Inbetriebnahme kommen von uns. Die Mechanik selbst — Gestell, Gelenke, Anlenkung, Material, Statik — bauen wir nicht. Dabei können wir beraten und früh mitdenken, damit die Bewegung später auch wirklich funktioniert, aber gefertigt werden muss sie von anderer Seite.",
     videoHinweis:
       "Zu den Videos: Sie sind ungeschnitten und zeigen Testaufbauten, kein Werbematerial. Sie sollen nur veranschaulichen, was möglich ist.",
-    videoTitel: "Eine Drohne lenkt eine kinetische Installation in Echtzeit aus",
+    videoTitel:
+      "Eine Drohne lenkt eine kinetische Installation in Echtzeit aus",
     videoText:
       "Eine Drohne fliegt frei durch den Raum, die Installation reagiert in Echtzeit. Die Position der Drohne kommt aus der Sensorik und wird während der Ausführung Teil des Systems. Es gibt keine hinterlegte Choreografie, auf die zurückgegriffen wird.",
     beschreibbarH: "Was sich damit beschreiben lässt",
     beschreibbarText:
-      "Fünf Beispiele — nicht als Vorschlag für ein bestimmtes Werk, sondern um zu zeigen, wie kurz die Beschreibung wird, wenn sie eine Beziehung meint statt einer Bahn.",
+      "Fünf Beispiele — nicht als Vorschlag für ein bestimmtes Werk, sondern um zu zeigen, wie kurz die Beschreibung wird, wenn sie eine Beziehung meint statt einer Bahn. Bewegung meint dabei nicht nur Mechanik: Helligkeit und Farbe sind Größen im selben Modell, und in mehreren der Beispiele ist Licht das eigentliche Medium.",
     beschreibungLabel: "Beschreibung: ",
     miniaturen: [
       {
@@ -220,7 +221,7 @@ const de: KinetikTexte = {
         titel: "Rendezvous",
         text: "Zwei unabhängige Systeme bewegen sich mit Perioden, die nicht ganzzahlig zueinander stehen. Nur selten kommen sich bestimmte Punkte nahe — und genau dann reichen sie etwas weiter aus oder leuchten gemeinsam auf.",
         beschreibung:
-          "eine Bedingung über den Abstand zweier Knoten, keine vorab gesetzte Zeitmarke. Dadurch entsteht kein kurzer, erkennbarer Wiederholungszyklus.",
+          "eine Bedingung über den Abstand zweier Knoten, keine vorab gesetzte Zeitmarke. Dadurch entsteht kein kurzer, erkennbarer Wiederholungszyklus. Ob daraus eine Bewegung folgt oder ein Aufleuchten, ändert an der Beschreibung nichts — Helligkeit ist eine Größe wie ein Winkel.",
       },
       {
         titel: "Spiel zwischen real und virtuell",
@@ -239,13 +240,11 @@ const de: KinetikTexte = {
         text: "Eine Skizze genügt, und sie darf technisch unausgegoren sein. Was sich bewegen soll, wie es sich anfühlen soll, worauf es reagieren soll — das ist der Ausgangspunkt.",
       },
       {
-        titel:
-          "Dann klären wir gemeinsam, was mechanisch dahinterstehen muss.",
+        titel: "Dann klären wir gemeinsam, was mechanisch dahinterstehen muss.",
         text: "Welche Achsen, welche Antriebe, wo Gelenke sitzen, was sich überhaupt lohnt. Hier ist der beste Zeitpunkt für Einwände: Änderungen an einer Zeichnung kosten nichts, Änderungen an einer geschweißten Konstruktion schon.",
       },
       {
-        titel:
-          "Die Bewegung entsteht im Modell, bevor die Mechanik existiert.",
+        titel: "Die Bewegung entsteht im Modell, bevor die Mechanik existiert.",
         text: "Choreografie, Erreichbarkeit, Kollisionen und Timing lassen sich simulieren und ansehen, solange noch nichts gebaut ist.",
       },
       {
@@ -322,7 +321,7 @@ const de: KinetikTexte = {
       " Alle Bezugssysteme und ihre Beziehungen zueinander, live geführt. Ein laufendes Band, ein zweiter Roboter, eine getrackte Person: jeweils ein weiteres Bezugssystem, kein Sonderfall im Programm.",
     actionGraphTitel: "ActionGraph — wann etwas passiert.",
     actionGraphText:
-      " Aktionen, Reihenfolgen, parallele Zweige, Ereignisse, Fehlerfälle. Licht, Klappen und Projektionen gehören in dieselbe Beschreibung, nicht in ein zweites System.",
+      " Aktionen, Reihenfolgen, parallele Zweige, Ereignisse, Fehlerfälle. Licht, Klappen und Projektionen gehören in dieselbe Beschreibung, nicht in ein zweites System. Helligkeit und Farbe sind dabei Größen wie ein Winkel und lassen sich an dieselben Bedingungen knüpfen; wo eine Lichtanlage DMX spricht, wird sie direkt angesprochen.",
     modelleSchluss:
       "Beides ist stark abstrahiert und trotzdem echtzeitfähig. Weil die Beschreibung strukturiert ist, ist sie prüfbar — und das ist auch der Punkt, an dem KI sinnvoll ansetzt: Ein Sprachmodell erzeugt keinen Robotercode, sondern eine Beschreibung, die vor der Ausführung verifiziert wird.",
     simulationH: "Simulation ist keine zweite Implementierung",
@@ -444,7 +443,7 @@ const en: KinetikTexte = {
       "A drone flies freely through the room and the installation responds in real time. The drone's position comes from the sensors and becomes part of the system while it runs. There is no stored choreography being played back.",
     beschreibbarH: "What can be described this way",
     beschreibbarText:
-      "Five examples — not as a proposal for any particular work, but to show how short the description becomes once it means a relationship instead of a path.",
+      "Five examples — not as a proposal for any particular work, but to show how short the description becomes once it means a relationship instead of a path. Motion here is not only mechanics: brightness and colour are quantities in the same model, and in several of the examples light is the actual medium.",
     beschreibungLabel: "Description: ",
     miniaturen: [
       {
@@ -468,7 +467,7 @@ const en: KinetikTexte = {
         titel: "Rendezvous",
         text: "Two independent systems move with periods that are not integer multiples of one another. Only rarely do certain points come close — and exactly then they reach out a little further or light up together.",
         beschreibung:
-          "a condition on the distance between two nodes, not a preset point in time. As a result there is no short, recognisable repetition cycle.",
+          "a condition on the distance between two nodes, not a preset point in time. As a result there is no short, recognisable repetition cycle. Whether that produces a movement or a flare of light changes nothing about the description — brightness is a quantity like an angle.",
       },
       {
         titel: "Play between real and virtual",
@@ -491,7 +490,8 @@ const en: KinetikTexte = {
         text: "Which axes, which drives, where the joints sit, what is worth doing at all. This is the best moment for objections: changing a drawing costs nothing, changing a welded structure does.",
       },
       {
-        titel: "The motion takes shape in the model before the mechanics exist.",
+        titel:
+          "The motion takes shape in the model before the mechanics exist.",
         text: "Choreography, reachability, collisions and timing can be simulated and watched while nothing has been built yet.",
       },
       {
@@ -568,7 +568,7 @@ const en: KinetikTexte = {
       " All reference frames and their relationships to one another, maintained live. A moving conveyor, a second robot, a tracked person: each of them simply one more reference frame, not a special case in the program.",
     actionGraphTitel: "ActionGraph — when something happens.",
     actionGraphText:
-      " Actions, sequences, parallel branches, events, error cases. Light, flaps and projections belong in the same description, not in a second system.",
+      " Actions, sequences, parallel branches, events, error cases. Light, flaps and projections belong in the same description, not in a second system. Brightness and colour are quantities like an angle and can be tied to the same conditions; where a lighting rig speaks DMX, it is addressed directly.",
     modelleSchluss:
       "Both are heavily abstracted and still real-time capable. Because the description is structured, it can be checked — and that is also where AI has a sensible place: a language model does not produce robot code, it produces a description that is verified before execution.",
     simulationH: "Simulation is not a second implementation",
