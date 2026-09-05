@@ -8,6 +8,32 @@
 
 import { useState } from "react";
 import { Play } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+/**
+ * Beschriftungen der Klickfläche.
+ *
+ * Sie stehen hier und nicht in texte.ts: Die Komponente liegt in components/
+ * und darf nicht auf pages/kinetik zeigen. Es sind Bedienelemente, keine
+ * Inhalte — dieselbe Kategorie wie ein Knopftext in einer UI-Komponente.
+ *
+ * Vorher waren sie fest deutsch. Seit der Kinetik-Bereich zweisprachig ist,
+ * stand im englischen Aufruf „Video laden" und „Wird erst nach Klick von
+ * YouTube geladen." — sichtbar für genau die Empfänger, für die die englische
+ * Fassung gemacht wurde.
+ */
+const BESCHRIFTUNG = {
+  de: {
+    laden: "Video laden",
+    hinweis: "Wird erst nach Klick von YouTube geladen.",
+    abspielen: (titel: string) => `Video abspielen: ${titel}`,
+  },
+  en: {
+    laden: "Load video",
+    hinweis: "Only loaded from YouTube once you click.",
+    abspielen: (titel: string) => `Play video: ${titel}`,
+  },
+} as const;
 
 interface VideoEmbedProps {
   /** YouTube-Video-ID, z. B. "nheEumA4-cI" */
@@ -25,6 +51,8 @@ interface VideoEmbedProps {
 
 export default function VideoEmbed({ id, titel, className }: VideoEmbedProps) {
   const [geladen, setGeladen] = useState(false);
+  const { language } = useLanguage();
+  const b = BESCHRIFTUNG[language] ?? BESCHRIFTUNG.de;
 
   return (
     <figure className={className}>
@@ -48,7 +76,7 @@ export default function VideoEmbed({ id, titel, className }: VideoEmbedProps) {
           <button
             type="button"
             onClick={() => setGeladen(true)}
-            aria-label={`Video abspielen: ${titel}`}
+            aria-label={b.abspielen(titel)}
             className="group absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 transition-colors hover:bg-secondary/60 sm:gap-4 sm:px-6"
           >
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-foreground/40 transition-colors group-hover:border-primary group-hover:bg-primary sm:h-16 sm:w-16">
@@ -64,7 +92,7 @@ export default function VideoEmbed({ id, titel, className }: VideoEmbedProps) {
               {titel}
             </span>
             <span className="section-label text-muted-foreground">
-              Video laden
+              {b.laden}
             </span>
           </button>
         )}
@@ -78,7 +106,7 @@ export default function VideoEmbed({ id, titel, className }: VideoEmbedProps) {
         </figcaption>
       ) : (
         <figcaption className="mt-3 max-w-[34rem] text-xs text-muted-foreground/80">
-          Wird erst nach Klick von YouTube geladen.
+          {b.hinweis}
         </figcaption>
       )}
     </figure>

@@ -22,6 +22,9 @@ import { useKinetikTexte } from "./texte";
  * Grund, weil mindestens ein Logo eine weiße Fläche mitbringt und sonst als
  * Kasten im Seitenhintergrund steht.
  */
+/** Steht an zwei Stellen: Einbettung und Verweis auf die Beschreibung. */
+const VIDEO_TEXT_ZU_BEWEGUNG = "sFoopxDGA3s";
+
 const FOERDERER = [
   { name: "Covision", logo: "/images/covision-logo.jpg" },
   { name: "MFG", logo: "/images/mfg-logo.png" },
@@ -109,7 +112,9 @@ export default function Uebersicht() {
             </div>
           ))}
         </div>
-        <p className={`mt-5 ${SPALTE} text-sm leading-relaxed text-muted-foreground`}>
+        <p
+          className={`mt-5 ${SPALTE} text-sm leading-relaxed text-muted-foreground`}
+        >
           {s.foerderText}
         </p>
       </section>
@@ -177,6 +182,55 @@ export default function Uebersicht() {
           <span className="font-semibold">{s.nennerTitel}</span>
           {s.nennerText}
         </p>
+
+        {/*
+          Text zu Bewegung. Steht bewusst direkt hinter den Miniaturen: dort hat
+          der Leser fünfmal gesehen, wie kurz eine Beschreibung ausfällt — hier
+          sieht er, wie aus einer Beschreibung Bewegung wird.
+
+          Bewusst nicht als Aufmacher der Seite. Der Text beginnt mit „kein
+          Rendering"; ganz oben wäre das eine Bitte um Vertrauen, an dieser
+          Stelle ist es eine Bestätigung.
+        */}
+        <div className="mt-16 max-w-4xl">
+          <h3
+            className={`${SPALTE} font-display text-xl font-bold tracking-tight`}
+          >
+            {s.textZuBewegungH}
+          </h3>
+          <VideoEmbed
+            className="mt-6"
+            id={VIDEO_TEXT_ZU_BEWEGUNG}
+            titel={s.textZuBewegungVideoTitel}
+          />
+          {s.textZuBewegung.map((absatz, i) => (
+            <p
+              key={i}
+              className={`mt-6 ${SPALTE} leading-relaxed text-foreground/90`}
+            >
+              {absatz}
+            </p>
+          ))}
+          {/*
+            Verweis auf die Videobeschreibung. Wer das Video hier einbettet
+            sieht sie nicht — der eingebettete Player zeigt nur das Bild.
+            Deshalb der ausdrückliche Weg nach YouTube. Ein Link löst keinen
+            Request aus, solange niemand ihn anklickt.
+          */}
+          <p
+            className={`mt-6 ${SPALTE} text-sm leading-relaxed text-muted-foreground`}
+          >
+            {s.textZuBewegungHinweis}{" "}
+            <a
+              href={`https://www.youtube.com/watch?v=${VIDEO_TEXT_ZU_BEWEGUNG}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary hover:underline"
+            >
+              {s.textZuBewegungLink}
+            </a>
+          </p>
+        </div>
       </section>
 
       {/* ------------------------------------------------ Zusammenarbeit */}
