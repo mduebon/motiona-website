@@ -84,13 +84,6 @@ export interface KinetikTexte {
      * Bewegung aus Text. Zwei verschiedene Wege.
      */
     textZuBewegungH: string;
-    /**
-     * Was auf dem Schirm zu sehen ist. Ohne diesen Satz steht der Leser vor
-     * einem Entwicklerfenster mit Tick-Zeiten und Knotengraph und muss sich
-     * selbst zusammenreimen, dass die vierzehn Kugeln ein Skelett sind. Mit
-     * ihm wird die nüchterne Oberfläche zum Beleg statt zum Stilbruch.
-     */
-    textZuBewegungWasZuSehen: string;
     textZuBewegungVideoTitel: string;
     textZuBewegung: string[];
     /** Verweis auf die Videobeschreibung, wo die Einzelheiten stehen. */
@@ -258,16 +251,14 @@ const de: KinetikTexte = {
     nennerTitel: "Der gemeinsame Nenner:",
     nennerText:
       " Weil eine Beziehung beschrieben wird und kein Weg, bedeutet auch eine Änderung an der Geometrie — ein Montagepunkt 20 Millimeter weiter außen, ein etwas längerer Arm — lediglich einen geänderten Wert und keine neue Bahnprogrammierung.",
-    textZuBewegungH: "Von einem Satz zu einer Bewegung",
-    textZuBewegungWasZuSehen:
-      "Zu sehen ist die Oberfläche der Steuerung selbst: ein Skelett aus vierzehn geregelten Punkten, das läuft und springt, darunter der ActionGraph und das Eingabefeld für den Satz. Die Anzeige oben rechts nennt den Echtzeitfaktor — das Modell läuft mit, während es beschrieben wird.",
+    textZuBewegungH: "Was Sie hier sehen",
     textZuBewegungVideoTitel:
       "Aus einem Satz Text wird eine Bewegung — gefahren von der Steuerung",
     textZuBewegung: [
-      "Kein Rendering und keine abgespielte Animation. Der Bewegungsablauf entsteht aus einem Satz Text: Ein neuronales Netz übersetzt ihn in einen Bewegungsentwurf — Text zu Bewegung. Gefahren wird der Entwurf anschließend von der Steuerung. Jedes Gelenk hat einen eigenen Regler, alle laufen in gemeinsamer Zeit und in einem gemeinsamen räumlichen Modell.",
-      "Was physikalisch nicht geht, geht deshalb auch im Bild nicht: Das Bild ist eine Sicht auf den Zustand der Steuerung und nicht auf eine Animation daneben. Das Netz liefert die Absicht — ob sie sich bewegen lässt, entscheidet die Steuerung.",
-      "Der übliche Weg wäre umgekehrt. Ein Grafikwerkzeug erzeugt Bilder, und wenn sich etwas wirklich bewegen soll, schickt es Sollwerte an einen Motorcontroller. Dann ist die Animation das Original und die Maschine die Kopie, mit allen Abweichungen dazwischen.",
-      "Hier gibt es diese Trennung nicht. Es gibt einen Zustand, und das Bild ist eine Sicht darauf. Die Maschine wäre die andere. Zu sehen ist die simulierte Sicht — und weil beide auf demselben Zustand liegen, ist das keine Vorschau auf das Verhalten der Maschine, sondern dasselbe Verhalten.",
+      "Kein Rendering, keine abgespielte Animation. Der Bewegungsablauf entsteht aus einem Satz Text: Ein neuronales Netz erzeugt daraus einen Bewegungsentwurf. Gefahren wird er anschließend von der Steuerung — jedes Gelenk hat einen eigenen Regler, alle laufen in gemeinsamer Zeit und in einem gemeinsamen räumlichen Modell. Was physikalisch nicht geht, geht auch im Bild nicht.",
+      "Das Netz liefert die Absicht. Ob sie sich bewegen lässt, entscheidet die Steuerung.",
+      "Der übliche Weg wäre umgekehrt — ein Grafikwerkzeug erzeugt Bilder, und wenn sich etwas wirklich bewegen soll, schickt es Sollwerte an einen Motorcontroller. Dann ist die Animation das Original und die Maschine die Kopie, mit allen Abweichungen dazwischen.",
+      "Hier gibt es diese Trennung nicht. Es gibt einen Zustand, und das Bild ist eine Sicht darauf. Die Maschine wäre die andere.",
     ],
     textZuBewegungHinweis:
       "Die Einzelheiten zum Aufbau stehen in der Beschreibung des Videos.",
@@ -518,16 +509,14 @@ const en: KinetikTexte = {
     nennerTitel: "The common denominator:",
     nennerText:
       " Because a relationship is described and not a path, a change to the geometry — a mounting point 20 millimetres further out, a slightly longer arm — is only a changed value, not new path programming.",
-    textZuBewegungH: "From a sentence to a movement",
-    textZuBewegungWasZuSehen:
-      "What you see is the control system's own interface: a skeleton of fourteen controlled points that walks and jumps, below it the ActionGraph and the input field for the sentence. The readout in the top right gives the realtime factor — the model is running while it is being described.",
+    textZuBewegungH: "What you are seeing",
     textZuBewegungVideoTitel:
       "A sentence of text becomes a movement — driven by the control system",
     textZuBewegung: [
-      "No rendering and no animation being played back. The sequence comes from a single sentence of text: a neural network turns it into a motion draft — text to motion. The control system then drives that draft. Every joint has its own controller, all of them running in common time and in one shared spatial model.",
-      "So whatever is not physically possible does not happen in the picture either: the picture is a view of the control system's state, not of an animation running beside it. The network supplies the intent — whether it can be moved is decided by the control system.",
-      "The usual route is the other way round. A graphics tool produces images, and when something is actually meant to move, it sends setpoints to a motor controller. Then the animation is the original and the machine is the copy, with every deviation in between.",
-      "Here that separation does not exist. There is one state, and the picture is a view of it. The machine would be the other. What you see is the simulated view — and because both rest on the same state, this is not a preview of how the machine behaves, it is the same behaviour.",
+      "No rendering, no animation being played back. The movement comes from a single sentence of text: a neural network produces a motion draft from it. The control system then drives that draft — every joint has its own controller, all of them running in common time and in one shared spatial model. What is not physically possible does not happen in the picture either.",
+      "The network supplies the intent. Whether it can be moved is decided by the control system.",
+      "The usual route would be the other way round — a graphics tool produces images, and when something is actually meant to move, it sends setpoints to a motor controller. Then the animation is the original and the machine is the copy, with every deviation in between.",
+      "Here that separation does not exist. There is one state, and the picture is a view of it. The machine would be the other.",
     ],
     textZuBewegungHinweis:
       "The details of the setup are in the video's description.",
