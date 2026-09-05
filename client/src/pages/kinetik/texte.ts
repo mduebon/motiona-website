@@ -76,14 +76,10 @@ export interface KinetikTexte {
      * Miniaturen zeigen, wie kurz eine Beschreibung ausfällt — direkt danach
      * zeigt das Video, wie aus einer Beschreibung Bewegung wird.
      *
-     * Und bewusst nicht als Aufmacher: der erste Satz lautet „kein Rendering".
-     * Ganz oben wäre das eine Bitte um Vertrauen, hier ist es eine Bestätigung.
-     *
      * Nicht zu verwechseln mit dem Sprachmodell auf den Seiten 3 und 4. Das
      * erzeugt eine prüfbare Beschreibung; dieses Netz erzeugt menschliche
      * Bewegung aus Text. Zwei verschiedene Wege.
      */
-    textZuBewegungH: string;
     textZuBewegungVideoTitel: string;
     textZuBewegung: string[];
     /** Verweis auf die Videobeschreibung, wo die Einzelheiten stehen. */
@@ -251,14 +247,11 @@ const de: KinetikTexte = {
     nennerTitel: "Der gemeinsame Nenner:",
     nennerText:
       " Weil eine Beziehung beschrieben wird und kein Weg, bedeutet auch eine Änderung an der Geometrie — ein Montagepunkt 20 Millimeter weiter außen, ein etwas längerer Arm — lediglich einen geänderten Wert und keine neue Bahnprogrammierung.",
-    textZuBewegungH: "Was Sie hier sehen",
     textZuBewegungVideoTitel:
       "Aus einem Satz Text wird eine Bewegung — gefahren von der Steuerung",
     textZuBewegung: [
-      "Kein Rendering, keine abgespielte Animation. Der Bewegungsablauf entsteht aus einem Satz Text: Ein neuronales Netz erzeugt daraus einen Bewegungsentwurf. Gefahren wird er anschließend von der Steuerung — jedes Gelenk hat einen eigenen Regler, alle laufen in gemeinsamer Zeit und in einem gemeinsamen räumlichen Modell. Was physikalisch nicht geht, geht auch im Bild nicht.",
-      "Das Netz liefert die Absicht. Ob sie sich bewegen lässt, entscheidet die Steuerung.",
-      "Der übliche Weg wäre umgekehrt — ein Grafikwerkzeug erzeugt Bilder, und wenn sich etwas wirklich bewegen soll, schickt es Sollwerte an einen Motorcontroller. Dann ist die Animation das Original und die Maschine die Kopie, mit allen Abweichungen dazwischen.",
-      "Hier gibt es diese Trennung nicht. Es gibt einen Zustand, und das Bild ist eine Sicht darauf. Die Maschine wäre die andere.",
+      "Ein Satz Text beschreibt eine Bewegung, ein neuronales Netz macht daraus einen Bewegungsentwurf. Gefahren wird er von der Steuerung: jedes Gelenk hat einen eigenen Regler, alle laufen in gemeinsamer Zeit und in einem gemeinsamen räumlichen Modell. Was zu sehen ist, ist deshalb keine abgespielte Animation, sondern derselbe Vorgang, der auch reale Achsen bewegen würde.",
+      "Das Netz liefert die Absicht. Ob sie sich fahren lässt, entscheidet die Steuerung.",
     ],
     textZuBewegungHinweis:
       "Die Einzelheiten zum Aufbau stehen in der Beschreibung des Videos.",
@@ -509,14 +502,11 @@ const en: KinetikTexte = {
     nennerTitel: "The common denominator:",
     nennerText:
       " Because a relationship is described and not a path, a change to the geometry — a mounting point 20 millimetres further out, a slightly longer arm — is only a changed value, not new path programming.",
-    textZuBewegungH: "What you are seeing",
     textZuBewegungVideoTitel:
       "A sentence of text becomes a movement — driven by the control system",
     textZuBewegung: [
-      "No rendering, no animation being played back. The movement comes from a single sentence of text: a neural network produces a motion draft from it. The control system then drives that draft — every joint has its own controller, all of them running in common time and in one shared spatial model. What is not physically possible does not happen in the picture either.",
-      "The network supplies the intent. Whether it can be moved is decided by the control system.",
-      "The usual route would be the other way round — a graphics tool produces images, and when something is actually meant to move, it sends setpoints to a motor controller. Then the animation is the original and the machine is the copy, with every deviation in between.",
-      "Here that separation does not exist. There is one state, and the picture is a view of it. The machine would be the other.",
+      "A sentence of text describes a movement, and a neural network turns it into a draft of the movement. The control system then drives it: every joint has its own controller, all of them running in common time and in one shared spatial model. What you see is therefore not an animation being played back, but the same process that would move real axes.",
+      "The network supplies the intent. The control system decides whether it can be driven.",
     ],
     textZuBewegungHinweis:
       "The details of the setup are in the video's description.",

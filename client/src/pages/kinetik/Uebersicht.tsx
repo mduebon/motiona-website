@@ -187,19 +187,9 @@ export default function Uebersicht() {
           Text zu Bewegung. Steht bewusst direkt hinter den Miniaturen: dort hat
           der Leser fünfmal gesehen, wie kurz eine Beschreibung ausfällt — hier
           sieht er, wie aus einer Beschreibung Bewegung wird.
-
-          Bewusst nicht als Aufmacher der Seite. Der Text beginnt mit „kein
-          Rendering"; ganz oben wäre das eine Bitte um Vertrauen, an dieser
-          Stelle ist es eine Bestätigung.
         */}
         <div className="mt-16 max-w-4xl">
-          <h3
-            className={`${SPALTE} font-display text-xl font-bold tracking-tight`}
-          >
-            {s.textZuBewegungH}
-          </h3>
           <VideoEmbed
-            className="mt-6"
             id={VIDEO_TEXT_ZU_BEWEGUNG}
             titel={s.textZuBewegungVideoTitel}
           />
