@@ -84,6 +84,13 @@ export interface KinetikTexte {
      * Bewegung aus Text. Zwei verschiedene Wege.
      */
     textZuBewegungH: string;
+    /**
+     * Was auf dem Schirm zu sehen ist. Ohne diesen Satz steht der Leser vor
+     * einem Entwicklerfenster mit Tick-Zeiten und Knotengraph und muss sich
+     * selbst zusammenreimen, dass die vierzehn Kugeln ein Skelett sind. Mit
+     * ihm wird die nüchterne Oberfläche zum Beleg statt zum Stilbruch.
+     */
+    textZuBewegungWasZuSehen: string;
     textZuBewegungVideoTitel: string;
     textZuBewegung: string[];
     /** Verweis auf die Videobeschreibung, wo die Einzelheiten stehen. */
@@ -252,6 +259,8 @@ const de: KinetikTexte = {
     nennerText:
       " Weil eine Beziehung beschrieben wird und kein Weg, bedeutet auch eine Änderung an der Geometrie — ein Montagepunkt 20 Millimeter weiter außen, ein etwas längerer Arm — lediglich einen geänderten Wert und keine neue Bahnprogrammierung.",
     textZuBewegungH: "Von einem Satz zu einer Bewegung",
+    textZuBewegungWasZuSehen:
+      "Zu sehen ist die Oberfläche der Steuerung selbst: ein Skelett aus vierzehn geregelten Punkten, das läuft und springt, darunter der ActionGraph und das Eingabefeld für den Satz. Die Anzeige oben rechts nennt den Echtzeitfaktor — das Modell läuft mit, während es beschrieben wird.",
     textZuBewegungVideoTitel:
       "Aus einem Satz Text wird eine Bewegung — gefahren von der Steuerung",
     textZuBewegung: [
@@ -510,6 +519,8 @@ const en: KinetikTexte = {
     nennerText:
       " Because a relationship is described and not a path, a change to the geometry — a mounting point 20 millimetres further out, a slightly longer arm — is only a changed value, not new path programming.",
     textZuBewegungH: "From a sentence to a movement",
+    textZuBewegungWasZuSehen:
+      "What you see is the control system's own interface: a skeleton of fourteen controlled points that walks and jumps, below it the ActionGraph and the input field for the sentence. The readout in the top right gives the realtime factor — the model is running while it is being described.",
     textZuBewegungVideoTitel:
       "A sentence of text becomes a movement — driven by the control system",
     textZuBewegung: [

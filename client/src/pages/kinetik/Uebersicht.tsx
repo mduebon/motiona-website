@@ -198,6 +198,11 @@ export default function Uebersicht() {
           >
             {s.textZuBewegungH}
           </h3>
+          <p
+            className={`mt-4 ${SPALTE} text-sm leading-relaxed text-muted-foreground`}
+          >
+            {s.textZuBewegungWasZuSehen}
+          </p>
           <VideoEmbed
             className="mt-6"
             id={VIDEO_TEXT_ZU_BEWEGUNG}
