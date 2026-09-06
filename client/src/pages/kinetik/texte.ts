@@ -248,10 +248,11 @@ const de: KinetikTexte = {
     nennerText:
       " Weil eine Beziehung beschrieben wird und kein Weg, bedeutet auch eine Änderung an der Geometrie — ein Montagepunkt 20 Millimeter weiter außen, ein etwas längerer Arm — lediglich einen geänderten Wert und keine neue Bahnprogrammierung.",
     textZuBewegungVideoTitel:
-      "Menschliche Bewegung — nicht animiert, sondern gefahren",
+      "Menschliche Bewegung — das Bild folgt der Steuerung, nicht umgekehrt",
     textZuBewegung: [
       "Ein Satz Text beschreibt eine Bewegung, ein neuronales Netz macht daraus einen Bewegungsentwurf. Gefahren wird er von der Steuerung: jedes Gelenk hat einen eigenen Regler, alle laufen in gemeinsamer Zeit und in einem gemeinsamen räumlichen Modell. Was zu sehen ist, ist deshalb keine abgespielte Animation, sondern derselbe Vorgang, der auch reale Achsen bewegen würde.",
       "Das Netz liefert die Absicht. Ob sie sich fahren lässt, entscheidet die Steuerung.",
+      "Der übliche Weg wäre umgekehrt: Ein Grafikwerkzeug erzeugt die Animation, die Maschine bekommt Sollwerte und versucht ihr zu folgen. Hier ist das Bild nur eine Ausgabe — dieselbe Rechnung bewegte auch die Motoren.",
     ],
     textZuBewegungHinweis:
       "Die Einzelheiten zum Aufbau stehen in der Beschreibung des Videos.",
@@ -502,10 +503,12 @@ const en: KinetikTexte = {
     nennerTitel: "The common denominator:",
     nennerText:
       " Because a relationship is described and not a path, a change to the geometry — a mounting point 20 millimetres further out, a slightly longer arm — is only a changed value, not new path programming.",
-    textZuBewegungVideoTitel: "Human motion — not animated, but driven",
+    textZuBewegungVideoTitel:
+      "Human motion — the picture follows the control system, not the reverse",
     textZuBewegung: [
       "A sentence of text describes a movement, and a neural network turns it into a draft of the movement. The control system then drives it: every joint has its own controller, all of them running in common time and in one shared spatial model. What you see is therefore not an animation being played back, but the same process that would move real axes.",
       "The network supplies the intent. The control system decides whether it can be driven.",
+      "The usual route would be the other way round: a graphics tool produces the animation, the machine is given setpoints and tries to follow them. Here the picture is only an output — the same computation would move the motors.",
     ],
     textZuBewegungHinweis:
       "The details of the setup are in the video's description.",
