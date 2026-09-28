@@ -319,7 +319,7 @@ const de: KinetikTexte = {
     koerperH: "Mehrere Körper in einem Modell",
     koerperVideoTitel: "Eine Drohnenformation als ein System",
     koerperText: [
-      "Eine Drohnenformation als ein System: keine parallel laufenden Einzelprogramme, sondern Beziehungen in einem Modell, zur Laufzeit aufgelöst. Formation, Abstände oder Anzahl ändern sich — die Einzelbahnen folgen daraus, statt einzeln geschrieben zu werden.",
+      "Eine Drohnenformation als ein System, hier in der Simulation: keine parallel laufenden Einzelprogramme, sondern Beziehungen in einem Modell, zur Laufzeit aufgelöst. Formation, Abstände oder Anzahl ändern sich — die Einzelbahnen folgen daraus, statt einzeln geschrieben zu werden.",
       "Derselbe Grundsatz gilt für mehrachsige Mechanik, kinetische Installationen und jeden Aufbau, in dem mehrere bewegte Teile in definierter Beziehung zueinander bleiben müssen.",
     ],
   },
@@ -576,7 +576,7 @@ const en: KinetikTexte = {
     koerperH: "Several bodies in one model",
     koerperVideoTitel: "A drone formation as one system",
     koerperText: [
-      "A drone formation as one system: not individual programs running in parallel, but relationships in one model, resolved at runtime. Formation, spacing or count change — the individual paths follow from that instead of being written one by one.",
+      "A drone formation as one system, here in simulation: not individual programs running in parallel, but relationships in one model, resolved at runtime. Formation, spacing or count change — the individual paths follow from that instead of being written one by one.",
       "The same principle applies to multi-axis mechanics, kinetic installations and any setup in which several moving parts have to stay in a defined relationship to one another.",
     ],
   },

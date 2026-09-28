@@ -115,7 +115,7 @@ export default function Beispiele() {
           </h2>
           <VideoEmbed
             className="mt-6"
-            id="kN12YCLY-9U"
+            id="rFl7ppj2kE8"
             titel={s.koerperVideoTitel}
           />
           {s.koerperText.map((absatz, i) => (
