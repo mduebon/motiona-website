@@ -402,42 +402,24 @@ export const translations = {
       intro: "Videos load from YouTube only after you click.",
       kategorien: {
         produkt: "Products",
-        anwendung: "Application Notes (Industry)",
-        art: "Art and stage",
+        anwendung: "Applications",
+        art: "Explorations",
       },
       eintraege: [
         {
-          id: "jy2JHnxqBMk",
           kategorie: "anwendung",
-          titel:
-            "MotionA App Note — picking parts off a moving belt with a delta robot",
+          titel: "Picking parts off a moving belt — delta, SCARA or cobot",
           text: [
-            "On the left the Python script, on the right a simulated linear delta robot picking parts off a running conveyor and dropping them into a bin — driven by around thirty lines of code. A camera reports each new part once; the script attaches that position to the moving belt, and from then on the part’s current position follows from the belt’s motion. For MotionA it is simply a moving target in the world model.",
-            "Only the sequence is described for each part: catch up, travel with the belt, grip while moving, then drop it in the bin. How the robot follows the moving target, and which axis motions that takes, is MotionA’s job. The robot geometry lives in the machine file — linear or rotary delta, large or small, the script stays the same.",
+            "On the left the Python script, on the right the simulation: a robot picks parts off a running conveyor and drops them into a bin — driven by around thirty lines of code. A camera reports each new part once; the script attaches that position to the moving belt, and from then on the part’s current position follows from the belt’s motion. For MotionA it is simply a moving target in the world model.",
+            "Only the sequence is described for each part: catch up, travel with the belt, grip while moving, then drop it in the bin. Switch the machine above — delta, SCARA or cobot: only the machine file and the drop position change, the sequence in the script stays the same.",
+          ],
+          varianten: [
+            { id: "jy2JHnxqBMk", label: "Delta" },
+            { id: "_FT1h6zr-58", label: "SCARA" },
+            { id: "P_YaWyQ40ng", label: "Cobot" },
           ],
         },
         {
-          id: "_FT1h6zr-58",
-          kategorie: "anwendung",
-          titel:
-            "MotionA App Note — picking parts off a moving belt with a SCARA",
-          text: [
-            "On the left the Python script, on the right a simulated SCARA robot picking parts off a running conveyor and dropping them into a bin — with the same thirty-odd lines of Python as the delta robot in the app note above.",
-            "Going from delta to SCARA changes only the machine file and the drop position. Kinematics, vertical axis and limits live in the machine file; which joint motions it takes to follow the moving part is MotionA’s job. The sequence in the script stays unchanged.",
-          ],
-        },
-        {
-          id: "P_YaWyQ40ng",
-          kategorie: "anwendung",
-          titel:
-            "MotionA App Note — picking parts off a moving belt with a cobot",
-          text: [
-            "On the left the Python script, on the right a simulated six-axis cobot picking parts off a running conveyor and dropping them into a bin — with the same thirty-odd lines of Python as the delta and the SCARA in the app notes above.",
-            "Going from SCARA to cobot again changes only the machine file and the drop position. Six joints, tool length and limits live in the machine file; which joint motions it takes to follow the moving part is MotionA’s job. Delta, SCARA or cobot — the sequence in the script stays unchanged.",
-          ],
-        },
-        {
-          id: "e_F5ZE4q62g",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — setting smoothness via maximum acceleration",
@@ -445,9 +427,9 @@ export const translations = {
             "On the left the Python script, on the right a simulated pipettor filling a plate column by column. How smoothly the pipette moves depends on the maximum permitted acceleration, and the script changes that limit while the program runs — first 3 m/s², then 0.3 m/s², then 3 m/s² again.",
             "MotionA re-plans the path under the new constraints each time; maximum velocity and maximum jerk stay as they were. At 0.3 m/s² the pipette starts visibly more gently and brakes more softly, but needs roughly twice as long for the column. That is how the trade-off between smooth running and cycle time gets set — without reprogramming the motion sequence itself.",
           ],
+          varianten: [{ id: "e_F5ZE4q62g", label: "" }],
         },
         {
-          id: "RgzSc_ilglc",
           kategorie: "anwendung",
           titel:
             "One prompt, three machines — a gantry, a SCARA and a delta draw a heart",
@@ -455,9 +437,9 @@ export const translations = {
             "One prompt — “Construct a heart and draw an arrow” — and three machines draw the result at the same time: an XY gantry, a SCARA and a linear delta. The heart is drawn by construction, from straight lines and circular arcs at constant speed; the arrow freehand.",
             "The same motion commands run on all three kinematics; only the machine description differs. The axes are simulated, and the prompt entry on the left is illustrative.",
           ],
+          varianten: [{ id: "RgzSc_ilglc", label: "" }],
         },
         {
-          id: "7BnUx9JtsB4",
           kategorie: "art",
           titel:
             "From text to machine motion — AI-generated movement drives a SCARA and a cobot",
@@ -465,9 +447,9 @@ export const translations = {
             "Type a sentence, get motion. An open-source neural network (MoMask) generates human movement from a text prompt. MotionA describes the relationships between the skeleton’s points with a few simple rules and runs the skeleton and the machines as one control program. The prompt in this clip: “a person does jumping jacks”.",
             "The SCARA on the left and the cobot on the right are simulated, but MotionA uses the same control logic it would use for physical machines: it solves their inverse kinematics and calculates a trajectory for each axis, respecting joint limits and limits on velocity, acceleration and jerk. The remaining skeleton points are virtual and have no mechanical constraints — both run in a single program. The wait for motion generation has been cut.",
           ],
+          varianten: [{ id: "7BnUx9JtsB4", label: "" }],
         },
         {
-          id: "Qjs5bP1fkxQ",
           kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive measuring, first simulated then real",
@@ -475,6 +457,7 @@ export const translations = {
             "MotionA Measure inspects parts without contact, on site at the customer — a rentable system built from aluminium profiles, a measuring head and the MotionController, described and operated with MotionA. The measuring sequence is built entirely in simulation first; later the real components are connected and nothing about the sequence changes.",
             "Instead of fixed programmed positions, MotionA keeps track of how everything relates while it measures: the part, the reference body, the individual measuring fields. Each result becomes the starting point for the next — in the video the beam stays on the reference sphere while the table brings the next field into place, with nothing reprogrammed for it. The system can also react to its own results, tracking the sensor when a surface leaves the measuring range or re-measuring specific areas.",
           ],
+          varianten: [{ id: "Qjs5bP1fkxQ", label: "" }],
         },
       ],
     },
@@ -912,42 +895,24 @@ export const translations = {
       intro: "Videos werden erst nach einem Klick von YouTube geladen.",
       kategorien: {
         produkt: "Produkte",
-        anwendung: "Application Notes (Industrie)",
-        art: "Kunst und Bühne",
+        anwendung: "Anwendungen",
+        art: "Freie Arbeiten",
       },
       eintraege: [
         {
-          id: "jy2JHnxqBMk",
           kategorie: "anwendung",
-          titel:
-            "MotionA App Note — Teile vom laufenden Band greifen mit einem Delta-Roboter",
+          titel: "Teile vom laufenden Band greifen — Delta, SCARA oder Cobot",
           text: [
-            "Links das Python-Skript, rechts die Simulation eines Linear-Delta-Roboters, der Teile von einem laufenden Förderband greift und in einem Behälter ablegt — gesteuert von rund dreißig Zeilen Code. Eine Kamera meldet jedes neue Teil einmalig; das Skript ordnet dessen Position dem laufenden Band zu. Von da an ergibt sich die aktuelle Position aus der Bewegung des Bandes — für MotionA ist es ein bewegtes Ziel im Weltmodell.",
-            "Beschrieben wird je Teil nur der Ablauf: einholen, mit dem Band mitfahren, während der Bewegung greifen, im Behälter ablegen. Wie der Roboter dem bewegten Ziel folgt und welche Achsbewegungen dafür nötig sind, übernimmt MotionA. Die Geometrie steht in der Maschinendatei — ob Linear- oder Rotationsdelta, ob groß oder klein, der Ablauf im Skript bleibt derselbe.",
+            "Links das Python-Skript, rechts die Simulation: Ein Roboter greift Teile von einem laufenden Förderband und legt sie im Behälter ab — gesteuert von rund dreißig Zeilen Code. Eine Kamera meldet jedes neue Teil einmalig; das Skript ordnet dessen Position dem laufenden Band zu. Von da an ergibt sich die aktuelle Position aus der Bewegung des Bandes — für MotionA ist es ein bewegtes Ziel im Weltmodell.",
+            "Beschrieben wird je Teil nur der Ablauf: einholen, mit dem Band mitfahren, während der Bewegung greifen, im Behälter ablegen. Wechseln Sie oben die Maschine — Delta, SCARA oder Cobot: Es ändern sich nur die Maschinendatei und die Ablageposition, der Ablauf im Skript bleibt derselbe.",
+          ],
+          varianten: [
+            { id: "jy2JHnxqBMk", label: "Delta" },
+            { id: "_FT1h6zr-58", label: "SCARA" },
+            { id: "P_YaWyQ40ng", label: "Cobot" },
           ],
         },
         {
-          id: "_FT1h6zr-58",
-          kategorie: "anwendung",
-          titel:
-            "MotionA App Note — Teile mit einem SCARA vom laufenden Band greifen",
-          text: [
-            "Links das Python-Skript, rechts die Simulation eines SCARA-Roboters, der Teile von einem laufenden Förderband greift und im Behälter ablegt — mit denselben rund dreißig Zeilen Python wie der Delta-Roboter in der App Note darüber.",
-            "Vom Delta zum SCARA ändern sich nur die Maschinendatei und die Ablageposition. Kinematik, Hubachse und Grenzwerte stehen in der Maschinendatei; welche Gelenkbewegungen nötig sind, um dem bewegten Teil zu folgen, berechnet MotionA. Der Ablauf im Skript bleibt unverändert.",
-          ],
-        },
-        {
-          id: "P_YaWyQ40ng",
-          kategorie: "anwendung",
-          titel:
-            "MotionA App Note — Teile mit einem Cobot vom laufenden Band greifen",
-          text: [
-            "Links das Python-Skript, rechts die Simulation eines Sechsachs-Cobots, der Teile von einem laufenden Förderband greift und im Behälter ablegt — mit denselben rund dreißig Zeilen Python wie Delta und SCARA in den App Notes darüber.",
-            "Vom SCARA zum Cobot ändern sich wieder nur die Maschinendatei und die Ablageposition. Sechs Gelenke, Werkzeuglänge und Grenzwerte stehen in der Maschinendatei; welche Gelenkbewegungen nötig sind, um dem bewegten Teil zu folgen, berechnet MotionA. Ob Delta, SCARA oder Cobot — der Ablauf im Skript bleibt unverändert.",
-          ],
-        },
-        {
-          id: "e_F5ZE4q62g",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — Laufruhe über die maximale Beschleunigung einstellen",
@@ -955,9 +920,9 @@ export const translations = {
             "Links das Python-Skript, rechts die Simulation eines Pipettierers, der eine Platte Spalte für Spalte füllt. Wie ruhig sich die Pipette bewegt, hängt an der maximal erlaubten Beschleunigung — und das Skript ändert diesen Grenzwert im laufenden Programm: erst 3 m/s², dann 0,3 m/s², dann wieder 3 m/s².",
             "MotionA plant die Bahn jeweils unter den neuen Randbedingungen neu; maximale Geschwindigkeit und maximaler Ruck bleiben unverändert. Bei 0,3 m/s² fährt die Pipette sichtbar sanfter an und bremst weicher ab, braucht für die Spalte aber ungefähr doppelt so lange. So lässt sich der Kompromiss zwischen Laufruhe und Taktzeit einstellen, ohne den Bewegungsablauf neu zu programmieren.",
           ],
+          varianten: [{ id: "e_F5ZE4q62g", label: "" }],
         },
         {
-          id: "RgzSc_ilglc",
           kategorie: "anwendung",
           titel:
             "Ein Prompt, drei Maschinen — Portal, SCARA und Delta zeichnen ein Herz",
@@ -965,9 +930,9 @@ export const translations = {
             "Ein Prompt — „Construct a heart and draw an arrow“ — und drei Maschinen zeichnen das Ergebnis gleichzeitig: ein XY-Portal, ein SCARA und ein Lineardelta. Das Herz entsteht konstruiert, aus Geraden und Kreisbögen mit konstanter Geschwindigkeit, der Pfeil freihand.",
             "Auf allen drei Kinematiken laufen dieselben Bewegungsbefehle; nur die Maschinenbeschreibung unterscheidet sich. Die Achsen sind simuliert, und die Prompt-Eingabe links ist nachgestellt.",
           ],
+          varianten: [{ id: "RgzSc_ilglc", label: "" }],
         },
         {
-          id: "7BnUx9JtsB4",
           kategorie: "art",
           titel:
             "Von Text zu Maschinenbewegung — KI-erzeugte Bewegung treibt SCARA und Cobot",
@@ -975,9 +940,9 @@ export const translations = {
             "Ein Satz Text, daraus eine Bewegung: Ein quelloffenes neuronales Netz (MoMask) erzeugt menschliche Bewegung aus einem Prompt. MotionA beschreibt mit wenigen einfachen Regeln, wie die Punkte des Skeletts zueinander stehen, und führt Skelett und Maschinen als ein einziges Steuerungsprogramm aus. Der Prompt in diesem Ausschnitt lautete „a person does jumping jacks“.",
             "SCARA links und Cobot rechts sind simuliert, die Steuerungslogik ist dieselbe wie für echte Maschinen: MotionA löst ihre inverse Kinematik und rechnet für jede Achse eine Bahn, die Gelenkgrenzen sowie Grenzen für Geschwindigkeit, Beschleunigung und Ruck einhält. Die übrigen Skelettpunkte sind virtuell und haben keine mechanischen Grenzen — beides läuft in einem Programm. Die Wartezeit auf die Bewegungserzeugung ist herausgeschnitten.",
           ],
+          varianten: [{ id: "7BnUx9JtsB4", label: "" }],
         },
         {
-          id: "Qjs5bP1fkxQ",
           kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive Messsysteme, erst simuliert, dann real",
@@ -985,6 +950,7 @@ export const translations = {
             "MotionA Measure misst Bauteile berührungslos beim Kunden vor Ort — eine mietbare Anlage aus Aluprofilen, Messkopf und MotionController, beschrieben und betrieben mit MotionA. Der Messablauf entsteht zuerst vollständig in der Simulation; später werden die echten Komponenten angeschlossen, am Ablauf selbst ändert sich nichts.",
             "Statt fest programmierter Positionen führt MotionA während der Messung mit, wie alles zusammenhängt: Bauteil, Referenzkörper, die einzelnen Messfelder. Das Ergebnis einer Messung ist der Ausgangspunkt der nächsten — im Video bleibt der Messstrahl auf der Referenzkugel, während der Tisch das nächste Feld heranfährt, ohne dass dafür etwas nachprogrammiert wird. Die Anlage kann zudem auf ihre eigenen Ergebnisse reagieren: den Sensor nachführen, wenn eine Fläche aus dem Messbereich läuft, oder Bereiche gezielt nachmessen.",
           ],
+          varianten: [{ id: "Qjs5bP1fkxQ", label: "" }],
         },
       ],
     },
