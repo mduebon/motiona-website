@@ -46,6 +46,7 @@ const DAUER: Record<string, string> = {
   e_F5ZE4q62g: "1:02",
   jy2JHnxqBMk: "0:39",
   "_FT1h6zr-58": "0:39",
+  P_YaWyQ40ng: "0:39",
   "7BnUx9JtsB4": "0:51",
 };
 

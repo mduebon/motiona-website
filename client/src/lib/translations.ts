@@ -427,6 +427,16 @@ export const translations = {
           ],
         },
         {
+          id: "P_YaWyQ40ng",
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — picking parts off a moving belt with a cobot",
+          text: [
+            "On the left the Python script, on the right a simulated six-axis cobot picking parts off a running conveyor and dropping them into a bin — with the same thirty-odd lines of Python as the delta and the SCARA in the app notes above.",
+            "Going from SCARA to cobot again changes only the machine file and the drop position. Six joints, tool length and limits live in the machine file; which joint motions it takes to follow the moving part is MotionA’s job. Delta, SCARA or cobot — the sequence in the script stays unchanged.",
+          ],
+        },
+        {
           id: "e_F5ZE4q62g",
           kategorie: "anwendung",
           titel:
@@ -914,6 +924,16 @@ export const translations = {
           text: [
             "Links das Python-Skript, rechts die Simulation eines SCARA-Roboters, der Teile von einem laufenden Förderband greift und im Behälter ablegt — mit denselben rund dreißig Zeilen Python wie der Delta-Roboter in der App Note darüber.",
             "Vom Delta zum SCARA ändern sich nur die Maschinendatei und die Ablageposition. Kinematik, Hubachse und Grenzwerte stehen in der Maschinendatei; welche Gelenkbewegungen nötig sind, um dem bewegten Teil zu folgen, berechnet MotionA. Der Ablauf im Skript bleibt unverändert.",
+          ],
+        },
+        {
+          id: "P_YaWyQ40ng",
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — Teile mit einem Cobot vom laufenden Band greifen",
+          text: [
+            "Links das Python-Skript, rechts die Simulation eines Sechsachs-Cobots, der Teile von einem laufenden Förderband greift und im Behälter ablegt — mit denselben rund dreißig Zeilen Python wie Delta und SCARA in den App Notes darüber.",
+            "Vom SCARA zum Cobot ändern sich wieder nur die Maschinendatei und die Ablageposition. Sechs Gelenke, Werkzeuglänge und Grenzwerte stehen in der Maschinendatei; welche Gelenkbewegungen nötig sind, um dem bewegten Teil zu folgen, berechnet MotionA. Ob Delta, SCARA oder Cobot — der Ablauf im Skript bleibt unverändert.",
           ],
         },
         {
