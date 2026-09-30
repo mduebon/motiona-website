@@ -40,6 +40,7 @@ const DAUER: Record<string, string> = {
   GFF37Meparc: "2:05",
   eFuo1gsnpqs: "1:02",
   p2cG7OkNGHc: "0:39",
+  nxwkMzirkyU: "0:39",
 };
 
 export default function Videos() {

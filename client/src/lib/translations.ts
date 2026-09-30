@@ -417,6 +417,16 @@ export const translations = {
           ],
         },
         {
+          id: "nxwkMzirkyU",
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — picking parts off a moving belt with a SCARA",
+          text: [
+            "On the left the Python script, on the right a simulated SCARA robot picking parts off a running conveyor and dropping them into a bin — with the same thirty-odd lines of Python as the delta robot in the app note above.",
+            "Going from delta to SCARA changes only the machine file and the drop position. Kinematics, vertical axis and limits live in the machine file; which joint motions it takes to follow the moving part is MotionA’s job. The sequence in the script stays unchanged.",
+          ],
+        },
+        {
           id: "eFuo1gsnpqs",
           kategorie: "anwendung",
           titel:
@@ -884,6 +894,16 @@ export const translations = {
           text: [
             "Links das Python-Skript, rechts die Simulation eines Linear-Delta-Roboters, der Teile von einem laufenden Förderband greift und in einem Behälter ablegt — gesteuert von rund dreißig Zeilen Code. Eine Kamera meldet jedes neue Teil einmalig; das Skript ordnet dessen Position dem laufenden Band zu. Von da an ergibt sich die aktuelle Position aus der Bewegung des Bandes — für MotionA ist es ein bewegtes Ziel im Weltmodell.",
             "Beschrieben wird je Teil nur der Ablauf: einholen, mit dem Band mitfahren, während der Bewegung greifen, im Behälter ablegen. Wie der Roboter dem bewegten Ziel folgt und welche Achsbewegungen dafür nötig sind, übernimmt MotionA. Die Geometrie steht in der Maschinendatei — ob Linear- oder Rotationsdelta, ob groß oder klein, der Ablauf im Skript bleibt derselbe.",
+          ],
+        },
+        {
+          id: "nxwkMzirkyU",
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — Teile mit einem SCARA vom laufenden Band greifen",
+          text: [
+            "Links das Python-Skript, rechts die Simulation eines SCARA-Roboters, der Teile von einem laufenden Förderband greift und im Behälter ablegt — mit denselben rund dreißig Zeilen Python wie der Delta-Roboter in der App Note darüber.",
+            "Vom Delta zum SCARA ändern sich nur die Maschinendatei und die Ablageposition. Kinematik, Hubachse und Grenzwerte stehen in der Maschinendatei; welche Gelenkbewegungen nötig sind, um dem bewegten Teil zu folgen, berechnet MotionA. Der Ablauf im Skript bleibt unverändert.",
           ],
         },
         {
