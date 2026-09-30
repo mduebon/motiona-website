@@ -447,6 +447,16 @@ export const translations = {
           ],
         },
         {
+          id: "RgzSc_ilglc",
+          kategorie: "anwendung",
+          titel:
+            "One prompt, three machines — a gantry, a SCARA and a delta draw a heart",
+          text: [
+            "One prompt — “Construct a heart and draw an arrow” — and three machines draw the result at the same time: an XY gantry, a SCARA and a linear delta. The heart is drawn by construction, from straight lines and circular arcs at constant speed; the arrow freehand.",
+            "The same motion commands run on all three kinematics; only the machine description differs. The axes are simulated, and the prompt entry on the left is illustrative.",
+          ],
+        },
+        {
           id: "7BnUx9JtsB4",
           kategorie: "art",
           titel:
@@ -944,6 +954,16 @@ export const translations = {
           text: [
             "Links das Python-Skript, rechts die Simulation eines Pipettierers, der eine Platte Spalte für Spalte füllt. Wie ruhig sich die Pipette bewegt, hängt an der maximal erlaubten Beschleunigung — und das Skript ändert diesen Grenzwert im laufenden Programm: erst 3 m/s², dann 0,3 m/s², dann wieder 3 m/s².",
             "MotionA plant die Bahn jeweils unter den neuen Randbedingungen neu; maximale Geschwindigkeit und maximaler Ruck bleiben unverändert. Bei 0,3 m/s² fährt die Pipette sichtbar sanfter an und bremst weicher ab, braucht für die Spalte aber ungefähr doppelt so lange. So lässt sich der Kompromiss zwischen Laufruhe und Taktzeit einstellen, ohne den Bewegungsablauf neu zu programmieren.",
+          ],
+        },
+        {
+          id: "RgzSc_ilglc",
+          kategorie: "anwendung",
+          titel:
+            "Ein Prompt, drei Maschinen — Portal, SCARA und Delta zeichnen ein Herz",
+          text: [
+            "Ein Prompt — „Construct a heart and draw an arrow“ — und drei Maschinen zeichnen das Ergebnis gleichzeitig: ein XY-Portal, ein SCARA und ein Lineardelta. Das Herz entsteht konstruiert, aus Geraden und Kreisbögen mit konstanter Geschwindigkeit, der Pfeil freihand.",
+            "Auf allen drei Kinematiken laufen dieselben Bewegungsbefehle; nur die Maschinenbeschreibung unterscheidet sich. Die Achsen sind simuliert, und die Prompt-Eingabe links ist nachgestellt.",
           ],
         },
         {
