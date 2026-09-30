@@ -10,6 +10,8 @@ import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import Imprint from "./pages/Imprint";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import About from "./pages/About";
+import Videos from "./pages/Videos";
 import { KINETIK_BASIS } from "./pages/kinetik/seiten";
 import Uebersicht from "./pages/kinetik/Uebersicht";
 import Beispiele from "./pages/kinetik/Beispiele";
@@ -24,6 +26,8 @@ function Router() {
       <Route path={"/product/:slug"} component={ProductDetail} />
       <Route path={"/imprint"} component={Imprint} />
       <Route path={"/privacy"} component={PrivacyPolicy} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/videos"} component={Videos} />
 
       {/*
         Der unverlinkte Kinetik-Bereich. Basispfad und Reihenfolge stehen in

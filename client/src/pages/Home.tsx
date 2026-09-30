@@ -80,6 +80,12 @@ export default function Home() {
             <a href="#contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               {t.header.contact}
             </a>
+            <Link href="/videos" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              {t.videos.title}
+            </Link>
+            <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              {t.about.title}
+            </Link>
             <Button
               variant="outline"
               size="sm"
@@ -769,6 +775,14 @@ export default function Home() {
           <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-80">
             <p>{t.footer.copyright}</p>
             <div className="flex items-center gap-4">
+              <Link href="/about" className="hover:opacity-100 transition-opacity">
+                {t.about.title}
+              </Link>
+              <span>|</span>
+              <Link href="/videos" className="hover:opacity-100 transition-opacity">
+                {t.videos.title}
+              </Link>
+              <span>|</span>
               <Link href="/imprint" className="hover:opacity-100 transition-opacity">
                 {t.footer.imprint}
               </Link>
