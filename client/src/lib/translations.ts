@@ -400,13 +400,14 @@ export const translations = {
       intro:
         "Recordings from development and from real installations. Nothing is edited for effect — they show what the control system actually does. Videos load from YouTube only after you click.",
       kategorien: {
+        produkt: "Products",
         anwendung: "Application Notes (Industry)",
         art: "Art and stage",
       },
       eintraege: [
         {
           id: "GFF37Meparc",
-          kategorie: "anwendung",
+          kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive measuring, first simulated then real",
           text: "A gantry measures a car fender: reference spheres, scan fields, form deviation against the CAD surface. The same description runs in simulation and on the machine — the toggle in the top right switches between them. Measurement uncertainty per point is not simulated; it is determined by a calibration run once the system is installed.",
@@ -845,13 +846,14 @@ export const translations = {
       intro:
         "Aufnahmen aus der Entwicklung und von realen Aufbauten. Nichts davon ist auf Wirkung geschnitten — zu sehen ist, was die Steuerung tut. Videos werden erst nach einem Klick von YouTube geladen.",
       kategorien: {
+        produkt: "Produkte",
         anwendung: "Application Notes (Industrie)",
         art: "Kunst und Bühne",
       },
       eintraege: [
         {
           id: "GFF37Meparc",
-          kategorie: "anwendung",
+          kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive Messsysteme, erst simuliert, dann real",
           text: "Ein Portal vermisst einen Kotflügel: Referenzkugeln, Scanfelder, Formabweichung gegen die CAD-Sollfläche. Dieselbe Beschreibung läuft in der Simulation und auf der Anlage — der Umschalter oben rechts wechselt zwischen beiden. Die Messunsicherheit je Punkt wird nicht simuliert, sondern nach der Aufstellung per Kalibrierlauf bestimmt.",

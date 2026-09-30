@@ -201,9 +201,5 @@ im Server entfernen, Link in die Navigation aufnehmen.
 - [ ] Der Fließtext läuft auf `system-ui`, nicht auf Inter: `--font-body` in
       `index.css` nennt Inter, geladen wurde es nie. Entweder Inter lokal
       ergänzen oder das Token an die Wirklichkeit anpassen
-- [ ] Die Datenschutzseite hat ihre Absätze fest im JSX auf Englisch; nur die
-      Überschriften sind übersetzt. Der deutsche Aufruf zeigt also englischen
-      Rechtstext. Ausnahme ist der neue Abschnitt 12, der zweisprachig in
-      `privacy-translations.ts` steht
 - [ ] Datenschutzseite juristisch prüfen lassen — Abschnitt 12 beschreibt
       wahrheitsgemäß, was der Code tut, ist aber keine Rechtsberatung

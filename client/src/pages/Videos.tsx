@@ -17,8 +17,11 @@ import VideoEmbed from "@/components/VideoEmbed";
 import SeitenLayout, { SPALTE } from "@/components/SeitenLayout";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-/** Reihenfolge der Abschnitte auf der Seite. */
-const REIHENFOLGE = ["anwendung", "art"] as const;
+/**
+ * Reihenfolge der Abschnitte auf der Seite. Produkte zuerst: MotionA Measure ist ein eigenes Produkt und keine
+ * Anwendung eines fremden — das zu vermischen wäre die falsche Auskunft.
+ */
+const REIHENFOLGE = ["produkt", "anwendung", "art"] as const;
 
 export default function Videos() {
   const { t } = useLanguage();
