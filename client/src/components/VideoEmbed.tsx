@@ -59,9 +59,31 @@ interface VideoEmbedProps {
    * hinschreibt.
    */
   className?: string;
+  /**
+   * Spieldauer als "2:05". Steht unten rechts im Standbild, wie man es von
+   * Videolisten kennt. Einmal ausgelesen und fest hinterlegt — zur Laufzeit
+   * geht dafuer kein Request an Google.
+   */
+  dauer?: string;
+  /**
+   * Ob der Titel im Feld steht. Auf den Kinetik-Seiten ja: dort traegt das Feld
+   * den Titel, weil daneben nichts steht. Auf der Videoseite nein — dort
+   * steht der Titel rechts neben dem Bild, und im Feld waere er eine Dopplung.
+   *
+   * Daran haengt auch der Schleier ueber dem Standbild: Der ist nur noetig,
+   * damit Text auf dem Bild lesbar bleibt. Ohne Titel im Feld darf das Bild
+   * unverdeckt zeigen, was es zeigt.
+   */
+  titelImFeld?: boolean;
 }
 
-export default function VideoEmbed({ id, titel, className }: VideoEmbedProps) {
+export default function VideoEmbed({
+  id,
+  titel,
+  className,
+  dauer,
+  titelImFeld = true,
+}: VideoEmbedProps) {
   const [geladen, setGeladen] = useState(false);
   const [standbildDa, setStandbildDa] = useState(true);
   const { language } = useLanguage();
@@ -106,9 +128,11 @@ export default function VideoEmbed({ id, titel, className }: VideoEmbedProps) {
               onClick={() => setGeladen(true)}
               aria-label={b.abspielen(titel)}
               className={`group absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 transition-colors sm:gap-4 sm:px-6 ${
-                standbildDa
-                  ? "bg-background/75 hover:bg-background/55"
-                  : "hover:bg-secondary/60"
+                !standbildDa
+                  ? "hover:bg-secondary/60"
+                  : titelImFeld
+                    ? "bg-background/75 hover:bg-background/55"
+                    : "hover:bg-background/20"
               }`}
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-foreground/40 transition-colors group-hover:border-primary group-hover:bg-primary sm:h-16 sm:w-16">
@@ -120,13 +144,20 @@ export default function VideoEmbed({ id, titel, className }: VideoEmbedProps) {
               der Hinweis gerade hinein. Wesentlich längere Titel als die
               bisherigen (max. 78 Zeichen) würden anstoßen.
             */}
-              <span className="max-w-[34rem] text-center font-display text-sm font-medium leading-snug text-foreground sm:text-lg">
-                {titel}
-              </span>
+              {titelImFeld && (
+                <span className="max-w-[34rem] text-center font-display text-sm font-medium leading-snug text-foreground sm:text-lg">
+                  {titel}
+                </span>
+              )}
               <span className="section-label text-muted-foreground">
                 {b.laden}
               </span>
             </button>
+            {dauer && (
+              <span className="pointer-events-none absolute bottom-2 right-2 rounded-sm bg-foreground/80 px-1.5 py-0.5 font-mono text-xs tabular-nums text-background">
+                {dauer}
+              </span>
+            )}
           </>
         )}
       </div>

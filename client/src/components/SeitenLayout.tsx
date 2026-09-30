@@ -22,10 +22,13 @@ export const SPALTE = "max-w-[34rem]";
 
 export default function SeitenLayout({
   titel,
+  kernsatz,
   einleitung,
   children,
 }: {
   titel: string;
+  /** Steht groß und fett direkt unter der Überschrift. Die Hauptaussage. */
+  kernsatz?: string;
   einleitung?: string;
   children: ReactNode;
 }) {
@@ -58,8 +61,24 @@ export default function SeitenLayout({
         >
           {titel}
         </h1>
+        {/*
+          Der Kernsatz steht auf eigener Fläche, nicht nur in größerer Schrift.
+          Als Fließtext unter der Überschrift wird er überlesen; mit Akzentlinie
+          und abgesetztem Grund ist er eine andere Oberfläche, und das Auge
+          landet dort. Dieselbe Behandlung wie die Rollenklärung im
+          Kinetik-Bereich — deshalb border-l und kein Kasten mit Rahmen.
+        */}
+        {kernsatz && (
+          <div className="mt-8 max-w-4xl border-l-4 border-primary bg-secondary px-6 py-6 md:px-8 md:py-8">
+            <p className="max-w-[46rem] text-xl font-medium leading-snug md:text-2xl">
+              {kernsatz}
+            </p>
+          </div>
+        )}
         {einleitung && (
-          <p className={`mt-6 ${SPALTE} leading-relaxed text-foreground/90`}>
+          <p
+            className={`mt-4 ${SPALTE} text-sm leading-relaxed text-muted-foreground`}
+          >
             {einleitung}
           </p>
         )}
