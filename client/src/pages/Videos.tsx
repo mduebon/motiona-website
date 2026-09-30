@@ -43,11 +43,14 @@ export default function Videos() {
               {eintraege.map(e => (
                 <article key={e.id}>
                   <VideoEmbed id={e.id} titel={e.titel} />
-                  <p
-                    className={`mt-6 ${SPALTE} leading-relaxed text-foreground/90`}
-                  >
-                    {e.text}
-                  </p>
+                  {e.text.map((absatz, i) => (
+                    <p
+                      key={i}
+                      className={`mt-6 ${SPALTE} leading-relaxed text-foreground/90`}
+                    >
+                      {absatz}
+                    </p>
+                  ))}
                 </article>
               ))}
             </div>

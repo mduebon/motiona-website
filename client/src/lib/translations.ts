@@ -406,11 +406,34 @@ export const translations = {
       },
       eintraege: [
         {
+          id: "p2cG7OkNGHc",
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — picking parts off a moving belt with a delta robot",
+          text: [
+            "On the left the Python script, on the right a simulated linear delta robot picking parts off a running conveyor and dropping them into a bin — driven by around thirty lines of code. A camera reports each new part once; the script attaches that position to the moving belt, and from then on the part’s current position follows from the belt’s motion. For MotionA it is simply a moving target in the world model.",
+            "Only the sequence is described for each part: catch up, travel with the belt, grip while moving, then drop it in the bin. How the robot follows the moving target, and which axis motions that takes, is MotionA’s job. The robot geometry lives in the machine file — linear or rotary delta, large or small, the script stays the same.",
+          ],
+        },
+        {
+          id: "eFuo1gsnpqs",
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — setting smoothness via maximum acceleration",
+          text: [
+            "On the left the Python script, on the right a simulated pipettor filling a plate column by column. How smoothly the pipette moves depends on the maximum permitted acceleration, and the script changes that limit while the program runs — first 3 m/s², then 0.3 m/s², then 3 m/s² again.",
+            "MotionA re-plans the path under the new constraints each time; maximum velocity and maximum jerk stay as they were. At 0.3 m/s² the pipette starts visibly more gently and brakes more softly, but needs roughly twice as long for the column. That is how the trade-off between smooth running and cycle time gets set — without reprogramming the motion sequence itself.",
+          ],
+        },
+        {
           id: "GFF37Meparc",
           kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive measuring, first simulated then real",
-          text: "A gantry measures a car fender: reference spheres, scan fields, form deviation against the CAD surface. The same description runs in simulation and on the machine — the toggle in the top right switches between them. Measurement uncertainty per point is not simulated; it is determined by a calibration run once the system is installed.",
+          text: [
+            "MotionA Measure inspects parts without contact, on site at the customer — a rentable system built from aluminium profiles, a measuring head and the MotionController, described and operated with MotionA. The measuring sequence is built entirely in simulation first; later the real components are connected and nothing about the sequence changes.",
+            "Instead of fixed programmed positions, MotionA keeps track of how everything relates while it measures: the part, the reference body, the individual measuring fields. Each result becomes the starting point for the next — in the video the beam stays on the reference sphere while the table brings the next field into place, with nothing reprogrammed for it. The system can also react to its own results, tracking the sensor when a surface leaves the measuring range or re-measuring specific areas.",
+          ],
         },
       ],
     },
@@ -852,11 +875,34 @@ export const translations = {
       },
       eintraege: [
         {
+          id: "p2cG7OkNGHc",
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — Teile vom laufenden Band greifen mit einem Delta-Roboter",
+          text: [
+            "Links das Python-Skript, rechts die Simulation eines Linear-Delta-Roboters, der Teile von einem laufenden Förderband greift und in einem Behälter ablegt — gesteuert von rund dreißig Zeilen Code. Eine Kamera meldet jedes neue Teil einmalig; das Skript ordnet dessen Position dem laufenden Band zu. Von da an ergibt sich die aktuelle Position aus der Bewegung des Bandes — für MotionA ist es ein bewegtes Ziel im Weltmodell.",
+            "Beschrieben wird je Teil nur der Ablauf: einholen, mit dem Band mitfahren, während der Bewegung greifen, im Behälter ablegen. Wie der Roboter dem bewegten Ziel folgt und welche Achsbewegungen dafür nötig sind, übernimmt MotionA. Die Geometrie steht in der Maschinendatei — ob Linear- oder Rotationsdelta, ob groß oder klein, der Ablauf im Skript bleibt derselbe.",
+          ],
+        },
+        {
+          id: "eFuo1gsnpqs",
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — Laufruhe über die maximale Beschleunigung einstellen",
+          text: [
+            "Links das Python-Skript, rechts die Simulation eines Pipettierers, der eine Platte Spalte für Spalte füllt. Wie ruhig sich die Pipette bewegt, hängt an der maximal erlaubten Beschleunigung — und das Skript ändert diesen Grenzwert im laufenden Programm: erst 3 m/s², dann 0,3 m/s², dann wieder 3 m/s².",
+            "MotionA plant die Bahn jeweils unter den neuen Randbedingungen neu; maximale Geschwindigkeit und maximaler Ruck bleiben unverändert. Bei 0,3 m/s² fährt die Pipette sichtbar sanfter an und bremst weicher ab, braucht für die Spalte aber ungefähr doppelt so lange. So lässt sich der Kompromiss zwischen Laufruhe und Taktzeit einstellen, ohne den Bewegungsablauf neu zu programmieren.",
+          ],
+        },
+        {
           id: "GFF37Meparc",
           kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive Messsysteme, erst simuliert, dann real",
-          text: "Ein Portal vermisst einen Kotflügel: Referenzkugeln, Scanfelder, Formabweichung gegen die CAD-Sollfläche. Dieselbe Beschreibung läuft in der Simulation und auf der Anlage — der Umschalter oben rechts wechselt zwischen beiden. Die Messunsicherheit je Punkt wird nicht simuliert, sondern nach der Aufstellung per Kalibrierlauf bestimmt.",
+          text: [
+            "MotionA Measure misst Bauteile berührungslos beim Kunden vor Ort — eine mietbare Anlage aus Aluprofilen, Messkopf und MotionController, beschrieben und betrieben mit MotionA. Der Messablauf entsteht zuerst vollständig in der Simulation; später werden die echten Komponenten angeschlossen, am Ablauf selbst ändert sich nichts.",
+            "Statt fest programmierter Positionen führt MotionA während der Messung mit, wie alles zusammenhängt: Bauteil, Referenzkörper, die einzelnen Messfelder. Das Ergebnis einer Messung ist der Ausgangspunkt der nächsten — im Video bleibt der Messstrahl auf der Referenzkugel, während der Tisch das nächste Feld heranfährt, ohne dass dafür etwas nachprogrammiert wird. Die Anlage kann zudem auf ihre eigenen Ergebnisse reagieren: den Sensor nachführen, wenn eine Fläche aus dem Messbereich läuft, oder Bereiche gezielt nachmessen.",
+          ],
         },
       ],
     },
