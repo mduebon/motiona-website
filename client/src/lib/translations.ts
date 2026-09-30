@@ -407,7 +407,7 @@ export const translations = {
       },
       eintraege: [
         {
-          id: "8NmbPDpvB5M",
+          id: "jy2JHnxqBMk",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — picking parts off a moving belt with a delta robot",
@@ -417,7 +417,7 @@ export const translations = {
           ],
         },
         {
-          id: "C6VZTbuj9P8",
+          id: "_FT1h6zr-58",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — picking parts off a moving belt with a SCARA",
@@ -427,7 +427,7 @@ export const translations = {
           ],
         },
         {
-          id: "7kXLh4mEfrI",
+          id: "e_F5ZE4q62g",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — setting smoothness via maximum acceleration",
@@ -897,7 +897,7 @@ export const translations = {
       },
       eintraege: [
         {
-          id: "8NmbPDpvB5M",
+          id: "jy2JHnxqBMk",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — Teile vom laufenden Band greifen mit einem Delta-Roboter",
@@ -907,7 +907,7 @@ export const translations = {
           ],
         },
         {
-          id: "C6VZTbuj9P8",
+          id: "_FT1h6zr-58",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — Teile mit einem SCARA vom laufenden Band greifen",
@@ -917,7 +917,7 @@ export const translations = {
           ],
         },
         {
-          id: "7kXLh4mEfrI",
+          id: "e_F5ZE4q62g",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — Laufruhe über die maximale Beschleunigung einstellen",

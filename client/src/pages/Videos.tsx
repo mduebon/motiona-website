@@ -37,12 +37,15 @@ const REIHENFOLGE = ["produkt", "anwendung", "art"] as const;
  * auseinander. Fehlt ein Eintrag, bleibt die Marke einfach weg.
  */
 const DAUER: Record<string, string> = {
-  // Schluessel in Anfuehrungszeichen: Zwei der IDs beginnen mit einer Ziffer
-  // und waeren als blosse Bezeichner kein gueltiges JavaScript.
+  // Zwei Schlüssel stehen in Anführungszeichen, weil YouTube-IDs mit einer
+  // Ziffer beginnen oder einen Bindestrich enthalten dürfen — beides ist als
+  // blosser Bezeichner kein gültiges JavaScript. Bei den übrigen entfernt
+  // Prettier die Zeichen wieder; einfach immer welche setzen und es sortiert
+  // sich von selbst.
   Qjs5bP1fkxQ: "2:05",
-  "7kXLh4mEfrI": "1:02",
-  "8NmbPDpvB5M": "0:39",
-  C6VZTbuj9P8: "0:39",
+  e_F5ZE4q62g: "1:02",
+  jy2JHnxqBMk: "0:39",
+  "_FT1h6zr-58": "0:39",
   "7BnUx9JtsB4": "0:51",
 };
 
