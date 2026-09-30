@@ -398,7 +398,7 @@ export const translations = {
     videos: {
       title: "Videos",
       kernsatz:
-        "The control logic in these recordings is real — the same logic that also runs on the real machine. The only difference: no motors are connected.",
+        "The control logic in these recordings is real — the same logic that runs on the real machine. The only difference: no motors are connected.",
       intro: "Videos load from YouTube only after you click.",
       kategorien: {
         produkt: "Products",
@@ -868,7 +868,7 @@ export const translations = {
     videos: {
       title: "Videos",
       kernsatz:
-        "Die Steuerungslogik in diesen Aufnahmen ist echt — dieselbe, die auch auf der realen Anlage läuft. Der einzige Unterschied: Es sind keine Motoren angeschlossen.",
+        "Die Steuerungslogik in diesen Aufnahmen ist echt — dieselbe, die auf der realen Anlage läuft. Der einzige Unterschied: Es sind keine Motoren angeschlossen.",
       intro: "Videos werden erst nach einem Klick von YouTube geladen.",
       kategorien: {
         produkt: "Produkte",
