@@ -407,7 +407,7 @@ export const translations = {
       },
       eintraege: [
         {
-          id: "p2cG7OkNGHc",
+          id: "8NmbPDpvB5M",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — picking parts off a moving belt with a delta robot",
@@ -417,7 +417,7 @@ export const translations = {
           ],
         },
         {
-          id: "nxwkMzirkyU",
+          id: "C6VZTbuj9P8",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — picking parts off a moving belt with a SCARA",
@@ -427,7 +427,7 @@ export const translations = {
           ],
         },
         {
-          id: "eFuo1gsnpqs",
+          id: "7kXLh4mEfrI",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — setting smoothness via maximum acceleration",
@@ -437,7 +437,7 @@ export const translations = {
           ],
         },
         {
-          id: "GFF37Meparc",
+          id: "Qjs5bP1fkxQ",
           kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive measuring, first simulated then real",
@@ -887,7 +887,7 @@ export const translations = {
       },
       eintraege: [
         {
-          id: "p2cG7OkNGHc",
+          id: "8NmbPDpvB5M",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — Teile vom laufenden Band greifen mit einem Delta-Roboter",
@@ -897,7 +897,7 @@ export const translations = {
           ],
         },
         {
-          id: "nxwkMzirkyU",
+          id: "C6VZTbuj9P8",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — Teile mit einem SCARA vom laufenden Band greifen",
@@ -907,7 +907,7 @@ export const translations = {
           ],
         },
         {
-          id: "eFuo1gsnpqs",
+          id: "7kXLh4mEfrI",
           kategorie: "anwendung",
           titel:
             "MotionA App Note — Laufruhe über die maximale Beschleunigung einstellen",
@@ -917,7 +917,7 @@ export const translations = {
           ],
         },
         {
-          id: "GFF37Meparc",
+          id: "Qjs5bP1fkxQ",
           kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive Messsysteme, erst simuliert, dann real",

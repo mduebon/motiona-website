@@ -37,10 +37,12 @@ const REIHENFOLGE = ["produkt", "anwendung", "art"] as const;
  * auseinander. Fehlt ein Eintrag, bleibt die Marke einfach weg.
  */
 const DAUER: Record<string, string> = {
-  GFF37Meparc: "2:05",
-  eFuo1gsnpqs: "1:02",
-  p2cG7OkNGHc: "0:39",
-  nxwkMzirkyU: "0:39",
+  // Schluessel in Anfuehrungszeichen: Zwei der IDs beginnen mit einer Ziffer
+  // und waeren als blosse Bezeichner kein gueltiges JavaScript.
+  Qjs5bP1fkxQ: "2:05",
+  "7kXLh4mEfrI": "1:02",
+  "8NmbPDpvB5M": "0:39",
+  C6VZTbuj9P8: "0:39",
 };
 
 export default function Videos() {
