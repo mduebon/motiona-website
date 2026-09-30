@@ -159,8 +159,11 @@ export default function Videos() {
         aria-label={s.title}
         className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-border pt-6 text-sm"
       >
+        {/* Die Dauer braucht eine Beschriftung. Als blosse Zahl neben der
+            Videoanzahl las sie sich wie eine Uhrzeit oder Versionsnummer —
+            beim ersten Leser genau so passiert. */}
         <span className="text-muted-foreground">
-          {anzahlVideos} Videos · {alsDauer(gesamtSekunden)}
+          {anzahlVideos} Videos · {s.gesamt} {alsDauer(gesamtSekunden)}
         </span>
         {REIHENFOLGE.map(schluessel => {
           const anzahl = s.eintraege.filter(

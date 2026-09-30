@@ -400,6 +400,7 @@ export const translations = {
       kernsatz:
         "The control logic in these recordings is real — the same logic that runs on the real machine. The only difference: no motors are connected.",
       intro: "Videos load from YouTube only after you click.",
+      gesamt: "total running time",
       kategorien: {
         produkt: "Products",
         anwendung: "Applications",
@@ -893,6 +894,7 @@ export const translations = {
       kernsatz:
         "Die Steuerungslogik in diesen Aufnahmen ist echt — dieselbe, die auf der realen Anlage läuft. Der einzige Unterschied: Es sind keine Motoren angeschlossen.",
       intro: "Videos werden erst nach einem Klick von YouTube geladen.",
+      gesamt: "Gesamtdauer",
       kategorien: {
         produkt: "Produkte",
         anwendung: "Anwendungen",
