@@ -74,6 +74,7 @@ export default function Videos() {
                     titel={e.titel}
                     dauer={DAUER[e.id]}
                     titelImFeld={false}
+                    bildunterschrift={false}
                   />
 
                   <div>

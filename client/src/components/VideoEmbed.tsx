@@ -75,6 +75,13 @@ interface VideoEmbedProps {
    * unverdeckt zeigen, was es zeigt.
    */
   titelImFeld?: boolean;
+  /**
+   * Ob die Bildunterschrift erscheint. Auf den Kinetik-Seiten ja: dort ist der
+   * Hinweis "wird erst nach Klick geladen" die einzige Stelle, an der das steht.
+   * Auf der Videoseite nein - dort sagt es die Einleitung einmal fuer alle, und
+   * unter jedem Video wiederholt waere es dieselbe Aussage viermal.
+   */
+  bildunterschrift?: boolean;
 }
 
 export default function VideoEmbed({
@@ -83,6 +90,7 @@ export default function VideoEmbed({
   className,
   dauer,
   titelImFeld = true,
+  bildunterschrift = true,
 }: VideoEmbedProps) {
   const [geladen, setGeladen] = useState(false);
   const [standbildDa, setStandbildDa] = useState(true);
@@ -164,15 +172,16 @@ export default function VideoEmbed({
       {/* Die Beschriftung erscheint erst nach dem Laden — vorher trägt sie das
           Feld selbst, und beides zugleich wäre eine Dopplung. Für Screenreader
           steht der Titel ohnehin im aria-label des Knopfes. */}
-      {geladen ? (
-        <figcaption className="mt-3 max-w-[34rem] text-sm text-muted-foreground">
-          {titel}
-        </figcaption>
-      ) : (
-        <figcaption className="mt-3 max-w-[34rem] text-xs text-muted-foreground/80">
-          {b.hinweis}
-        </figcaption>
-      )}
+      {bildunterschrift &&
+        (geladen ? (
+          <figcaption className="mt-3 max-w-[34rem] text-sm text-muted-foreground">
+            {titel}
+          </figcaption>
+        ) : (
+          <figcaption className="mt-3 max-w-[34rem] text-xs text-muted-foreground/80">
+            {b.hinweis}
+          </figcaption>
+        ))}
     </figure>
   );
 }
