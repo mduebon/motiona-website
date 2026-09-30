@@ -437,6 +437,16 @@ export const translations = {
           ],
         },
         {
+          id: "7BnUx9JtsB4",
+          kategorie: "art",
+          titel:
+            "From text to machine motion — AI-generated movement drives a SCARA and a cobot",
+          text: [
+            "Type a sentence, get motion. An open-source neural network (MoMask) generates human movement from a text prompt. MotionA describes the relationships between the skeleton’s points with a few simple rules and runs the skeleton and the machines as one control program. The prompt in this clip: “a person does jumping jacks”.",
+            "The SCARA on the left and the cobot on the right are simulated, but MotionA uses the same control logic it would use for physical machines: it solves their inverse kinematics and calculates a trajectory for each axis, respecting joint limits and limits on velocity, acceleration and jerk. The remaining skeleton points are virtual and have no mechanical constraints — both run in a single program. The wait for motion generation has been cut.",
+          ],
+        },
+        {
           id: "Qjs5bP1fkxQ",
           kategorie: "produkt",
           titel:
@@ -914,6 +924,16 @@ export const translations = {
           text: [
             "Links das Python-Skript, rechts die Simulation eines Pipettierers, der eine Platte Spalte für Spalte füllt. Wie ruhig sich die Pipette bewegt, hängt an der maximal erlaubten Beschleunigung — und das Skript ändert diesen Grenzwert im laufenden Programm: erst 3 m/s², dann 0,3 m/s², dann wieder 3 m/s².",
             "MotionA plant die Bahn jeweils unter den neuen Randbedingungen neu; maximale Geschwindigkeit und maximaler Ruck bleiben unverändert. Bei 0,3 m/s² fährt die Pipette sichtbar sanfter an und bremst weicher ab, braucht für die Spalte aber ungefähr doppelt so lange. So lässt sich der Kompromiss zwischen Laufruhe und Taktzeit einstellen, ohne den Bewegungsablauf neu zu programmieren.",
+          ],
+        },
+        {
+          id: "7BnUx9JtsB4",
+          kategorie: "art",
+          titel:
+            "Von Text zu Maschinenbewegung — KI-erzeugte Bewegung treibt SCARA und Cobot",
+          text: [
+            "Ein Satz Text, daraus eine Bewegung: Ein quelloffenes neuronales Netz (MoMask) erzeugt menschliche Bewegung aus einem Prompt. MotionA beschreibt mit wenigen einfachen Regeln, wie die Punkte des Skeletts zueinander stehen, und führt Skelett und Maschinen als ein einziges Steuerungsprogramm aus. Der Prompt in diesem Ausschnitt lautete „a person does jumping jacks“.",
+            "SCARA links und Cobot rechts sind simuliert, die Steuerungslogik ist dieselbe wie für echte Maschinen: MotionA löst ihre inverse Kinematik und rechnet für jede Achse eine Bahn, die Gelenkgrenzen sowie Grenzen für Geschwindigkeit, Beschleunigung und Ruck einhält. Die übrigen Skelettpunkte sind virtuell und haben keine mechanischen Grenzen — beides läuft in einem Programm. Die Wartezeit auf die Bewegungserzeugung ist herausgeschnitten.",
           ],
         },
         {
