@@ -423,6 +423,16 @@ export const translations = {
         {
           kategorie: "anwendung",
           titel:
+            "MotionA App Note — coupling stamping axes to an externally driven carousel",
+          text: [
+            "On the left the machine file and the Python script, on the right a simulated stamping station: four linear axes stamp parts on a carousel. The carousel is not part of the station — a foreign drive moves it unevenly and at times backwards. MotionA does not control that drive, it only reads its position and velocity; in the machine file the carousel is a reference frame, and so are the six parts riding on it.",
+            "In the script a single step couples each stamp to the parts passing by, much like an electronic cam: lower, touch at the working point, lift — even when the carousel changes speed or reverses. Every touch is reported back to the script as an event; the script counts along and stops the station after twelve stampings, lifting the stamps while the carousel keeps running.",
+          ],
+          varianten: [{ id: "dkIKtRiM0uQ", label: "" }],
+        },
+        {
+          kategorie: "anwendung",
+          titel:
             "MotionA App Note — setting smoothness via maximum acceleration",
           text: [
             "On the left the Python script, on the right a simulated pipettor filling a plate column by column. How smoothly the pipette moves depends on the maximum permitted acceleration, and the script changes that limit while the program runs — first 3 m/s², then 0.3 m/s², then 3 m/s² again.",
@@ -913,6 +923,16 @@ export const translations = {
             { id: "_FT1h6zr-58", label: "SCARA" },
             { id: "P_YaWyQ40ng", label: "Cobot" },
           ],
+        },
+        {
+          kategorie: "anwendung",
+          titel:
+            "MotionA App Note — Stempelachsen an ein fremd angetriebenes Karussell koppeln",
+          text: [
+            "Links die Maschinendatei und das Python-Skript, rechts die Simulation einer Stanzstation: Vier Linearachsen stempeln Teile auf einem Karussell. Das Karussell gehört nicht zur Station — ein fremder Antrieb bewegt es ungleichmäßig und zeitweise rückwärts. MotionA steuert diesen Antrieb nicht, sondern liest nur Position und Geschwindigkeit mit; in der Maschinendatei ist das Karussell ein Bezugssystem, die sechs Teile darauf ebenso.",
+            "Im Skript koppelt ein einziger Schritt jeden Stempel an die vorbeilaufenden Teile, ähnlich einer elektronischen Kurvenscheibe: absenken, am Arbeitspunkt berühren, abheben — auch wenn das Karussell seine Geschwindigkeit ändert oder die Richtung wechselt. Jede Berührung meldet MotionA als Ereignis an das Skript zurück; das zählt mit und hält die Station nach zwölf Stempelvorgängen an — die Stempel fahren hoch, während das Karussell weiterläuft.",
+          ],
+          varianten: [{ id: "dkIKtRiM0uQ", label: "" }],
         },
         {
           kategorie: "anwendung",
