@@ -182,6 +182,24 @@ im Server entfernen, Link in die Navigation aufnehmen.
   nichts gespeichert ist — ohne die Schaltfläche gäbe es nach „Akzeptieren"
   keinen Weg zurück.
 
+## Videos
+
+Die Spieldauer aller Videos steht einmal in `client/src/lib/video-dauer.ts` —
+für die öffentliche Sammlung und den Kinetik-Bereich gemeinsam, weil das
+Herz-Video in beiden steht. Eine Zahl, keine Übersetzung, deshalb nicht in
+`translations.ts` oder `kinetik/texte.ts`.
+
+Die Zielgruppen sind getrennt: **`/videos` ist für die Industrie, der
+Kinetik-Bereich für Künstlerinnen und Künstler.** Band, Karussell und Measure
+gehören deshalb nicht in die Kinetik-Beispiele. Der Verweis am Fuß von Seite 02
+führt trotzdem auf `/videos`, aber ausdrücklich als „Aufnahmen aus industriellen
+Anwendungen" beschriftet — unbeschriftet wäre es ein Bruch der Ansprache,
+beschriftet ist es der Beleg, dass hinter der Arbeit ein Produkt steht.
+
+Jedes Beispiel im Kinetik-Bereich trägt eine Marke, ob es real steht oder
+simuliert läuft (`…Art` in `texte.ts`). Ein leerer Text lässt sie weg und
+heißt: noch nicht geklärt, nicht „egal".
+
 ## Deployment
 
 `deploy.sh` auf dem Server: `git pull origin main`, `pnpm install`,
@@ -195,9 +213,6 @@ im Server entfernen, Link in die Navigation aufnehmen.
       `client/public/images/kinetik/`, siehe Hinweisdatei dort. Das `<img>` ist
       in `Beispiele.tsx` solange auskommentiert, damit kein Haarstrich
       erscheint — Markup steht im Kommentar daneben
-- [ ] Von den fünf Beispielen sagt nur eines, ob es real oder simuliert ist
-      (Cobots: „in der Simulation"). CLAUDE.md verlangt die Angabe — für
-      Omniwheel, Cobot/Delta/SCARA und Drohnenformation nachtragen
 - [ ] Der Fließtext läuft auf `system-ui`, nicht auf Inter: `--font-body` in
       `index.css` nennt Inter, geladen wurde es nie. Entweder Inter lokal
       ergänzen oder das Token an die Wirklichkeit anpassen

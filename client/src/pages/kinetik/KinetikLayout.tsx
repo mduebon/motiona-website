@@ -155,9 +155,7 @@ export default function KinetikLayout({
             >
               <ArrowLeft className="h-4 w-4" />
               <span>
-                <span className="section-label block">
-                  {t.layout.zurueck}
-                </span>
+                <span className="section-label block">{t.layout.zurueck}</span>
                 <span className="font-medium">{t.seiten[index - 1].titel}</span>
               </span>
             </Link>

@@ -107,21 +107,47 @@ export interface KinetikTexte {
     /** Steht kursiv zwischen den beiden Hälften: „der Simulator *ist* die Steuerung". */
     einleitungIst: string;
     einleitungNach: string;
+    /**
+     * Steht als kleine Marke neben jeder Überschrift: realer Aufbau oder
+     * Simulation. CLAUDE.md verlangt die Angabe bei jedem Beispiel — ohne sie
+     * muss der Leser raten, und beim ersten simulierten Video, das er für real
+     * gehalten hat, verliert die ganze Seite an Glaubwürdigkeit.
+     *
+     * Ein leerer Text lässt die Marke weg. Das ist kein Normalfall, sondern
+     * heisst: noch nicht geklärt.
+     */
+    artReal: string;
+    artSimuliert: string;
     pendelchorH: string;
     pendelchorAlt: string;
     pendelchorText: string;
+    pendelchorArt: string;
     cobotH: string;
     cobotText: string[];
     cobotVideoTitel: string;
+    cobotArt: string;
     omniwheelH: string;
     omniwheelVideoTitel: string;
     omniwheelText: string;
-    kinematikenH: string;
-    kinematikenVideoTitel: string;
-    kinematikenText: string;
+    omniwheelArt: string;
+    /**
+     * Das Herz-Video. Steht bewusst direkt hinter den drei Kinematiken: Dort
+     * läuft dieselbe Aufgabe auf drei Maschinen, hier kommt die Aufgabe selbst
+     * aus einem Satz. Zusammen gelesen ist es eine Steigerung, getrennt wären
+     * es zwei Videos über Kinematik.
+     */
+    herzH: string;
+    herzVideoTitel: string;
+    herzText: string[];
+    herzArt: string;
     koerperH: string;
     koerperVideoTitel: string;
     koerperText: string[];
+    koerperArt: string;
+    /** Verweis auf die öffentliche Videosammlung am Fuß der Seite. */
+    mehrVideosVor: string;
+    mehrVideosLink: string;
+    mehrVideosNach: string;
   };
 
   technik: {
@@ -295,11 +321,14 @@ const de: KinetikTexte = {
     einleitungIst: "ist",
     einleitungNach:
       " die Steuerung, nur mit anderer Hardware-Anbindung. Zu sehen ist also die tatsächliche Berechnung und keine Animation eines geplanten Ergebnisses.",
+    artReal: "Realer Aufbau",
+    artSimuliert: "In der Simulation",
     pendelchorH: "Pendel·Chor",
     pendelchorAlt:
       "Vier leuchtende Pendel an einer Traverse, daneben ein Bedienterminal",
     pendelchorText:
       "Vier beleuchtete Pendel reagieren auf Besucher und sind als ein Bewegungsstück choreografiert. „Lass die Pendel schwingen wie Schilf im Wind, wenn jemand näher kommt“ wird zu einer geprüften Beschreibung, im digitalen Zwilling verifiziert und auf der Installation ausgeführt.",
+    pendelchorArt: "Realer Aufbau",
     cobotH: "Zwei Cobots docken aneinander an",
     cobotText: [
       "Ein Cobot dreht das Ziel, der zweite muss andocken, während es sich dreht. Die Andockpose ist dabei nie in Weltkoordinaten definiert, sondern im Koordinatensystem des rotierenden Objekts. Die Bahn im Raum ist ein Ergebnis des Modells, keine programmierte Trajektorie.",
@@ -307,21 +336,32 @@ const de: KinetikTexte = {
     ],
     cobotVideoTitel:
       "Andockmanöver zweier Cobots — eine Hommage an Interstellar, in der Simulation",
+    cobotArt: "In der Simulation",
     omniwheelH: "Omniwheel-Plattform",
     omniwheelVideoTitel:
       "Omniwheel-Plattform: holonome Bewegung aus dem Modell",
     omniwheelText:
       "Eine Omniwheel-Plattform fährt holonom, also in jede Richtung bei gleichzeitiger Drehung. Die Radgeschwindigkeiten ergeben sich aus dem Modell; kommandiert wird im Bezugssystem, das gerade zählt — der Plattform, dem Raum oder einem anderen bewegten Objekt.",
-    kinematikenH: "Dieselbe Aufgabe auf Cobot, Delta und SCARA",
-    kinematikenVideoTitel: "Dieselbe Aufgabe auf Cobot, Delta und SCARA",
-    kinematikenText:
-      "Dass daneben auch klassische Robotik läuft, ist der Beleg dafür, dass der Ansatz trägt: drei verschiedene Kinematiken, dieselbe Bewegungslogik. Kommandiert wird in Bezugssystemen und Zielen, nicht in Gelenkwinkeln — deshalb ändert sich an der Aufgabe nichts, wenn die Maschine wechselt.",
+    omniwheelArt: "In der Simulation",
+    herzH: "Ein Prompt, drei Maschinen",
+    herzVideoTitel:
+      "Ein Prompt, drei Maschinen — Portal, SCARA und Delta zeichnen ein Herz",
+    herzText: [
+      "Ein Satz — „Construct a heart and draw an arrow“ — und drei Maschinen zeichnen das Ergebnis gleichzeitig: ein XY-Portal, ein SCARA und ein Lineardelta. Das Herz entsteht konstruiert, aus Geraden und Kreisbögen mit konstanter Geschwindigkeit, der Pfeil freihand.",
+      "Das ist der Abschnitt darüber, einen Schritt weiter: Dort läuft dieselbe Aufgabe auf drei Kinematiken, hier kommt die Aufgabe selbst aus einem Satz. Das Sprachmodell erzeugt dabei keinen Maschinencode, sondern eine Beschreibung — geprüft, bevor sich etwas bewegt. Die Prompt-Eingabe links im Bild ist nachgestellt.",
+    ],
+    herzArt: "In der Simulation",
     koerperH: "Mehrere Körper in einem Modell",
     koerperVideoTitel: "Eine Drohnenformation als ein System",
     koerperText: [
       "Eine Drohnenformation als ein System, hier in der Simulation: keine parallel laufenden Einzelprogramme, sondern Beziehungen in einem Modell, zur Laufzeit aufgelöst. Formation, Abstände oder Anzahl ändern sich — die Einzelbahnen folgen daraus, statt einzeln geschrieben zu werden.",
       "Derselbe Grundsatz gilt für mehrachsige Mechanik, kinetische Installationen und jeden Aufbau, in dem mehrere bewegte Teile in definierter Beziehung zueinander bleiben müssen.",
     ],
+    koerperArt: "In der Simulation",
+    mehrVideosVor:
+      "Weitere Aufnahmen aus industriellen Anwendungen stehen in der öffentlichen ",
+    mehrVideosLink: "Videosammlung",
+    mehrVideosNach: ".",
   },
 
   technik: {
@@ -337,7 +377,7 @@ const de: KinetikTexte = {
     mechanik4:
       "Vorhandene Steuerungen müssen dabei nicht ersetzt werden. Wo ein Roboter mit funktionierendem Controller steht, kann er bleiben — MotionA bildet ihn gemeinsam mit den übrigen Achsen, Licht und Sensorik in einem Modell ab.",
     verweisVor:
-      "Wie das in echten Aufbauten aussieht — Omniwheel-Plattform, dieselbe Aufgabe auf Cobot, Delta und SCARA — steht unter ",
+      "Wie das in echten Aufbauten aussieht — Omniwheel-Plattform, ein Prompt auf drei Maschinen — steht unter ",
     verweisNach: ".",
     modelleH: "Zwei Modelle",
     frameGraphTitel: "FrameGraph — wo sich etwas befindet.",
@@ -552,11 +592,14 @@ const en: KinetikTexte = {
     einleitungIst: "is",
     einleitungNach:
       " the control system, only with a different hardware connection. What you see is the actual computation, not an animation of an intended result.",
+    artReal: "Physical installation",
+    artSimuliert: "In simulation",
     pendelchorH: "Pendulum Choir",
     pendelchorAlt:
       "Four illuminated pendulums on a truss, next to an operating terminal",
     pendelchorText:
       "Four illuminated pendulums respond to visitors and are choreographed as a single piece of motion. “Let the pendulums sway like reeds in the wind when someone comes closer” becomes a checked description, verified in the digital twin and executed on the installation.",
+    pendelchorArt: "Physical installation",
     cobotH: "Two cobots docking with each other",
     cobotText: [
       "One cobot rotates the target, the second has to dock while it turns. The docking pose is never defined in world coordinates but in the coordinate system of the rotating object. The path through space is a result of the model, not a programmed trajectory.",
@@ -564,21 +607,32 @@ const en: KinetikTexte = {
     ],
     cobotVideoTitel:
       "Docking manoeuvre of two cobots — a nod to Interstellar, in simulation",
+    cobotArt: "In simulation",
     omniwheelH: "Omniwheel platform",
     omniwheelVideoTitel:
       "Omniwheel platform: holonomic motion derived from the model",
     omniwheelText:
       "An omniwheel platform moves holonomically, that is in any direction while rotating at the same time. The wheel speeds follow from the model; commands are given in whichever reference frame matters at that moment — the platform, the room, or another moving object.",
-    kinematikenH: "The same task on a cobot, a delta and a SCARA",
-    kinematikenVideoTitel: "The same task on a cobot, a delta and a SCARA",
-    kinematikenText:
-      "That classic robotics runs alongside it is the evidence that the approach holds: three different kinematics, the same motion logic. Commands are given in reference frames and targets, not in joint angles — which is why nothing about the task changes when the machine does.",
+    omniwheelArt: "In simulation",
+    herzH: "One prompt, three machines",
+    herzVideoTitel:
+      "One prompt, three machines — a gantry, a SCARA and a delta draw a heart",
+    herzText: [
+      "One sentence — “Construct a heart and draw an arrow” — and three machines draw the result at the same time: an XY gantry, a SCARA and a linear delta. The heart is drawn by construction, from straight lines and circular arcs at constant speed; the arrow freehand.",
+      "This is the section above taken one step further: there the same task runs on three kinematics, here the task itself comes from a sentence. The language model does not produce machine code but a description — checked before anything moves. The prompt entry on the left of the picture is illustrative.",
+    ],
+    herzArt: "In simulation",
     koerperH: "Several bodies in one model",
     koerperVideoTitel: "A drone formation as one system",
     koerperText: [
       "A drone formation as one system, here in simulation: not individual programs running in parallel, but relationships in one model, resolved at runtime. Formation, spacing or count change — the individual paths follow from that instead of being written one by one.",
       "The same principle applies to multi-axis mechanics, kinetic installations and any setup in which several moving parts have to stay in a defined relationship to one another.",
     ],
+    koerperArt: "In simulation",
+    mehrVideosVor:
+      "Further recordings from industrial applications are in the public ",
+    mehrVideosLink: "video collection",
+    mehrVideosNach: ".",
   },
 
   technik: {
@@ -594,7 +648,7 @@ const en: KinetikTexte = {
     mechanik4:
       "Existing controllers do not have to be replaced. Where a robot with a working controller is already in place, it can stay — MotionA represents it in one model together with the remaining axes, the light and the sensors.",
     verweisVor:
-      "What that looks like in real setups — the omniwheel platform, the same task on a cobot, a delta and a SCARA — is shown under ",
+      "What that looks like in real setups — the omniwheel platform, one prompt on three machines — is shown under ",
     verweisNach: ".",
     modelleH: "Two models",
     frameGraphTitel: "FrameGraph — where something is.",

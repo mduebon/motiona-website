@@ -8,6 +8,7 @@
 
 import { Mail } from "lucide-react";
 import VideoEmbed from "@/components/VideoEmbed";
+import { DAUER } from "@/lib/video-dauer";
 import KinetikLayout from "./KinetikLayout";
 import { KONTAKT_MAIL, SPALTE, SPALTE_EINGERUECKT } from "./seiten";
 import { useKinetikTexte } from "./texte";
@@ -151,7 +152,11 @@ export default function Uebersicht() {
 
       {/* ------------------------------------------------ Erstes Video */}
       <div className="mt-16 max-w-4xl">
-        <VideoEmbed id="nheEumA4-cI" titel={s.videoTitel} />
+        <VideoEmbed
+          id="nheEumA4-cI"
+          titel={s.videoTitel}
+          dauer={DAUER["nheEumA4-cI"]}
+        />
         <p className={`mt-6 ${SPALTE} leading-relaxed text-foreground/90`}>
           {s.videoText}
         </p>
@@ -192,6 +197,7 @@ export default function Uebersicht() {
           <VideoEmbed
             id={VIDEO_TEXT_ZU_BEWEGUNG}
             titel={s.textZuBewegungVideoTitel}
+            dauer={DAUER[VIDEO_TEXT_ZU_BEWEGUNG]}
           />
           {s.textZuBewegung.map((absatz, i) => (
             <p

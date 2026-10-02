@@ -13,6 +13,7 @@
 
 import { Link } from "wouter";
 import VideoEmbed from "@/components/VideoEmbed";
+import { DAUER } from "@/lib/video-dauer";
 import KinetikLayout from "./KinetikLayout";
 import { SEITEN, SPALTE, pfad } from "./seiten";
 import { useKinetikTexte } from "./texte";
@@ -82,7 +83,11 @@ export default function WieDasFunktioniert() {
         ))}
 
         <div className="mt-10 max-w-4xl">
-          <VideoEmbed id="hQIq_sJLczw" titel={s.simulationVideoTitel} />
+          <VideoEmbed
+            id="hQIq_sJLczw"
+            titel={s.simulationVideoTitel}
+            dauer={DAUER.hQIq_sJLczw}
+          />
         </div>
       </section>
     </KinetikLayout>

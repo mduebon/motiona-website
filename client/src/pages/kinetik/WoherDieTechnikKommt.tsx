@@ -61,7 +61,6 @@ export default function WoherDieTechnikKommt() {
           </p>
         ))}
       </section>
-
     </KinetikLayout>
   );
 }

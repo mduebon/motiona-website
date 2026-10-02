@@ -4,7 +4,8 @@
  * Die Einträge stehen als Liste in `lib/translations.ts` unter
  * `videos.eintraege`: `kategorie`, `titel`, `text` und `varianten`. Ein neues
  * Video ist ein Listeneintrag in beiden Sprachen, ein Standbild unter
- * `public/images/video/<id>.webp` und eine Zeile in DAUER — sonst nichts.
+ * `public/images/video/<id>.webp` und eine Zeile in `lib/video-dauer.ts` —
+ * sonst nichts.
  *
  * Warum jeder Eintrag `varianten` hat, auch wenn es nur eine ist: Damit alle
  * Einträge dieselbe Form haben. Bei gemischten Formen wäre der Typ eine
@@ -23,32 +24,10 @@ import { useState } from "react";
 import VideoEmbed from "@/components/VideoEmbed";
 import SeitenLayout, { SPALTE } from "@/components/SeitenLayout";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { DAUER } from "@/lib/video-dauer";
 
 /** Reihenfolge der Abschnitte. Produkte zuerst, freie Arbeiten zuletzt. */
 const REIHENFOLGE = ["produkt", "anwendung", "art"] as const;
-
-/**
- * Spieldauer je Video, einmal von YouTube abgelesen.
- *
- * Steht hier und nicht in translations.ts: Es ist eine Zahl und kein Text, in
- * beiden Sprachen dieselbe — doppelt gepflegt liefe sie irgendwann
- * auseinander. Fehlt ein Eintrag, bleibt die Marke einfach weg.
- */
-const DAUER: Record<string, string> = {
-  // Zwei Schlüssel stehen in Anführungszeichen, weil YouTube-IDs mit einer
-  // Ziffer beginnen oder einen Bindestrich enthalten dürfen — beides ist als
-  // blosser Bezeichner kein gültiges JavaScript. Bei den übrigen entfernt
-  // Prettier die Zeichen wieder; einfach immer welche setzen und es sortiert
-  // sich von selbst.
-  Qjs5bP1fkxQ: "2:05",
-  e_F5ZE4q62g: "1:02",
-  jy2JHnxqBMk: "0:39",
-  "_FT1h6zr-58": "0:39",
-  P_YaWyQ40ng: "0:39",
-  dkIKtRiM0uQ: "0:39",
-  RgzSc_ilglc: "0:22",
-  "7BnUx9JtsB4": "0:51",
-};
 
 /** "2:05" -> 125. Für die Gesamtdauer im Index. */
 function sekunden(mmss: string) {
@@ -143,11 +122,16 @@ export default function Videos() {
   const { t } = useLanguage();
   const s = t.videos;
 
-  const gesamtSekunden = Object.values(DAUER).reduce(
-    (summe, d) => summe + sekunden(d),
+  // Gezaehlt wird, was auf dieser Seite steht, nicht was in DAUER steht: Die
+  // Tabelle gilt fuer die ganze Website und fuehrt auch die Videos des
+  // Kinetik-Bereichs. Ueber Object.keys(DAUER) haette der Index die
+  // mitgezaehlt.
+  const ids = s.eintraege.flatMap(e => e.varianten.map(v => v.id));
+  const gesamtSekunden = ids.reduce(
+    (summe, id) => summe + (DAUER[id] ? sekunden(DAUER[id]) : 0),
     0
   );
-  const anzahlVideos = Object.keys(DAUER).length;
+  const anzahlVideos = ids.length;
 
   return (
     <SeitenLayout titel={s.title} kernsatz={s.kernsatz} einleitung={s.intro}>
