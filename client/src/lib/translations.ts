@@ -291,11 +291,11 @@ export const translations = {
           cta: "Feature Article",
         },
         {
-          title: "Watch Demos",
+          title: "Read the App Notes",
           subtitle: "YouTube Playlist",
           description:
-            "Explore our dedicated playlist packed with practical demonstrations and real-world applications.",
-          cta: "YouTube Channel",
+            "Short, practical notes — one task each, with the script that describes it and the machine running it.",
+          cta: "YouTube Playlist",
         },
         {
           title: "Buy MotionA-Spark",
@@ -377,7 +377,7 @@ export const translations = {
       },
       resources: "Resources",
       resourceLinks: {
-        youtube: "YouTube Channel",
+        youtube: "App Notes on YouTube",
         article: "Feature Article",
       },
       copyright: "© 2026 Dübon Engineering GmbH. All rights reserved.",
@@ -811,11 +811,11 @@ export const translations = {
           cta: "Zum Artikel",
         },
         {
-          title: "Demos ansehen",
+          title: "App Notes lesen",
           subtitle: "YouTube-Playlist",
           description:
-            "Praktische Demonstrationen und reale Anwendungen in unserer Video-Playlist.",
-          cta: "Zum YouTube-Kanal",
+            "Kurze Praxisnotizen — je eine Aufgabe, das Skript, das sie beschreibt, und die Maschine, die sie ausführt.",
+          cta: "Zur YouTube-Playlist",
         },
         {
           title: "MotionA-Spark kaufen",
@@ -897,7 +897,7 @@ export const translations = {
       },
       resources: "Ressourcen",
       resourceLinks: {
-        youtube: "YouTube-Kanal",
+        youtube: "App Notes auf YouTube",
         article: "Feature-Artikel",
       },
       copyright: "© 2026 Dübon Engineering GmbH. Alle Rechte vorbehalten.",

@@ -56,6 +56,12 @@ import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
+/**
+ * App-Notes-Playlist auf YouTube. Die fruehere Liste ("Practical Demos &
+ * Applications") ist nicht mehr zeitgemaess und wird nirgends mehr verlinkt.
+ */
+const PLAYLIST = "https://www.youtube.com/playlist?list=PLPF6p6uYmPg4";
+
 export default function Home() {
   const { language, setLanguage, t } = useLanguage();
   useScrollAnimation();
@@ -166,16 +172,17 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
-                <a
-                  href="https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                {/* Fuehrte auf eine YouTube-Playlist. Der sichtbarste Knopf
+                    der Seite schickte damit jeden Besucher zu Google, waehrend
+                    der Rest der Website genau das vermeidet — Videos laden
+                    erst nach Klick, Schriften liegen lokal. Die eigene
+                    Videoseite zeigt dasselbe mit Erlaeuterung. */}
+                <Link href="/videos">
                   <Button size="lg" variant="outline">
                     <Play className="mr-2 h-4 w-4" />
                     {t.hero.watchDemo}
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -686,7 +693,7 @@ export default function Home() {
               },
               {
                 ...t.resources.items[1],
-                url: "https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P",
+                url: PLAYLIST,
               },
               {
                 ...t.resources.items[2],
@@ -908,7 +915,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm opacity-80">
                 <li>
                   <a
-                    href="https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P"
+                    href={PLAYLIST}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:opacity-100 transition-opacity"
