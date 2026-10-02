@@ -42,8 +42,10 @@ export const products: Record<string, Product> = {
       "A universal motion controller with 3 motor outputs, featuring an innovative and simple description language, optimized trajectories, and extremely cost-sensitive design for series solutions.",
     descriptionDE:
       "Ein universeller Motion Controller mit 3 Motorausgängen mit innovativer, einfacher Beschreibungssprache, optimierten Trajektorien und extrem kostensensibler Auslegung für Serienlösungen.",
-    shortDescription: "Flexible control system board for versatile motion applications.",
-    shortDescriptionDE: "Flexibles Kontrollsystem-Board für vielseitige Bewegungsanwendungen.",
+    shortDescription:
+      "Flexible control system board for versatile motion applications.",
+    shortDescriptionDE:
+      "Flexibles Kontrollsystem-Board für vielseitige Bewegungsanwendungen.",
     images: [
       {
         url: "https://images.squarespace-cdn.com/content/v1/619512257bd2ba0708fcc8bc/545a3a1a-f386-4bda-a4b8-05ed58487eec/MC_BaseBoard_V1.0_RevB+4X130+PCbs.482.png",
@@ -62,7 +64,8 @@ export const products: Record<string, Product> = {
       },
       {
         title: "Cost-Effective",
-        description: "Extremely cost-sensitive design, especially for series solutions",
+        description:
+          "Extremely cost-sensitive design, especially for series solutions",
       },
       {
         title: "Flexible Configuration",
@@ -80,11 +83,13 @@ export const products: Record<string, Product> = {
       },
       {
         title: "Kostengünstig",
-        description: "Extrem kostensensibler Aufbau, besonders für Serienlösungen",
+        description:
+          "Extrem kostensensibler Aufbau, besonders für Serienlösungen",
       },
       {
         title: "Flexible Konfiguration",
-        description: "Anpassbare Systemkonfiguration für verschiedene Anwendungen",
+        description:
+          "Anpassbare Systemkonfiguration für verschiedene Anwendungen",
       },
     ],
     specifications: {
@@ -94,20 +99,29 @@ export const products: Record<string, Product> = {
       Interfaces: ["Isolated USB", "RS485", "RS232 (2-Channel)", "µSD Card"],
       GPIO: ["4-bit DIP", "1x Push Button", "6x LEDs"],
       "Motor Drivers": "4x independent driver modules",
-      "Stepper Options": ["Option A: 1 Stepper (4A per phase)", "Option B: 2 Stepper (2A per phase)"],
+      "Stepper Options": [
+        "Option A: 1 Stepper (4A per phase)",
+        "Option B: 2 Stepper (2A per phase)",
+      ],
     },
     specificationsDE: {
       Abmessungen: "109,6mm x 109,6mm x 41,6mm",
       Eingangsspannung: "15-45V",
       MCU: "STM32H7 (Cortex-M7, 400MHz, 2MB Flash, 1MB RAM)",
-      Schnittstellen: ["Isoliertes USB", "RS485", "RS232 (2-Kanal)", "µSD-Karte"],
+      Schnittstellen: [
+        "Isoliertes USB",
+        "RS485",
+        "RS232 (2-Kanal)",
+        "µSD-Karte",
+      ],
       GPIO: ["4-Bit-DIP", "1x Druckknopf", "6x LEDs"],
       Motortreiber: "4x unabhängige Treibermodule",
-      "Stepper-Optionen": ["Option A: 1 Stepper (4A pro Phase)", "Option B: 2 Stepper (2A pro Phase)"],
+      "Stepper-Optionen": [
+        "Option A: 1 Stepper (4A pro Phase)",
+        "Option B: 2 Stepper (2A pro Phase)",
+      ],
     },
-    links: {
-      documentation: "https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview",
-    },
+    links: {},
     relatedProducts: ["motiona", "zynq-pcie-board"],
   },
 
@@ -120,13 +134,15 @@ export const products: Record<string, Product> = {
       "A temperature and humidity monitoring and alarm system with a browser-based real-time viewer, SNMP, and email alerts for comprehensive environmental monitoring.",
     descriptionDE:
       "Ein Temperatur- und Luftfeuchtigkeitsüberwachungs- und Alarmsystem mit einem browserbasierten Echtzeit-Viewer, SNMP und E-Mail-Alarm.",
-    shortDescription: "Real-time environmental monitoring with IoT connectivity.",
+    shortDescription:
+      "Real-time environmental monitoring with IoT connectivity.",
     shortDescriptionDE: "Echtzeit-Umweltüberwachung mit IoT-Konnektivität.",
     images: [
       {
         url: "/images/komi-temperature-sensors.webp",
         alt: "Komi Temperature Sensor Dashboard",
-        caption: "Four Temperature Sensors with Real-time Monitoring and Alerts",
+        caption:
+          "Four Temperature Sensors with Real-time Monitoring and Alerts",
       },
       {
         url: "/images/komi-sensor-overview.webp",
@@ -164,11 +180,13 @@ export const products: Record<string, Product> = {
       },
       {
         title: "SNMP-Unterstützung",
-        description: "Integration der Netzwerküberwachung auf Unternehmensebene",
+        description:
+          "Integration der Netzwerküberwachung auf Unternehmensebene",
       },
       {
         title: "E-Mail-Benachrichtigungen",
-        description: "Automatische Benachrichtigungen bei Schwellenwertüberschreitung",
+        description:
+          "Automatische Benachrichtigungen bei Schwellenwertüberschreitung",
       },
       {
         title: "Datenprotokollierung",
@@ -252,7 +270,8 @@ export const products: Record<string, Product> = {
       },
       {
         title: "Einfache Integration",
-        description: "Einfache Einrichtung und Bereitstellung für IoT-Anwendungen",
+        description:
+          "Einfache Einrichtung und Bereitstellung für IoT-Anwendungen",
       },
     ],
     specifications: {
@@ -280,8 +299,10 @@ export const products: Record<string, Product> = {
       "A ZYNQ PCIe Board with FMC connector for custom expansion cards and Linux OS. Features ZYNQ XC72015, PCIe IP Core, and comprehensive Linux support for advanced FPGA applications.",
     descriptionDE:
       "Ein ZYNQ-PCIe-Board mit FMC-Stecker für kundenspezifische Erweiterungskarten und Linux OS. Mit ZYNQ XC72015, PCIe IP Core und umfassender Linux-Unterstützung für fortgeschrittene FPGA-Anwendungen.",
-    shortDescription: "High-performance FPGA board for advanced computing applications.",
-    shortDescriptionDE: "Hochleistungs-FPGA-Board für fortgeschrittene Computing-Anwendungen.",
+    shortDescription:
+      "High-performance FPGA board for advanced computing applications.",
+    shortDescriptionDE:
+      "Hochleistungs-FPGA-Board für fortgeschrittene Computing-Anwendungen.",
     images: [
       {
         url: "/images/zynq-pcie-board.webp",
@@ -297,7 +318,8 @@ export const products: Record<string, Product> = {
     features: [
       {
         title: "ZYNQ XC72015",
-        description: "Powerful Xilinx ZYNQ SoC with ARM processor and FPGA fabric",
+        description:
+          "Powerful Xilinx ZYNQ SoC with ARM processor and FPGA fabric",
       },
       {
         title: "FMC Connector",
@@ -315,19 +337,23 @@ export const products: Record<string, Product> = {
     featuresDE: [
       {
         title: "ZYNQ XC72015",
-        description: "Leistungsstarker Xilinx ZYNQ SoC mit ARM-Prozessor und FPGA-Fabric",
+        description:
+          "Leistungsstarker Xilinx ZYNQ SoC mit ARM-Prozessor und FPGA-Fabric",
       },
       {
         title: "FMC-Stecker",
-        description: "FPGA Mezzanine Card Stecker für kundenspezifische Erweiterungskarten",
+        description:
+          "FPGA Mezzanine Card Stecker für kundenspezifische Erweiterungskarten",
       },
       {
         title: "PCIe IP Core",
-        description: "Integrierte PCIe-Schnittstelle für Hochgeschwindigkeitsdatenübertragung",
+        description:
+          "Integrierte PCIe-Schnittstelle für Hochgeschwindigkeitsdatenübertragung",
       },
       {
         title: "Linux OS-Unterstützung",
-        description: "Vollständige Linux-Betriebssystemunterstützung für einfache Entwicklung",
+        description:
+          "Vollständige Linux-Betriebssystemunterstützung für einfache Entwicklung",
       },
     ],
     specifications: {
@@ -345,7 +371,8 @@ export const products: Record<string, Product> = {
       Repository: "https://bitbucket.org/ingdb/tec0097.git",
     },
     links: {
-      documentation: "https://drive.google.com/drive/folders/1tsH49wlNh63odSeVSHUfIBW6YdH-qtiT",
+      documentation:
+        "https://drive.google.com/drive/folders/1tsH49wlNh63odSeVSHUfIBW6YdH-qtiT",
       repository: "https://bitbucket.org/ingdb/tec0097.git",
     },
     relatedProducts: ["motionc-flex"],
@@ -353,13 +380,13 @@ export const products: Record<string, Product> = {
 };
 
 export function getProductBySlug(slug: string): Product | undefined {
-  return Object.values(products).find((p) => p.slug === slug);
+  return Object.values(products).find(p => p.slug === slug);
 }
 
 export function getRelatedProducts(productId: string): Product[] {
-  const product = Object.values(products).find((p) => p.id === productId);
+  const product = Object.values(products).find(p => p.id === productId);
   if (!product || !product.relatedProducts) return [];
   return product.relatedProducts
-    .map((id) => Object.values(products).find((p) => p.id === id))
+    .map(id => Object.values(products).find(p => p.id === id))
     .filter((p): p is Product => p !== undefined);
 }

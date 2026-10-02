@@ -43,7 +43,7 @@ import {
   ShieldCheck,
   Server,
   Network,
-  Radio
+  Radio,
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -67,38 +67,51 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/">
-            <img src="/images/dubon-logo.png" alt="Dübon Engineering" className="h-12 cursor-pointer" />
+            <img
+              src="/images/dubon-logo.png"
+              alt="Dübon Engineering"
+              className="h-12 cursor-pointer"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a
+              href="#features"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
               {t.header.features}
             </a>
-            <a href="#products" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a
+              href="#products"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
               {t.header.products}
             </a>
-            <a href="#contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a
+              href="#contact"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
               {t.header.contact}
             </a>
-            <Link href="/videos" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/videos"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
               {t.videos.title}
             </Link>
-            <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <Link
+              href="/about"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
               {t.about.title}
             </Link>
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setLanguage(language === 'en' ? 'de' : 'en')}
+              onClick={() => setLanguage(language === "en" ? "de" : "en")}
             >
-              {language === 'en' ? 'DE' : 'EN'}
+              {language === "en" ? "DE" : "EN"}
             </Button>
-            <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                {t.header.documentation}
-                <ExternalLink className="ml-2 h-3 w-3" />
-              </Button>
-            </a>
           </nav>
         </div>
       </header>
@@ -108,9 +121,7 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="section-label text-primary">
-                {t.hero.label}
-              </div>
+              <div className="section-label text-primary">{t.hero.label}</div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 {t.hero.title1}
@@ -135,7 +146,10 @@ export default function Home() {
                     </div>
                     <div className="font-bold text-base leading-tight">
                       {t.hero.flagshipTitle}
-                      <span className="font-normal text-muted-foreground"> — {t.hero.flagshipSubtitle}</span>
+                      <span className="font-normal text-muted-foreground">
+                        {" "}
+                        — {t.hero.flagshipSubtitle}
+                      </span>
                     </div>
                   </div>
                   <ArrowRight className="h-4 w-4 text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform" />
@@ -144,12 +158,19 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <a href="#products">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  >
                     {t.hero.exploreSolutions}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
-                <a href="https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button size="lg" variant="outline">
                     <Play className="mr-2 h-4 w-4" />
                     {t.hero.watchDemo}
@@ -190,7 +211,12 @@ export default function Home() {
               <div className="space-y-1">
                 <div className="font-bold text-base flex items-center gap-2">
                   {t.trustStrip.research.title}
-                  <img src="/images/bsfz-logo.png" alt="BSFZ" className="h-5 w-auto" loading="lazy" />
+                  <img
+                    src="/images/bsfz-logo.png"
+                    alt="BSFZ"
+                    className="h-5 w-auto"
+                    loading="lazy"
+                  />
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {t.trustStrip.research.description}
@@ -203,7 +229,9 @@ export default function Home() {
                 <Building2 className="h-5 w-5 text-primary" />
               </div>
               <div className="space-y-1">
-                <div className="font-bold text-base">{t.trustStrip.company.title}</div>
+                <div className="font-bold text-base">
+                  {t.trustStrip.company.title}
+                </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {t.trustStrip.company.description}
                 </p>
@@ -215,7 +243,9 @@ export default function Home() {
                 <FlaskConical className="h-5 w-5 text-primary" />
               </div>
               <div className="space-y-1">
-                <div className="font-bold text-base">{t.trustStrip.investment.title}</div>
+                <div className="font-bold text-base">
+                  {t.trustStrip.investment.title}
+                </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {t.trustStrip.investment.description}
                 </p>
@@ -232,7 +262,7 @@ export default function Home() {
             {t.supporters.label}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10">
-            {t.supporters.partners.map((partner) => (
+            {t.supporters.partners.map(partner => (
               <div
                 key={partner.name}
                 className="flex items-center justify-center bg-white rounded-xl border-2 border-border hover:border-primary/40 px-8 py-6 h-28 w-64 shadow-md hover:shadow-lg transition-all"
@@ -255,7 +285,9 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="section-label text-primary">{t.useCases.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.useCases.title}</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.useCases.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.useCases.description}
             </p>
@@ -263,7 +295,10 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.useCases.cases.map((useCase, index) => (
-              <Card key={index} className="border-border hover:border-primary transition-colors">
+              <Card
+                key={index}
+                className="border-border hover:border-primary transition-colors"
+              >
                 <CardContent className="p-6 space-y-3">
                   <CheckCircle2 className="h-6 w-6 text-primary" />
                   <h3 className="font-semibold text-lg">{useCase.title}</h3>
@@ -281,8 +316,12 @@ export default function Home() {
       <section className="py-24 bg-muted/30 scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
-            <div className="section-label text-primary">{t.coreCapabilities.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.coreCapabilities.title}</h2>
+            <div className="section-label text-primary">
+              {t.coreCapabilities.label}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.coreCapabilities.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.coreCapabilities.description}
             </p>
@@ -317,15 +356,22 @@ export default function Home() {
       <section className="py-24 bg-background scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
-            <div className="section-label text-primary">{t.advancedCapabilities.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.advancedCapabilities.title}</h2>
+            <div className="section-label text-primary">
+              {t.advancedCapabilities.label}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.advancedCapabilities.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.advancedCapabilities.description}
             </p>
           </div>
 
           <div className="mb-16 px-12 relative group">
-            <Carousel className="w-full max-w-5xl mx-auto" opts={{ loop: true }}>
+            <Carousel
+              className="w-full max-w-5xl mx-auto"
+              opts={{ loop: true }}
+            >
               <CarouselContent className="-ml-4">
                 {[
                   "/images/caroussel/Screenshot 2026-02-18 110631.webp",
@@ -333,9 +379,12 @@ export default function Home() {
                   "/images/caroussel/Screenshot 2026-02-18 110808.webp",
                   "/images/caroussel/Screenshot 2026-02-18 110819.webp",
                   "/images/caroussel/Screenshot 2026-02-18 110911.webp",
-                  "/images/caroussel/Screenshot 2026-02-18 110919.webp"
+                  "/images/caroussel/Screenshot 2026-02-18 110919.webp",
                 ].map((imagePath, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem
+                    key={index}
+                    className="pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                  >
                     <div
                       className="p-1 cursor-pointer"
                       onClick={() => setSelectedImage(imagePath)}
@@ -349,7 +398,9 @@ export default function Home() {
                           decoding="async"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                          <span className="text-white font-medium">Click to Enlarge</span>
+                          <span className="text-white font-medium">
+                            Click to Enlarge
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -361,10 +412,15 @@ export default function Home() {
             </Carousel>
           </div>
 
-          <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+          <Dialog
+            open={!!selectedImage}
+            onOpenChange={open => !open && setSelectedImage(null)}
+          >
             <DialogContent className="sm:max-w-[90vw] max-w-[95vw] max-h-[95vh] w-fit p-0 border-none bg-transparent shadow-none flex justify-center items-center gap-0">
               <DialogTitle className="sr-only">Enlarged Image</DialogTitle>
-              <DialogDescription className="sr-only">A larger view of the selected screenshot</DialogDescription>
+              <DialogDescription className="sr-only">
+                A larger view of the selected screenshot
+              </DialogDescription>
               {selectedImage && (
                 <div className="relative flex items-center justify-center">
                   <img
@@ -408,8 +464,12 @@ export default function Home() {
       <section className="py-24">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
-            <div className="section-label text-primary">{t.versatility.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.versatility.title}</h2>
+            <div className="section-label text-primary">
+              {t.versatility.label}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.versatility.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.versatility.description}
             </p>
@@ -442,8 +502,12 @@ export default function Home() {
       <section className="py-24 bg-muted/30 scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
-            <div className="section-label text-primary">{t.expertise.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.expertise.title}</h2>
+            <div className="section-label text-primary">
+              {t.expertise.label}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.expertise.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.expertise.description}
             </p>
@@ -463,7 +527,7 @@ export default function Home() {
               return (
                 <Card
                   key={index}
-                  className={`transition-colors ${featured ? 'border-2 border-primary' : 'border-border hover:border-primary'}`}
+                  className={`transition-colors ${featured ? "border-2 border-primary" : "border-border hover:border-primary"}`}
                 >
                   <CardContent className="p-6 space-y-3 h-full flex flex-col">
                     <div className="flex items-center justify-between">
@@ -495,14 +559,18 @@ export default function Home() {
           aria-hidden="true"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 20% 20%, var(--color-primary) 0%, transparent 40%), radial-gradient(circle at 80% 80%, var(--color-accent) 0%, transparent 45%)',
+              "radial-gradient(circle at 20% 20%, var(--color-primary) 0%, transparent 40%), radial-gradient(circle at 80% 80%, var(--color-accent) 0%, transparent 45%)",
           }}
         />
 
         <div className="container relative">
           <div className="text-center mb-16 space-y-4">
-            <div className="section-label text-primary">{t.solutions.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.solutions.title}</h2>
+            <div className="section-label text-primary">
+              {t.solutions.label}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.solutions.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.solutions.description}
             </p>
@@ -517,8 +585,12 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">{t.solutions.motionA.title}</h3>
-                  <p className="text-muted-foreground">{t.solutions.motionA.subtitle}</p>
+                  <h3 className="text-2xl font-bold mb-2">
+                    {t.solutions.motionA.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {t.solutions.motionA.subtitle}
+                  </p>
                 </div>
 
                 <p className="text-sm leading-relaxed">
@@ -534,11 +606,13 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="w-full">
+                {/* MotionA ist Software und steht in keinem Shop. Gezeigt
+                    wird sie auf der Videoseite, mit App Notes. */}
+                <Link href="/videos" className="w-full">
                   <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                     {t.solutions.motionA.learnMore}
                   </Button>
-                </a>
+                </Link>
               </CardContent>
             </Card>
 
@@ -550,8 +624,12 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">{t.solutions.motionASpark.title}</h3>
-                  <p className="text-muted-foreground">{t.solutions.motionASpark.subtitle}</p>
+                  <h3 className="text-2xl font-bold mb-2">
+                    {t.solutions.motionASpark.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {t.solutions.motionASpark.subtitle}
+                  </p>
                 </div>
 
                 <p className="text-sm leading-relaxed">
@@ -567,7 +645,14 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="w-full">
+                {/* Spark ist das Geraet, das es zu kaufen gibt — wer mehr
+                    wissen will, will Datenblatt und Preis, nicht ein Video. */}
+                <a
+                  href={t.rbtx.produkt}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
                   <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
                     {t.solutions.motionASpark.learnMore}
                   </Button>
@@ -582,8 +667,12 @@ export default function Home() {
       <section className="py-24 bg-muted/30 scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
-            <div className="section-label text-primary">{t.resources.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.resources.title}</h2>
+            <div className="section-label text-primary">
+              {t.resources.label}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.resources.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.resources.description}
             </p>
@@ -593,27 +682,37 @@ export default function Home() {
             {[
               {
                 ...t.resources.items[0],
-                url: 'https://www.industrielle-automation.net/motion-control-neu-gedacht/',
+                url: "https://www.industrielle-automation.net/motion-control-neu-gedacht/",
               },
               {
                 ...t.resources.items[1],
-                url: 'https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P',
+                url: "https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P",
               },
               {
                 ...t.resources.items[2],
-                url: 'https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview',
+                url: t.rbtx.produkt,
               },
             ].map((resource, index) => (
-              <Card key={index} className="border-border hover:border-primary transition-colors">
+              <Card
+                key={index}
+                className="border-border hover:border-primary transition-colors"
+              >
                 <CardContent className="p-6 space-y-4">
                   <div>
                     <h3 className="font-bold text-lg mb-1">{resource.title}</h3>
-                    <p className="text-sm font-medium text-primary">{resource.subtitle}</p>
+                    <p className="text-sm font-medium text-primary">
+                      {resource.subtitle}
+                    </p>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {resource.description}
                   </p>
-                  <a href={resource.url} target="_blank" rel="noopener noreferrer" className="block">
+                  <a
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
                     <Button variant="outline" className="w-full">
                       {resource.cta}
                       <ExternalLink className="ml-2 h-3 w-3" />
@@ -625,8 +724,13 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/pages/31129609" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            {/* Fuehrte auf eine Confluence-Seite hinter einer Zugriffssperre.
+                Auf RBTX steht ein gepflegter Preis. */}
+            <a href={t.rbtx.produkt} target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
                 {t.resources.viewPricing}
               </Button>
             </a>
@@ -638,8 +742,12 @@ export default function Home() {
       <section id="products" className="py-24 bg-background scroll-animation">
         <div className="container">
           <div className="text-center mb-16 space-y-4">
-            <div className="section-label text-primary">{t.productsHub.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.productsHub.title}</h2>
+            <div className="section-label text-primary">
+              {t.productsHub.label}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.productsHub.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.productsHub.description}
             </p>
@@ -647,32 +755,35 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.productsHub.products.map((product, index) => (
-              <Card key={product.id} className="hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={product.id}
+                className="hover:shadow-lg transition-shadow duration-300"
+              >
                 <CardContent className="p-6 space-y-4 h-full flex flex-col">
                   <div className="flex-1">
                     <div className="inline-block px-3 py-1 bg-primary/10 rounded-full mb-3">
-                      <span className="text-xs font-semibold text-primary">{product.category}</span>
+                      <span className="text-xs font-semibold text-primary">
+                        {product.category}
+                      </span>
                     </div>
                     <h3 className="font-bold text-lg mb-2">{product.name}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {product.description}
                     </p>
                   </div>
-                  {product.id === 'motionc-flex' || product.id === 'komi-monitor' || product.id === 'lorawan-gateway' || product.id === 'zynq-pcie' ? (
-                    <Link href={`/product/${product.id}`}>
-                      <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
-                        {t.productsHub.learnMore}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                  ) : (
-                    <a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer">
-                      <Button variant="ghost" size="sm" className="w-full text-primary hover:bg-primary/10">
-                        {t.productsHub.learnMore}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </a>
-                  )}
+                  {/* Jedes Produkt im Hub hat eine eigene Seite. Hier stand
+                      eine Verzweigung mit einem Confluence-Zweig fuer den Fall,
+                      dass eines keine hat — der Fall trat nie ein. */}
+                  <Link href={`/product/${product.id}`}>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="w-full text-primary hover:bg-primary/10"
+                    >
+                      {t.productsHub.learnMore}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -685,7 +796,9 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="section-label text-primary">{t.contact.label}</div>
-            <h2 className="text-4xl md:text-5xl font-bold">{t.contact.title}</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t.contact.title}
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t.contact.description}
             </p>
@@ -699,8 +812,10 @@ export default function Home() {
                 </div>
                 <h3 className="font-bold">{t.contact.address.title}</h3>
                 <p className="text-sm text-muted-foreground">
-                  {t.contact.address.street}<br />
-                  {t.contact.address.city}<br />
+                  {t.contact.address.street}
+                  <br />
+                  {t.contact.address.city}
+                  <br />
                   {t.contact.address.country}
                 </p>
               </CardContent>
@@ -712,7 +827,10 @@ export default function Home() {
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-bold">{t.contact.phone.title}</h3>
-                <a href="tel:+4970711384161" className="text-sm text-primary hover:underline block">
+                <a
+                  href="tel:+4970711384161"
+                  className="text-sm text-primary hover:underline block"
+                >
                   {t.contact.phone.number}
                 </a>
               </CardContent>
@@ -724,7 +842,10 @@ export default function Home() {
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-bold">{t.contact.email.title}</h3>
-                <a href="mailto:mail@duebon-engineering.de" className="text-sm text-primary hover:underline block">
+                <a
+                  href="mailto:mail@duebon-engineering.de"
+                  className="text-sm text-primary hover:underline block"
+                >
                   {t.contact.email.address}
                 </a>
               </CardContent>
@@ -738,27 +859,73 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="space-y-4">
-              <img src="/images/dubon-logo.png" alt="Dübon Engineering" className="h-10" loading="lazy" decoding="async" />
-              <p className="text-sm opacity-80">
-                {t.footer.tagline}
-              </p>
+              <img
+                src="/images/dubon-logo.png"
+                alt="Dübon Engineering"
+                className="h-10"
+                loading="lazy"
+                decoding="async"
+              />
+              <p className="text-sm opacity-80">{t.footer.tagline}</p>
             </div>
 
             <div>
               <h4 className="font-bold mb-4 text-sm">{t.footer.products}</h4>
               <ul className="space-y-2 text-sm opacity-80">
-                <li><a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.software}</a></li>
-                <li><a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.spark}</a></li>
-                <li><a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/pages/31129609" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.productLinks.pricing}</a></li>
+                <li>
+                  <Link
+                    href="/videos"
+                    className="hover:opacity-100 transition-opacity"
+                  >
+                    {t.footer.productLinks.software}
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href={t.rbtx.produkt}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-100 transition-opacity"
+                  >
+                    {t.footer.productLinks.spark}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={t.rbtx.produkt}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-100 transition-opacity"
+                  >
+                    {t.footer.productLinks.pricing}
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-bold mb-4 text-sm">{t.footer.resources}</h4>
               <ul className="space-y-2 text-sm opacity-80">
-                <li><a href="https://ing-duebon.atlassian.net/wiki/spaces/MotionA/overview" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.documentation}</a></li>
-                <li><a href="https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.youtube}</a></li>
-                <li><a href="https://www.industrielle-automation.net/motion-control-neu-gedacht/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">{t.footer.resourceLinks.article}</a></li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/playlist?list=PLCVC6KYu5hU6NFSxSEH60EhtbraxJHt1P"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-100 transition-opacity"
+                  >
+                    {t.footer.resourceLinks.youtube}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.industrielle-automation.net/motion-control-neu-gedacht/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-100 transition-opacity"
+                  >
+                    {t.footer.resourceLinks.article}
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -775,20 +942,32 @@ export default function Home() {
           <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-80">
             <p>{t.footer.copyright}</p>
             <div className="flex items-center gap-4">
-              <Link href="/about" className="hover:opacity-100 transition-opacity">
+              <Link
+                href="/about"
+                className="hover:opacity-100 transition-opacity"
+              >
                 {t.about.title}
               </Link>
               <span>|</span>
-              <Link href="/videos" className="hover:opacity-100 transition-opacity">
+              <Link
+                href="/videos"
+                className="hover:opacity-100 transition-opacity"
+              >
                 {t.videos.title}
               </Link>
               <span>|</span>
-              <Link href="/imprint" className="hover:opacity-100 transition-opacity">
+              <Link
+                href="/imprint"
+                className="hover:opacity-100 transition-opacity"
+              >
                 {t.footer.imprint}
               </Link>
               <span>|</span>
-              <Link href="/privacy" className="hover:opacity-100 transition-opacity">
-                {language === 'de' ? 'Datenschutz' : 'Privacy Policy'}
+              <Link
+                href="/privacy"
+                className="hover:opacity-100 transition-opacity"
+              >
+                {language === "de" ? "Datenschutz" : "Privacy Policy"}
               </Link>
               <span>|</span>
               <p>{t.footer.footerAddress}</p>

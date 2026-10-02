@@ -70,6 +70,29 @@ export default function About() {
         </p>
       </section>
 
+      {/* ------------------------------------------------ Vertrieb */}
+      {/*
+        Steht vor dem Kontakt, nicht danach: Wer wissen will, was das Geraet
+        kostet, soll es kaufen koennen, ohne vorher eine Mail zu schreiben.
+        Der Preis selbst steht nicht hier, sondern wird auf RBTX gepflegt.
+      */}
+      <section className={`mt-20 ${SPALTE}`}>
+        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+          {s.vertriebH}
+        </h2>
+        <p className="mt-6 leading-relaxed text-foreground/90">
+          {s.vertriebText}
+        </p>
+        <a
+          href={t.rbtx.partner}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block font-medium text-primary hover:underline"
+        >
+          {s.vertriebLink}
+        </a>
+      </section>
+
       {/* ------------------------------------------------ Kontakt */}
       <section className={`mt-20 ${SPALTE} border-t border-border pt-12`}>
         <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">

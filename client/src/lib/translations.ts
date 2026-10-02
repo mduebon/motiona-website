@@ -2,6 +2,20 @@ export type Language = "en" | "de";
 
 export const translations = {
   en: {
+    /*
+     * RBTX ist der igus-Marktplatz, ueber den MotionA-Spark verkauft
+     * wird. Die Adressen stehen je Sprache, weil rbtx.com/de-DE auf
+     * rbtx.de umleitet — ein deutscher Besucher soll weder auf einer
+     * englischen Shopseite landen noch ueber eine Weiterleitung laufen.
+     *
+     * Der Preis steht bewusst nur dort und nicht hier: Er wird auf RBTX
+     * gepflegt und waere in dieser Datei beim naechsten Mal falsch.
+     */
+    rbtx: {
+      produkt:
+        "https://rbtx.com/en-US/components/control-system/motion-a-spark",
+      partner: "https://rbtx.com/en-US/partners/duebon-engineering",
+    },
     // Header
     header: {
       features: "Features",
@@ -284,11 +298,11 @@ export const translations = {
           cta: "YouTube Channel",
         },
         {
-          title: "Explore Documentation",
-          subtitle: "Technical Wiki",
+          title: "Buy MotionA-Spark",
+          subtitle: "Available on RBTX",
           description:
-            "Discover comprehensive technical details, API references, and integration guides in our wiki.",
-          cta: "Documentation",
+            "The integrated controller for delta robots, gantries and custom kinematics — with specifications and current pricing on the igus marketplace.",
+          cta: "View on RBTX",
         },
       ],
       viewPricing: "View Pricing & TCO",
@@ -363,7 +377,6 @@ export const translations = {
       },
       resources: "Resources",
       resourceLinks: {
-        documentation: "Documentation",
         youtube: "YouTube Channel",
         article: "Feature Article",
       },
@@ -484,6 +497,10 @@ export const translations = {
       foerderH: "Supported and funded by",
       foerderText:
         "Development work on MotionA is recognised as research and development under the German research allowance (BSFZ) and is supported by Covision and MFG Baden-Württemberg.",
+      vertriebH: "Where to get it",
+      vertriebText:
+        "MotionA-Spark, the integrated controller, is sold through RBTX, the igus marketplace. Specifications and current pricing are listed there.",
+      vertriebLink: "Dübon Engineering on RBTX",
       kontaktH: "Contact",
       firma: "Dübon Engineering GmbH",
       strasse: "Teichäcker 4",
@@ -507,6 +524,19 @@ export const translations = {
     },
   },
   de: {
+    /*
+     * RBTX ist der igus-Marktplatz, ueber den MotionA-Spark verkauft
+     * wird. Die Adressen stehen je Sprache, weil rbtx.com/de-DE auf
+     * rbtx.de umleitet — ein deutscher Besucher soll weder auf einer
+     * englischen Shopseite landen noch ueber eine Weiterleitung laufen.
+     *
+     * Der Preis steht bewusst nur dort und nicht hier: Er wird auf RBTX
+     * gepflegt und waere in dieser Datei beim naechsten Mal falsch.
+     */
+    rbtx: {
+      produkt: "https://rbtx.de/de-DE/components/control-system/motion-a-spark",
+      partner: "https://rbtx.de/de-DE/partners/duebon-engineering",
+    },
     // Header
     header: {
       features: "Funktionen",
@@ -788,11 +818,11 @@ export const translations = {
           cta: "Zum YouTube-Kanal",
         },
         {
-          title: "Dokumentation erkunden",
-          subtitle: "Technisches Wiki",
+          title: "MotionA-Spark kaufen",
+          subtitle: "Erhältlich über RBTX",
           description:
-            "Technische Details, API-Referenzen und Integrationsleitfäden in unserem Wiki.",
-          cta: "Zur Dokumentation",
+            "Die integrierte Steuerung für Delta-Roboter, Portale und eigene Kinematiken — mit Datenblatt und aktuellem Preis auf dem igus-Marktplatz.",
+          cta: "Auf RBTX ansehen",
         },
       ],
       viewPricing: "Preise & TCO ansehen",
@@ -867,7 +897,6 @@ export const translations = {
       },
       resources: "Ressourcen",
       resourceLinks: {
-        documentation: "Dokumentation",
         youtube: "YouTube-Kanal",
         article: "Feature-Artikel",
       },
@@ -988,6 +1017,10 @@ export const translations = {
       foerderH: "Unterstützt und gefördert durch",
       foerderText:
         "Die Entwicklung an MotionA ist im Rahmen der Forschungszulage als Forschung und Entwicklung anerkannt (BSFZ) und wird von Covision und der MFG Baden-Württemberg unterstützt.",
+      vertriebH: "Woher Sie es bekommen",
+      vertriebText:
+        "MotionA-Spark, die integrierte Steuerung, wird über RBTX vertrieben, den Marktplatz von igus. Datenblatt und aktueller Preis stehen dort.",
+      vertriebLink: "Dübon Engineering auf RBTX",
       kontaktH: "Kontakt",
       firma: "Dübon Engineering GmbH",
       strasse: "Teichäcker 4",
