@@ -59,46 +59,6 @@ export default function Beispiele() {
 
         <article className="border-t border-border pt-10">
           <h2 className="font-display text-2xl font-bold tracking-tight">
-            {s.cobotH}
-          </h2>
-          <Herkunft text={s.cobotArt} />
-          {/*
-            Bild vorerst herausgenommen: cobot-docking.webp liegt noch nicht in
-            client/public/images/kinetik/, und ein fehlendes Bild fällt auf zwei
-            Pixel Höhe zusammen — ein Haarstrich zwischen Überschrift und Text,
-            der nach Fehler aussieht. Der Abschnitt trägt sich solange über das
-            Videofeld darunter.
-
-            Zum Wiedereinsetzen, sobald die Datei da ist (width/height an die
-            echten Maße anpassen und das mt-6 am Absatz darunter entfernen):
-
-            <img
-              src="/images/kinetik/cobot-docking.webp"
-              alt="Zwei Sechsachs-Cobots beim Andockmanöver"
-              width={1400}
-              height={934}
-              className="my-6 w-full rounded-sm border border-border"
-              loading="lazy"
-            />
-          */}
-          {s.cobotText.map((absatz, i) => (
-            <p
-              key={i}
-              className={`${i === 0 ? "mt-6" : "mt-4"} ${SPALTE} leading-relaxed text-foreground/90`}
-            >
-              {absatz}
-            </p>
-          ))}
-          <VideoEmbed
-            className="mt-10"
-            id="o2zGbPmoGO0"
-            titel={s.cobotVideoTitel}
-            dauer={DAUER.o2zGbPmoGO0}
-          />
-        </article>
-
-        <article className="border-t border-border pt-10">
-          <h2 className="font-display text-2xl font-bold tracking-tight">
             {s.omniwheelH}
           </h2>
           <Herkunft text={s.omniwheelArt} />

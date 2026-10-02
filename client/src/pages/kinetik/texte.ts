@@ -122,10 +122,6 @@ export interface KinetikTexte {
     pendelchorAlt: string;
     pendelchorText: string;
     pendelchorArt: string;
-    cobotH: string;
-    cobotText: string[];
-    cobotVideoTitel: string;
-    cobotArt: string;
     omniwheelH: string;
     omniwheelVideoTitel: string;
     omniwheelText: string;
@@ -162,6 +158,17 @@ export interface KinetikTexte {
     modelleH: string;
     frameGraphTitel: string;
     frameGraphText: string;
+    /**
+     * Das Andockvideo. Stand bis dahin auf Seite 02 unter den Beispielen —
+     * dort war es mit 3:40 laenger als die drei anderen Videos zusammen und
+     * zeigte zwei Industriearme, also das Bild, das dieser Bereich gerade
+     * nicht fuehren will. Das Argument dagegen gehoert hierher: Die Andockpose
+     * ist im Koordinatensystem des drehenden Objekts definiert, und genau das
+     * erklaert der FrameGraph-Absatz darueber in Worten.
+     */
+    frameGraphVideoTitel: string;
+    frameGraphVideoText: string[];
+    frameGraphVideoArt: string;
     actionGraphTitel: string;
     actionGraphText: string;
     modelleSchluss: string;
@@ -274,11 +281,11 @@ const de: KinetikTexte = {
     nennerText:
       " Weil eine Beziehung beschrieben wird und kein Weg, bedeutet auch eine Änderung an der Geometrie — ein Montagepunkt 20 Millimeter weiter außen, ein etwas längerer Arm — lediglich einen geänderten Wert und keine neue Bahnprogrammierung.",
     textZuBewegungVideoTitel:
-      "Menschliche Bewegung — das Bild folgt der Steuerung, nicht umgekehrt",
+      "Ein Satz wird zu menschlicher Bewegung — und die fährt zwei Maschinen",
     textZuBewegung: [
-      "Ein Satz Text beschreibt eine Bewegung, ein neuronales Netz macht daraus einen Bewegungsentwurf. Gefahren wird er von der Steuerung: jedes Gelenk hat einen eigenen Regler, alle laufen in gemeinsamer Zeit und in einem gemeinsamen räumlichen Modell. Was zu sehen ist, ist deshalb keine abgespielte Animation, sondern derselbe Vorgang, der auch reale Achsen bewegen würde.",
+      "„a person does jumping jacks“ — ein neuronales Netz macht daraus einen Bewegungsentwurf. Gefahren wird er von der Steuerung: Für den SCARA links und den Cobot rechts löst MotionA die inverse Kinematik und rechnet je Achse eine Bahn, die Gelenkgrenzen sowie Grenzen für Geschwindigkeit, Beschleunigung und Ruck einhält. Was die Maschinen nicht können, fahren sie auch hier nicht.",
+      "Die übrigen Punkte des Skeletts sind frei und haben keine mechanischen Zwänge. Beides läuft in einem Programm — zwangsgebundene Maschinen und frei bewegliche Körper im selben Modell. Genau diese Mischung ist eine Installation.",
       "Das Netz liefert die Absicht. Ob sie sich fahren lässt, entscheidet die Steuerung.",
-      "Der übliche Weg wäre umgekehrt: Ein Grafikwerkzeug erzeugt die Animation, die Maschine bekommt Sollwerte und versucht ihr zu folgen. Hier ist das Bild nur eine Ausgabe — dieselbe Rechnung bewegte auch die Motoren.",
     ],
     textZuBewegungHinweis:
       "Die Einzelheiten zum Aufbau stehen in der Beschreibung des Videos.",
@@ -329,14 +336,6 @@ const de: KinetikTexte = {
     pendelchorText:
       "Vier beleuchtete Pendel reagieren auf Besucher und sind als ein Bewegungsstück choreografiert. „Lass die Pendel schwingen wie Schilf im Wind, wenn jemand näher kommt“ wird zu einer geprüften Beschreibung, im digitalen Zwilling verifiziert und auf der Installation ausgeführt.",
     pendelchorArt: "Realer Aufbau",
-    cobotH: "Zwei Cobots docken aneinander an",
-    cobotText: [
-      "Ein Cobot dreht das Ziel, der zweite muss andocken, während es sich dreht. Die Andockpose ist dabei nie in Weltkoordinaten definiert, sondern im Koordinatensystem des rotierenden Objekts. Die Bahn im Raum ist ein Ergebnis des Modells, keine programmierte Trajektorie.",
-      "Ändert sich die Drehzahl oder die Geometrie, funktioniert das Andocken weiter. Nichts muss neu eingelernt werden.",
-    ],
-    cobotVideoTitel:
-      "Andockmanöver zweier Cobots — eine Hommage an Interstellar, in der Simulation",
-    cobotArt: "In der Simulation",
     omniwheelH: "Omniwheel-Plattform",
     omniwheelVideoTitel:
       "Omniwheel-Plattform: holonome Bewegung aus dem Modell",
@@ -383,6 +382,13 @@ const de: KinetikTexte = {
     frameGraphTitel: "FrameGraph — wo sich etwas befindet.",
     frameGraphText:
       " Alle Bezugssysteme und ihre Beziehungen zueinander, live geführt. Ein laufendes Band, ein zweiter Roboter, eine getrackte Person: jeweils ein weiteres Bezugssystem, kein Sonderfall im Programm.",
+    frameGraphVideoTitel:
+      "Andockmanöver zweier Cobots — eine Hommage an Interstellar",
+    frameGraphVideoText: [
+      "Ein Cobot dreht das Ziel, der zweite muss andocken, während es sich dreht. Die Andockpose ist nie in Weltkoordinaten definiert, sondern im Koordinatensystem des rotierenden Objekts — ein Bezugssystem im FrameGraph wie jedes andere. Die Bahn im Raum ist ein Ergebnis des Modells, keine programmierte Trajektorie.",
+      "Ändert sich die Drehzahl oder die Geometrie, funktioniert das Andocken weiter. Nichts muss neu eingelernt werden.",
+    ],
+    frameGraphVideoArt: "In der Simulation",
     actionGraphTitel: "ActionGraph — wann etwas passiert.",
     actionGraphText:
       " Aktionen, Reihenfolgen, parallele Zweige, Ereignisse, Fehlerfälle. Licht, Klappen und Projektionen gehören in dieselbe Beschreibung, nicht in ein zweites System. Helligkeit und Farbe sind dabei Größen wie ein Winkel und lassen sich an dieselben Bedingungen knüpfen; wo eine Lichtanlage DMX spricht, wird sie direkt angesprochen.",
@@ -544,11 +550,11 @@ const en: KinetikTexte = {
     nennerText:
       " Because a relationship is described and not a path, a change to the geometry — a mounting point 20 millimetres further out, a slightly longer arm — is only a changed value, not new path programming.",
     textZuBewegungVideoTitel:
-      "Human motion — the picture follows the control system, not the reverse",
+      "A sentence becomes human motion — and that motion drives two machines",
     textZuBewegung: [
-      "A sentence of text describes a movement, and a neural network turns it into a draft of the movement. The control system then drives it: every joint has its own controller, all of them running in common time and in one shared spatial model. What you see is therefore not an animation being played back, but the same process that would move real axes.",
+      "“a person does jumping jacks” — a neural network turns the sentence into a draft of the movement. The control system then drives it: for the SCARA on the left and the cobot on the right, MotionA solves the inverse kinematics and computes a trajectory per axis that respects joint limits as well as limits on velocity, acceleration and jerk. What the machines cannot do, they do not do here either.",
+      "The remaining points of the skeleton are free and have no mechanical constraints. Both run in one program — constrained machines and freely moving bodies in the same model. That mixture is exactly what an installation is.",
       "The network supplies the intent. The control system decides whether it can be driven.",
-      "The usual route would be the other way round: a graphics tool produces the animation, the machine is given setpoints and tries to follow them. Here the picture is only an output — the same computation would move the motors.",
     ],
     textZuBewegungHinweis:
       "The details of the setup are in the video's description.",
@@ -600,14 +606,6 @@ const en: KinetikTexte = {
     pendelchorText:
       "Four illuminated pendulums respond to visitors and are choreographed as a single piece of motion. “Let the pendulums sway like reeds in the wind when someone comes closer” becomes a checked description, verified in the digital twin and executed on the installation.",
     pendelchorArt: "Physical installation",
-    cobotH: "Two cobots docking with each other",
-    cobotText: [
-      "One cobot rotates the target, the second has to dock while it turns. The docking pose is never defined in world coordinates but in the coordinate system of the rotating object. The path through space is a result of the model, not a programmed trajectory.",
-      "If the rotation speed or the geometry changes, the docking still works. Nothing has to be taught again.",
-    ],
-    cobotVideoTitel:
-      "Docking manoeuvre of two cobots — a nod to Interstellar, in simulation",
-    cobotArt: "In simulation",
     omniwheelH: "Omniwheel platform",
     omniwheelVideoTitel:
       "Omniwheel platform: holonomic motion derived from the model",
@@ -654,6 +652,13 @@ const en: KinetikTexte = {
     frameGraphTitel: "FrameGraph — where something is.",
     frameGraphText:
       " All reference frames and their relationships to one another, maintained live. A moving conveyor, a second robot, a tracked person: each of them simply one more reference frame, not a special case in the program.",
+    frameGraphVideoTitel:
+      "Docking manoeuvre of two cobots — a nod to Interstellar",
+    frameGraphVideoText: [
+      "One cobot rotates the target, the second has to dock while it turns. The docking pose is never defined in world coordinates but in the coordinate system of the rotating object — a reference frame in the FrameGraph like any other. The path through space is a result of the model, not a programmed trajectory.",
+      "If the rotation speed or the geometry changes, the docking still works. Nothing has to be taught again.",
+    ],
+    frameGraphVideoArt: "In simulation",
     actionGraphTitel: "ActionGraph — when something happens.",
     actionGraphText:
       " Actions, sequences, parallel branches, events, error cases. Light, flaps and projections belong in the same description, not in a second system. Brightness and colour are quantities like an angle and can be tied to the same conditions; where a lighting rig speaks DMX, it is addressed directly.",

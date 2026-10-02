@@ -49,19 +49,43 @@ export default function WieDasFunktioniert() {
       </section>
 
       {/* ------------------------------------------------ Zwei Modelle */}
-      <section className={`mt-24 ${SPALTE}`}>
-        <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl">
+      {/* Nicht auf SPALTE begrenzt wie die anderen Abschnitte: Hier steht ein
+          Videofeld, und das gehoert wie ueberall in die breite Flaeche. Die
+          Absaetze tragen ihre Breite deshalb einzeln. */}
+      <section className="mt-24">
+        <h2
+          className={`${SPALTE} font-display text-2xl font-bold tracking-tight md:text-3xl`}
+        >
           {s.modelleH}
         </h2>
-        <p className="mt-6 leading-relaxed text-foreground/90">
+        <p className={`mt-6 ${SPALTE} leading-relaxed text-foreground/90`}>
           <span className="font-semibold">{s.frameGraphTitel}</span>
           {s.frameGraphText}
         </p>
-        <p className="mt-4 leading-relaxed text-foreground/90">
+        <div className="mt-8 max-w-4xl">
+          <VideoEmbed
+            id="o2zGbPmoGO0"
+            titel={s.frameGraphVideoTitel}
+            dauer={DAUER.o2zGbPmoGO0}
+          />
+          <p className="section-label mt-2 text-muted-foreground">
+            {s.frameGraphVideoArt}
+          </p>
+          {s.frameGraphVideoText.map((absatz, i) => (
+            <p
+              key={i}
+              className={`${i === 0 ? "mt-6" : "mt-4"} ${SPALTE} leading-relaxed text-foreground/90`}
+            >
+              {absatz}
+            </p>
+          ))}
+        </div>
+
+        <p className={`mt-10 ${SPALTE} leading-relaxed text-foreground/90`}>
           <span className="font-semibold">{s.actionGraphTitel}</span>
           {s.actionGraphText}
         </p>
-        <p className="mt-4 leading-relaxed text-foreground/90">
+        <p className={`mt-4 ${SPALTE} leading-relaxed text-foreground/90`}>
           {s.modelleSchluss}
         </p>
       </section>

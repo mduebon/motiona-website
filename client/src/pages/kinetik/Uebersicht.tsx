@@ -23,8 +23,17 @@ import { useKinetikTexte } from "./texte";
  * Grund, weil mindestens ein Logo eine weiße Fläche mitbringt und sonst als
  * Kasten im Seitenhintergrund steht.
  */
-/** Steht an zwei Stellen: Einbettung und Verweis auf die Beschreibung. */
-const VIDEO_TEXT_ZU_BEWEGUNG = "sFoopxDGA3s";
+/**
+ * Steht an zwei Stellen: Einbettung und Verweis auf die Beschreibung.
+ *
+ * Vorher lief hier sFoopxDGA3s — vierzehn angetriebene Körper folgen einem
+ * Skelett. Dasselbe Netz, dasselbe Prinzip, aber das Bild sieht aus wie eine
+ * Grafik, und der Text musste in drei Absätzen gegen den Animationsverdacht
+ * anschreiben. Hier führen ein SCARA und ein Cobot die Bewegung aus, mit
+ * inverser Kinematik und echten Grenzwerten: Das Bild belegt selbst, dass
+ * Steuerung läuft und keine Animation abgespielt wird.
+ */
+const VIDEO_TEXT_ZU_BEWEGUNG = "7BnUx9JtsB4";
 
 const FOERDERER = [
   { name: "Covision", logo: "/images/covision-logo.jpg" },
