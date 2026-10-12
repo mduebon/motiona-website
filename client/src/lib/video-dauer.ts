@@ -20,6 +20,7 @@
 
 export const DAUER: Record<string, string> = {
   // Öffentliche Videosammlung (/videos)
+  "4b69MoPO7Z0": "2:08",
   Qjs5bP1fkxQ: "2:05",
   e_F5ZE4q62g: "1:02",
   jy2JHnxqBMk: "0:39",

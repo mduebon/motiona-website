@@ -475,6 +475,15 @@ export const translations = {
         },
         {
           kategorie: "produkt",
+          titel: "From profile to motion cell — the concept in two minutes",
+          text: [
+            "Linear units, servo motors and drives from a manufacturer’s catalogue, plus peripherals of any make, become a complete test cell. You choose a template, the MotionA controller and whether the application runs in simulation or on the real machine, and describe the process in plain language, in Python or through other interfaces. From that, the bill of materials, the EtherCAT configuration, a readable program and the simulation are generated.",
+            "On the left the program, on the right the simulated cell measuring a workpiece while it is being moved — three lines of code, because the measuring points are attached to the workpiece. The simulator is the controller with a different hardware connection, so switching to the real machine leaves the program unchanged. The studio shown is a concept study.",
+          ],
+          varianten: [{ id: "4b69MoPO7Z0", label: "" }],
+        },
+        {
+          kategorie: "produkt",
           titel:
             "MotionA Measure — adaptive measuring, first simulated then real",
           text: [
@@ -992,6 +1001,15 @@ export const translations = {
             "SCARA links und Cobot rechts sind simuliert, die Steuerungslogik ist dieselbe wie für echte Maschinen: MotionA löst ihre inverse Kinematik und rechnet für jede Achse eine Bahn, die Gelenkgrenzen sowie Grenzen für Geschwindigkeit, Beschleunigung und Ruck einhält. Die übrigen Skelettpunkte sind virtuell und haben keine mechanischen Grenzen — beides läuft in einem Programm. Die Wartezeit auf die Bewegungserzeugung ist herausgeschnitten.",
           ],
           varianten: [{ id: "7BnUx9JtsB4", label: "" }],
+        },
+        {
+          kategorie: "produkt",
+          titel: "Vom Profil zur Bewegungszelle — das Konzept in zwei Minuten",
+          text: [
+            "Lineareinheiten, Servomotoren und Regler aus dem Katalog eines Herstellers und Peripherie beliebiger Hersteller werden zu einer kompletten Prüfzelle. Sie wählen eine Vorlage, die Steuerung MotionA und ob die Anwendung in der Simulation oder auf der echten Anlage läuft, und beschreiben den Ablauf in eigenen Worten, in Python oder über andere Schnittstellen. Daraus entstehen Stückliste, EtherCAT-Konfiguration, ein lesbares Programm und die Simulation.",
+            "Links das Programm, rechts die simulierte Zelle, die ein Werkstück misst, während es verschoben wird — mit drei Zeilen Code, weil die Messpunkte am Werkstück hängen. Der Simulator ist die Steuerung mit anderer Hardware-Anbindung; beim Wechsel auf die echte Anlage bleibt das Programm dasselbe. Das gezeigte Studio ist eine Konzeptstudie, das Video ist englisch.",
+          ],
+          varianten: [{ id: "4b69MoPO7Z0", label: "" }],
         },
         {
           kategorie: "produkt",
